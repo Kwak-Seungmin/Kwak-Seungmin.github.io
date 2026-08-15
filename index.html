@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kwak Seungmin — Portfolio Page</title>
+<meta name="description" content="곽승민 — Technical Artist. 3D 모델링과 생성형 AI 파이프라인, 제작 자동화 툴 작업 포트폴리오.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Raleway:wght@300;400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="style.css?v=64">
+</head>
+<body>
+
+<header id="header">
+  <div class="container">
+    <div id="logo">
+      <h1><a href="#intro">Kwak Seungmin</a></h1>
+    </div>
+    <nav class="nav-menu">
+      <a href="#portfolio" class="scrollto">Portfolio</a>
+      <a href="#experience" class="scrollto">Experience</a>
+      <a href="#pipeline" class="scrollto">Pipeline</a>
+      <a href="#about" class="scrollto">About</a>
+      <a href="#contact" class="scrollto">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ INTRO ============ -->
+<section id="intro">
+  <video class="video" src="assets/video/hero_loop.mp4" poster="assets/video/hero_poster.jpg"
+         autoplay muted loop playsinline preload="metadata"></video>
+  <div class="intro-container">
+    <div class="container">
+      <h1>Kwak <span>Seungmin</span></h1>
+      <p class="intro-subtitle"><span id="typed"></span><span class="cursor">|</span></p>
+      <div class="intro-actions">
+        <a class="btn btn-solid" href="#portfolio">Portfolio 보기</a>
+        <a class="btn" href="assets/docs/곽승민_포트폴리오.pdf" target="_blank" rel="noopener">Portfolio PDF</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PORTFOLIO ============ -->
+<section id="portfolio">
+  <div class="container">
+    <div class="section-header">
+      <h2>Portfolio</h2>
+    </div>
+
+    <ul id="portfolio-flters">
+      <li data-filter="all" class="filter-active">All</li>
+      <li data-filter="pipeline">Pipeline</li>
+      <li data-filter="3d">3D / Character</li>
+      <li data-filter="ai">AI Film</li>
+      <li data-filter="team">Team</li>
+    </ul>
+
+    <div class="portfolio-grid">
+      <div class="portfolio-item" data-cat="pipeline" data-project="aiartpipeline">
+        <img src="assets/img/aiartpipeline_hero.jpg" alt="AI Game &amp; Art Pipeline">
+        <span class="play-badge">▶ 7 Videos</span>
+        <span class="pf-logo"><b>AI GAME &amp; ART</b><i>PIPELINE</i></span>
+        <div class="portfolio-info"><h4>AI Game &amp; Art Pipeline</h4><p>Tool / Automation</p></div>
+      </div>
+      <div class="portfolio-item" data-cat="3d ai team" data-project="naevis">
+        <img src="assets/img/naevis_hero.png" alt="nævis Project">
+        <span class="pf-logo"><b>n&aelig;vis</b><i>PROJECT</i></span>
+        <div class="portfolio-info"><h4>nævis Project</h4><p>SM Entertainment · Team Lead</p></div>
+      </div>
+      <div class="portfolio-item" data-cat="3d" data-project="utopia">
+        <img src="assets/img/utopia_01.png" alt="Utopia Garden">
+        <span class="play-badge">▶ Turntable</span>
+        <span class="pf-logo"><b>UTOPIA</b><i>GARDEN</i></span>
+        <div class="portfolio-info"><h4>Utopia Garden</h4><p>Creature / Hard-surface</p></div>
+      </div>
+      <div class="portfolio-item" data-cat="3d" data-project="mongsungi">
+        <img src="assets/img/p06_meditation.jpg" alt="Mongsungi">
+        <span class="pf-logo"><b>MONG</b><i>SUNGI</i></span>
+        <div class="portfolio-info"><h4>Mongsungi</h4><p>Character Design</p></div>
+      </div>
+      <div class="portfolio-item" data-cat="3d" data-project="arcimboldo">
+        <img src="assets/img/p04_winter_close.jpg" alt="Arcimboldo Winter">
+        <span class="play-badge">▶ Turntable</span>
+        <span class="pf-logo"><b>ARCIMBOLDO</b><i>WINTER</i></span>
+        <div class="portfolio-info"><h4>Arcimboldo Winter</h4><p>Organic 3D Modeling</p></div>
+      </div>
+      <div class="portfolio-item" data-cat="3d" data-project="bio">
+        <img src="assets/img/p05_torso_v2.png" alt="Bio Project">
+        <span class="play-badge">▶ Video</span>
+        <span class="pf-logo"><b>BIO</b><i>PROJECT</i></span>
+        <div class="portfolio-info"><h4>Bio Project</h4><p>Organic 3D Modeling</p></div>
+      </div>
+      <div class="portfolio-item" data-cat="ai" data-project="honor">
+        <img src="assets/img/p01_duel.jpg" alt="The Weight of Honor">
+        <span class="pf-logo"><b>THE WEIGHT</b><i>OF HONOR</i></span>
+        <span class="play-badge">▶ Video</span>
+        <div class="portfolio-info"><h4>The Weight of Honor</h4><p>AI Short Film</p></div>
+      </div>
+      <div class="portfolio-item" data-cat="ai" data-project="bonfire">
+        <img src="assets/img/p02_ritual.jpg" alt="The Bonfire Will Die">
+        <span class="pf-logo"><b>THE BONFIRE</b><i>WILL DIE</i></span>
+        <span class="play-badge">▶ 4 Videos</span>
+        <div class="portfolio-info"><h4>The Bonfire Will Die</h4><p>AI Short Film</p></div>
+      </div>
+      <div class="portfolio-item" data-cat="ai" data-project="keloid">
+        <img src="assets/img/p10_arrival.png" alt="Keloid">
+        <span class="play-badge">▶ 2 Videos</span>
+        <span class="pf-logo"><b>KELOID</b></span>
+        <div class="portfolio-info"><h4>Keloid</h4><p>Conceptual Cinematic</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section id="experience" class="section-with-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>Experience</h2>
+    </div>
+
+    <div class="exp-row">
+      <div class="exp-badge">Avene<br>Contest</div>
+      <div class="exp-body">
+        <h3>Brand Character Contest / Mongsungi</h3>
+        <div class="exp-date">2024.01 &ndash; 2024.02</div>
+        <p>A character contest entry for Av&egrave;ne, a skincare brand built on thermal spring water. Made everything myself &mdash; character design, modeling, rigging-ready round topology, and the Unreal Engine key visual.</p>
+      </div>
+    </div>
+
+    <div class="exp-row">
+      <div class="exp-badge">Personal<br>Projects</div>
+      <div class="exp-body">
+        <h3>Personal 3D Projects / Utopia Garden &middot; Arcimboldo Winter &middot; Bio Project</h3>
+        <div class="exp-date">2024.04 &ndash; 2024.12</div>
+        <p>Three projects taken from worldbuilding and storyboards through modeling, texturing, and lighting &mdash; each one alone. The goal was to pick up one new workflow per project: hard-surface part recombination, precision sculpting in ZBrush, and facial capture in Unreal Engine.</p>
+      </div>
+    </div>
+
+    <div class="exp-row">
+      <div class="exp-badge">SM Entertainment<br>&times; KOCCA</div>
+      <div class="exp-body">
+        <h3>SM Entertainment n&aelig;vis Project</h3>
+        <div class="exp-date">2024.07 &ndash; 2024.12 &middot; KOCCA Showcase 2024.12.18&ndash;19</div>
+        <p>Led the MNM team through a six-month showcase exhibition built on the IP of n&aelig;vis, SM Entertainment&rsquo;s first virtual artist. Handled concept imagery and poster visuals, 3D modeling of Sevas and Codori, and directed and produced the Unreal Engine short-form pieces (Contribution 80%).</p>
+      </div>
+    </div>
+
+    <div class="exp-row">
+      <div class="exp-badge">Graduation<br>Exhibition</div>
+      <div class="exp-body">
+        <h3>Conceptual Cinematic / Keloid</h3>
+        <div class="exp-date">2025.02 &ndash; 2025.12</div>
+        <p>A graduation cinematic made by building base forms in Unreal Engine, then layering AI-generated detail and deformation on top. Took it end to end alone &mdash; worldbuilding and story, hand-drawn concept art, and video production (Contribution 100%).</p>
+      </div>
+    </div>
+
+    <div class="exp-row">
+      <div class="exp-badge">AI Short<br>Films</div>
+      <div class="exp-body">
+        <h3>AI Short Film Direction &amp; Production / The Weight of Honor &middot; The Bonfire Will Die</h3>
+        <div class="exp-date">2026</div>
+        <p>Generated 75 frames with GPT Image 2 and animated them through Seedance2, Kling 3.0, and Sora 2 into a 4&ndash;5 minute short film, alongside a 2&ndash;3 minute short-form series showing the daily life of the Naga without dialogue. Completed both alone, and turned the production process into code.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ PIPELINE ============ -->
+<section id="pipeline" class="section-dark">
+  <div class="container">
+
+    <!-- ── 파이프라인으로 만든 게임 ── -->
+    <div class="gj">
+      <div class="gj-head">
+        <h3>Games Built with the Pipeline</h3>
+        <span class="gj-count"><b id="gjNow">1</b> / 5</span>
+      </div>
+      <div class="gj-body">
+        <div class="gj-left">
+        <div class="gj-stage">
+          <video id="gjVideo" muted loop playsinline preload="metadata" controls
+                 poster="assets/video/poster_game_abyssal.jpg?v=64">
+            <source src="assets/video/game_abyssal.mp4?v=64" type="video/mp4">
+          </video>
+          <button class="gj-nav gj-prev" type="button" aria-label="이전 게임">&#8249;</button>
+          <button class="gj-nav gj-next" type="button" aria-label="다음 게임">&#8250;</button>
+        </div>
+        <div class="gj-strip">
+          <button class="gj-thumb is-on" data-i="0" type="button" aria-label="심연의 사슬">
+            <img src="assets/video/poster_game_abyssal.jpg?v=64" alt="">
+            <span>심연의 사슬</span>
+          </button>
+          <button class="gj-thumb" data-i="1" type="button" aria-label="별이 스러지는 밤에">
+            <img src="assets/video/poster_game_starless.jpg?v=64" alt="">
+            <span>별이 스러지는 밤에</span>
+          </button>
+          <button class="gj-thumb" data-i="2" type="button" aria-label="픽셀런너 8-9">
+            <img src="assets/video/poster_game_pixelrunner.jpg?v=64" alt="">
+            <span>픽셀런너 8-9</span>
+          </button>
+          <button class="gj-thumb" data-i="3" type="button" aria-label="새싹 요새">
+            <img src="assets/video/poster_game_sprout.jpg?v=64" alt="">
+            <span>새싹 요새</span>
+          </button>
+          <button class="gj-thumb" data-i="4" type="button" aria-label="안개 항로">
+            <img src="assets/video/poster_game_fogfall.jpg?v=64" alt="">
+            <span>안개 항로</span>
+          </button>
+        </div>
+      </div>
+        <div class="gj-info">
+          <span class="gj-badge" id="gjGenre">로그라이크 · 액션 퍼즐</span>
+          <h4 id="gjTitle">심연의 사슬</h4>
+          <div class="gj-desc kr" id="gjDesc">
+            <p>심해 잠수정 파일럿이 압력 균열의 사슬을 따라 내려가는 탑다운 로그라이크입니다. 층마다 60초의 산소가 주어지고, 그 안에 폭뢰를 배치해 터뜨리면 폭발이 가스 주머니를 가진 생물과 휘발성 분출구를 타고 번져 화면 전체가 빛의 벽이 됩니다.</p>
+            <p>폭발은 단단한 지형에 가려지고 연쇄는 시야선 안의 물체를 통해서만 이동합니다. 한 번의 폭발로 층 반대편까지 닿게 하려면 생물과 분출구를 디딤돌 삼아 경로를 짜야 하는, 제한 시간 안에 푸는 공간 퍼즐인 셈입니다.</p>
+            <p>산소는 초당 1씩 줄고 다시 채우는 방법은 균열을 열고 더 내려가는 것뿐이라, 가만히 서 있어도 안전한 순간이 없습니다. 죽으면 그 런에서 모은 광물이 적립돼 잠수정을 영구히 재건하고, 지난번에 죽었던 층이 다음에는 도달 가능한 곳이 됩니다.</p>
+          </div>
+          <dl class="gj-spec kr" id="gjSpec">
+            <div><dt>구조</dt><dd>탑다운 · 절차적으로 생성되는 층</dd></div>
+            <div><dt>코어 루프</dt><dd>이동 → 폭뢰 배치 → 재배치 → 폭발 → 수집</dd></div>
+            <div><dt>제한</dt><dd>층당 산소 60초 · 초당 1 감소</dd></div>
+            <div><dt>보상</dt><dd>연쇄 길이에 비례해 최대 ×5</dd></div>
+            <div><dt>진행</dt><dd>15층 하강 · 보스 3종</dd></div>
+            <div><dt>메타</dt><dd>사망 시 광물 적립 → 영구 업그레이드</dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-header">
+      <h2>AI Art Pipeline</h2>
+      <p class="kr">기존 아트 파이프라인을 단계로 분해해 AI가 실제로 대체할 수 있는 지점을 찾고, 그 결과를 판단할 평가 기준을 만든 뒤, 기획서를 넣으면 엔진에 올릴 수 있는 에셋이 나오는 파이프라인으로 구현했습니다.</p>
+    </div>
+
+    <!-- ── 파이프라인 구조도 ── -->
+    <figure class="arch">
+      <svg viewBox="0 0 1250 380" role="img" aria-label="AI 아트 파이프라인 구조도">
+        <defs>
+          <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="#8b929d"/>
+          </marker>
+          <marker id="ar-c" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="#3cd3ff"/>
+          </marker>
+          <marker id="ar-w" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="#e0a95b"/>
+          </marker>
+        </defs>
+
+        <!-- 입력 -->
+        <rect class="grp" x="20" y="64" width="200" height="292" rx="3"/>
+        <text class="grp-t" x="40" y="90">INPUT</text>
+        <g class="nd">
+          <g class="ico" transform="translate(100,112) scale(1.25)"><path d="M8 3h11l5 5v21H8z"/><path d="M19 3v5h5"/><path d="M12 16h8M12 21h8M12 26h5"/></g>
+          <text class="n-t" x="120" y="176">GDD</text>
+          <text class="n-s" x="120" y="194">게임 기획서 · 아트 바이블</text>
+        </g>
+        <g class="nd">
+          <g class="ico" transform="translate(100,242) scale(1.25)"><path d="M6 7h8a2 2 0 0 1 2 2v18a2 2 0 0 0-2-2H6z"/><path d="M26 7h-8a2 2 0 0 0-2 2v18a2 2 0 0 1 2-2h8z"/></g>
+          <text class="n-t" x="120" y="306">art-bible</text>
+          <text class="n-s" x="120" y="324">에셋 스펙 · 품질 기준</text>
+        </g>
+
+        <!-- 생성 서비스 -->
+        <rect class="grp grp-main" x="260" y="28" width="700" height="328" rx="3"/>
+        <text class="grp-t grp-t-main" x="282" y="70">ART GENERATION SERVICE</text>
+        <g class="nd">
+          <g class="ico" transform="translate(312,112) scale(1.25)"><path d="M11 6H8a2 2 0 0 0-2 2v18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-3"/><rect x="11" y="4" width="10" height="5" rx="1"/><path d="M11 18l3.5 3.5L21 15"/></g>
+          <text class="n-t" x="332" y="176">Spec Check</text>
+          <text class="n-s" x="332" y="194">에셋 스펙 확인</text>
+        </g>
+        <g class="nd">
+          <g class="ico" transform="translate(488,112) scale(1.25)"><path d="M7 26l1-5L21 8l4 4L12 25z"/><path d="M18 11l3 3"/><path d="M7 26l4.5-1"/></g>
+          <text class="n-t" x="508" y="176">Concept</text>
+          <text class="n-s" x="508" y="194">컨셉 아트</text>
+        </g>
+        <g class="nd">
+          <g class="ico" transform="translate(664,112) scale(1.25)"><path d="M16 4l11 6-11 6-11-6z"/><path d="M5 16.5l11 6 11-6"/><path d="M5 22l11 6 11-6"/></g>
+          <text class="n-t" x="684" y="176">2D Asset</text>
+          <text class="n-s" x="684" y="194">2D 에셋 · 프레임</text>
+        </g>
+        <g class="nd">
+          <g class="ico" transform="translate(840,112) scale(1.25)"><rect x="6" y="6" width="8" height="8" rx="1"/><rect class="f" x="18" y="6" width="8" height="8" rx="1"/><rect class="f" x="6" y="18" width="8" height="8" rx="1"/><rect x="18" y="18" width="8" height="8" rx="1"/></g>
+          <text class="n-t" x="860" y="176">Pixel</text>
+          <text class="n-s" x="860" y="194">픽셀 변환</text>
+        </g>
+
+        <!-- 출력 -->
+        <rect class="grp" x="1000" y="64" width="230" height="292" rx="3"/>
+        <text class="grp-t" x="1020" y="90">OUTPUT</text>
+        <g class="nd">
+          <g class="ico" transform="translate(1095,112) scale(1.25)"><path d="M16 4l11 6v12l-11 6-11-6V10z"/><path d="M5 10l11 6 11-6"/><path d="M16 16v12"/></g>
+          <text class="n-t" x="1115" y="176">런타임 에셋</text>
+          <text class="n-s" x="1115" y="194">스프라이트 · 타일셋 · UI</text>
+        </g>
+        <g class="nd">
+          <g class="ico" transform="translate(1095,242) scale(1.25)"><rect x="4" y="7" width="24" height="18" rx="2"/><path class="f" d="M14 12.5l6 3.5-6 3.5z"/></g>
+          <text class="n-t" x="1115" y="306">엔진 적용</text>
+          <text class="n-s" x="1115" y="324">변환 없이 그대로</text>
+        </g>
+
+        <!-- 연결선 -->
+        <path class="ln" d="M140,132 H236"/>
+        <path class="ln" d="M140,262 H236 V132"/>
+        <path class="ln" d="M236,132 H306" marker-end="url(#ar)"/>
+
+        <path class="ln ln-c" d="M352,132 H482" marker-end="url(#ar-c)"/>
+        <text class="e-t" x="404" y="122">스펙 통과</text>
+        <path class="ln ln-c" d="M528,132 H658" marker-end="url(#ar-c)"/>
+        <text class="e-t" x="593" y="122">컨셉 확정</text>
+        <path class="ln ln-c cond" d="M704,132 H834" marker-end="url(#ar-c)"/>
+        <text class="e-t" x="769" y="106">GDD에 픽셀 아트로</text>
+        <text class="e-t" x="769" y="122">명시된 경우</text>
+        <path class="ln ln-c" d="M880,132 H1089" marker-end="url(#ar-c)"/>
+        <text class="e-t" x="985" y="122">규격 맞춘 에셋</text>
+
+        <path class="ln ln-c" d="M718,132 V60 H1115 V106" marker-end="url(#ar-c)"/>
+        <text class="e-t" x="916" y="52">그 외 · 2D 에셋 그대로</text>
+
+        <path class="ln" d="M1135,132 H1196 V262 H1141" marker-end="url(#ar)"/>
+
+        <!-- 스펙 미기재 시 중단 -->
+        <circle class="brp" cx="443" cy="132" r="3.5"/>
+        <path class="ln warn" d="M443,132 V244" marker-end="url(#ar-w)"/>
+        <text class="warn-t" x="458" y="232">스펙이 비어 있으면 중단</text>
+        <text class="warn-t warn-t2" x="458" y="250">추론하지 않고 기획서로 되돌림</text>
+      </svg>
+      <figcaption class="kr">기획서와 아트 스펙을 입력으로 받아 세 단계 에이전트를 거치고, 마지막에 엔진에 변환 없이 올릴 수 있는 에셋이 나옵니다. 첫 단계에서 스펙이 비어 있으면 추론하지 않고 작업을 멈춥니다.</figcaption>
+    </figure>
+
+    <div class="tool-grid">
+      <div class="tool-col tool-col--past">
+        <div class="col-head">
+          <h3>Research</h3>
+          <span>2025</span>
+          <span class="past-tag">과거 리서치</span>
+          <p class="kr">2025년에 리서치로 진행했던 작업입니다. 게임 아트에 어떤 모델이 맞는지 찾고, 게임 에셋의 2D·3D 제작 흐름 전체를 설계했습니다.</p>
+        </div>
+        <div class="tool-card">
+          <div class="t-top">
+            <h3>Art Pipeline Design</h3>
+            <span class="t-year">2025</span>
+          </div>
+          <p class="kr">기획 문서를 넣으면 시트가 나오고, 그 시트에서 2D 스프라이트와 3D 모델이 각각 갈라져 엔진까지 도달하는 흐름을 설계했습니다. 게임 에셋을 종류별로 나눠 각각 별도 계통으로 두고, 단계마다 어떤 모델을 쓸지와 사람이 개입할 지점을 정했습니다.</p>
+          <figure class="mini">
+            <svg viewBox="0 0 520 556" role="img" aria-label="게임 에셋 아트 파이프라인 흐름도">
+              <defs>
+                <marker id="mar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+                  <path d="M0,0 L10,5 L0,10 z" fill="#8b929d"/>
+                </marker>
+                <marker id="mar-w" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+                  <path d="M0,0 L10,5 L0,10 z" fill="#e0a95b"/>
+                </marker>
+              </defs>
+
+              <g class="mn"><rect x="160" y="10" width="200" height="34" rx="3"/><text x="260" y="32">기획 문서 · 레퍼런스</text></g>
+              <g class="mn"><rect x="160" y="72" width="200" height="34" rx="3"/><text x="260" y="94">LLM 파싱 · 환경 설정</text></g>
+
+              <g class="mn"><rect x="30" y="134" width="196" height="34" rx="3"/><text x="128" y="156">스타일 가이드</text></g>
+              <g class="mn"><rect x="294" y="134" width="196" height="34" rx="3"/><text x="392" y="156">게임 에셋 시트</text></g>
+
+              <g class="mn mn-src"><rect x="30" y="196" width="460" height="34" rx="3"/><text x="260" y="218">이미지 생성 실행</text></g>
+
+              <g class="mn mn-key"><rect x="160" y="258" width="200" height="34" rx="3"/><text x="260" y="280">생성물 AI 자동 피드백</text></g>
+              <g class="mn"><rect x="160" y="320" width="200" height="34" rx="3"/><text x="260" y="342">시트 자동 업스케일</text></g>
+
+              <text class="mb mb-l" x="118" y="382">2D</text>
+              <text class="mb mb-r" x="402" y="382">3D</text>
+              <g class="mn"><rect x="30" y="392" width="196" height="34" rx="3"/><text x="128" y="414">스프라이트 생성</text></g>
+              <g class="mn mn-src"><rect x="294" y="392" width="196" height="34" rx="3"/><text x="392" y="414">3D 생성 모델</text></g>
+              <g class="mn"><rect x="30" y="444" width="196" height="34" rx="3"/><text x="128" y="466">애니메이션 자동 통합</text></g>
+              <g class="mn"><rect x="294" y="444" width="196" height="34" rx="3"/><text x="392" y="466">리토폴로지 · 텍스처링 · 리깅</text></g>
+
+              <g class="mn mn-key"><rect x="160" y="514" width="200" height="34" rx="3"/><text x="260" y="536">게임 엔진 반영</text></g>
+
+              <path class="mln" d="M260,44 V66" marker-end="url(#mar)"/>
+              <path class="mln" d="M260,106 V120 H128 V128" marker-end="url(#mar)"/>
+              <path class="mln" d="M260,106 V120 H392 V128" marker-end="url(#mar)"/>
+              <path class="mln" d="M128,168 V190" marker-end="url(#mar)"/>
+              <path class="mln" d="M392,168 V190" marker-end="url(#mar)"/>
+              <path class="mln" d="M260,230 V252" marker-end="url(#mar)"/>
+              <path class="mln" d="M260,292 V314" marker-end="url(#mar)"/>
+              <path class="mln" d="M260,354 V368 H128 V386" marker-end="url(#mar)"/>
+              <path class="mln" d="M260,354 V368 H392 V386" marker-end="url(#mar)"/>
+              <path class="mln" d="M128,426 V438" marker-end="url(#mar)"/>
+              <path class="mln" d="M392,426 V438" marker-end="url(#mar)"/>
+              <path class="mln" d="M128,478 V490 H260"/>
+              <path class="mln" d="M392,478 V490 H260"/>
+              <path class="mln" d="M260,490 V508" marker-end="url(#mar)"/>
+
+              <path class="mln mwarn" d="M160,275 H16 V151 H24" marker-end="url(#mar-w)"/>
+              <text class="mwt" x="88" y="267">AI가 걸러 재생성</text>
+            </svg>
+          </figure>
+          <p class="kr">생성된 시트는 AI가 먼저 걸러 다시 스타일 가이드 쪽으로 되돌리고, 여기서 통과한 것만 업스케일을 거쳐 2D와 3D로 갈라집니다. 포즈·색상 변형과 VFX처럼 같은 시트에서 파생되는 작업도 이 흐름 안에 함께 두었습니다.</p>
+          <div class="chips">
+            <span>파이프라인 설계</span><span>2D · 3D 분기</span><span>단계별 모델 배치</span><span>자동 피드백 루프</span>
+          </div>
+        </div>
+        <div class="tool-card">
+          <div class="t-top">
+            <h3>Art Model Research</h3>
+            <span class="t-year">2025.10</span>
+          </div>
+          <p class="kr">당시 이미지 모델은 한 달 단위로 새 버전이 나왔고, 벤치마크 점수가 높다고 게임 아트에 잘 맞는 것도 아니었습니다. 그래서 <b>여러 모델</b>에 같은 프롬프트로 게임 에셋을 돌려보며, 어떤 성향의 모델이 어떤 작업에 맞는지 직접 확인했습니다. <b>다양한 게임 장르</b>의 아트 스타일로 생성해 비교했습니다.</p>
+          <ul class="rubric">
+            <li><b>형태 충실형</b> 레퍼런스의 형태 · 비율 · 재질을 가장 그대로 지킴 <i>정밀 재현 · 시트 제작</i></li>
+            <li><b>스타일 반영형</b> 구조보다 팔레트 · 패턴 · 조명 톤을 잘 따라옴 <i>아트 스타일 가이드 적용</i></li>
+            <li><b>탐색 속도형</b> 시안을 빠르게 많이 뽑아 방향을 좁히는 데 유리 <i>초기 컨셉 탐색</i></li>
+            <li><b>이미지 → 3D 변환형</b> 완성된 시트에서 베이스 메시를 뽑아냄 <i>3D 분기</i></li>
+          </ul>
+          <p class="kr">결론은 <b>단계마다 맞는 모델이 다르다</b>는 것이었습니다. 초기 탐색에는 속도와 레퍼런스 반영도가, 바리에이션에는 일관성과 디테일 유지가 중요합니다. 프롬프트에서 스타일 키워드를 따옴표로 묶어 강조하면 팔레트와 디테일이 눈에 띄게 정확해진다는 것도 이때 확인했습니다.</p>
+          <p class="kr">함께 API 조사도 진행해, 각 단계에 실제로 붙일 수 있는 상용 서비스와 호출 방식을 정리했습니다.</p>
+          <div class="chips">
+            <span>모델 비교</span><span>다양한 게임 장르</span><span>프롬프트 실험</span><span>API 조사</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tool-col">
+        <div class="col-head">
+          <h3>Pipeline</h3>
+          <span>2026</span>
+          <a class="t-link" href="https://github.com/a2z-team/a2z-game-dev-art/tree/service_integration" target="_blank" rel="noopener">GitHub ↗</a>
+          <p class="kr">기획서를 넣으면 엔진에 올릴 에셋이 나오는 서비스를 만들고, 그 결과를 판정할 평가 체계를 세운 단계</p>
+        </div>
+        <div class="tool-card">
+          <div class="t-top">
+            <h3>Art Generation Service</h3>
+          </div>
+          <p class="lead kr">기획서를 넣으면 엔진에 올릴 수 있는 에셋이 나옵니다.</p>
+          <p class="kr">게임 기획서(GDD)의 아트 바이블 섹션을 입력으로 받아, 컨셉 아트에서 2D 에셋을 거쳐 픽셀 스프라이트까지 만들어내는 에셋 생성 파이프라인입니다. 컨셉·2D·픽셀 단계를 각각 독립된 에이전트로 분리하고, 단계마다 자체 품질 게이트를 두어 기준에 못 미치면 다음 단계로 넘기지 않도록 구성했습니다.</p>
+          <div class="flow">
+            <span>에셋 스펙 확인</span><span class="arw">→</span>
+            <span>컨셉 아트</span><span class="arw">→</span>
+            <span>2D 에셋</span><span class="arw">→</span>
+            <span>픽셀 변환</span>
+          </div>
+          <p class="kr">아트 바이블의 에셋 스펙을 <b>단일 기준으로 삼는 것</b>이 핵심입니다. 캔버스 크기와 에셋 종류, 프레임 수, fps, 팔레트, 네이밍까지 기획서에 명시된 값만 사용하고 파일명이나 설명에서 추론하지 않습니다. 값이 비어 있으면 작업을 멈추고 기획서를 채우도록 되돌립니다. 픽셀 변환에는 생성 모델을 쓰지 않고 색과 형태를 분리해 팔레트를 밝기 순으로 직접 할당하며, 타일셋은 이어 붙였을 때 이음매가 보이지 않는지 따로 검증합니다.</p>
+        </div>
+        <div class="tool-card">
+          <div class="t-top">
+            <h3>Service Composition</h3>
+          </div>
+          <p class="kr">단계마다 독립된 생성 에이전트를 두고, 각 에이전트가 자기 몫의 파이썬 도구를 호출하는 구조입니다. 컨셉 아트와 2D 에셋, 픽셀 변환이 각각 다른 이유로 실패하기 때문에, 한 덩어리로 두지 않고 실패 유형별로 갈랐습니다.</p>
+          <div class="chips">
+            <span>컨셉 아트</span><span>2D 에셋</span><span>픽셀 변환</span><span>소형 자산 직접 제작</span><span>결과 평가</span>
+          </div>
+          <p class="kr">도구는 이미지·영상 생성부터 후처리·검증까지 단계별로 나뉘어 있습니다. 배경 제거와 가장자리 정리, 팔레트 감사, 프레임 선별, 모션 차이 검증, 타일 연결성 검사처럼 손으로 확인하던 일을 스크립트로 옮겨 매 실행마다 같은 기준으로 걸러냅니다.</p>
+        </div>
+        <div class="tool-card">
+          <div class="t-top">
+            <h3>Evaluation Rubric</h3>
+            <span class="t-year">2026</span>
+          </div>
+          <p class="kr">"결과물이 쓸 만한가"를 사람마다 다르게 판단하면 무엇을 고치고 무엇을 넘길지 정할 수 없습니다. 그래서 채점 루브릭을 직접 설계하고 실제 산출물에 돌려가며 다듬었습니다.</p>
+          <p class="kr">결과물의 완성도, 기획서와 규격을 지켰는지, 세트로 묶었을 때 흩어지지 않는지처럼 <b>서로 다른 이유로 무너지는 것들을 각각 다른 축으로 나눠</b> 채점합니다. 설계에서 내린 판단은 네 가지입니다.</p>
+          <ul class="rubric">
+            <li><b>총점을 두지 않는다</b> <i>하나로 합치면 어느 축이 무너졌는지 다른 축에 가려집니다. 순위를 매기려고 만든 게 아니라 무엇부터 고칠지 정하려고 만든 기준이라, 총점은 오히려 그 답을 지웁니다.</i></li>
+            <li><b>지켜야 할 항목은 곱으로</b> <i>더하기로 계산하면 근본이 무너진 결과물도 다른 항목을 잘해서 점수를 법니다. 곱으로 두면 하나가 무너질 때 나머지로 메울 수 없습니다.</i></li>
+            <li><b>기록은 점수가 아니라 게이트로</b> <i>"결과가 나쁘다"와 "판정할 수 없다"는 다른 상태인데 둘 다 낮은 점수로 뭉쳐 있었습니다. 분리하니 품질 문제가 서류 문제 뒤에 숨지 않습니다.</i></li>
+            <li><b>잰 도구를 함께 남긴다</b> <i>기준이 바뀌면 숫자의 의미도 바뀝니다. 버전이 다른 점수는 비교하지 않습니다. 이 규칙이 없으면 기준을 고치고 다시 잰 것이 품질이 좋아진 것처럼 보입니다.</i></li>
+          </ul>
+          <div class="chips">
+            <span>축별 독립 채점</span><span>종합 점수 폐지</span><span>게이트 분리</span><span>계측기 버전 라벨</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about" class="section-bg">
+  <div class="container">
+    <div class="section-header">
+      <h2>About Me</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-photo">
+        <img src="assets/img/profile.png" alt="곽승민 프로필">
+      </div>
+      <div class="about-text">
+       <div class="cv-grid">
+        <div class="cv-col">
+        <div class="cv-block">
+          <h6>학력</h6>
+          <div class="cv-row">
+            <div class="cv-logo"><img src="assets/img/software/edu_sunhwa_ms.png?v=64" alt="선화예술중학교"></div>
+            <div class="cv-body">
+              <div class="cv-date">2013.03 – 2016.02</div>
+              <h4>선화예술중학교</h4>
+              <p class="kr">미술과 졸업</p>
+            </div>
+          </div>
+          <div class="cv-row">
+            <div class="cv-logo"><img src="assets/img/software/edu_sunhwa.png?v=64" alt="선화예술고등학교"></div>
+            <div class="cv-body">
+              <div class="cv-date">2016.03 – 2019.02</div>
+              <h4>선화예술고등학교</h4>
+              <p class="kr">미술과 졸업</p>
+            </div>
+          </div>
+          <div class="cv-row">
+            <div class="cv-logo"><img src="assets/img/software/edu_karts.png?v=64" alt="한국예술종합학교"></div>
+            <div class="cv-body">
+              <div class="cv-date">2021.03 – 2027.02</div>
+              <h4>한국예술종합학교</h4>
+              <p class="kr">학점 4.18 / 4.3</p>
+            </div>
+          </div>
+        </div>
+        </div>
+
+        <div class="cv-col">
+        <div class="cv-block">
+          <h6>경력</h6>
+          <div class="cv-row">
+            <div class="cv-logo"><img src="assets/img/software/org_krafton.png?v=64" alt="KRAFTON"></div>
+            <div class="cv-body">
+              <div class="cv-date">2025.09 – 현재</div>
+              <h4>크래프톤 · Technical Artist</h4>
+              <p class="kr">생성형 AI 기반 게임 에셋 제작 및 파이프라인 구축</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="cv-block">
+          <h6>대외활동</h6>
+          <div class="cv-row">
+            <div class="cv-logo"><img src="assets/img/software/org_sm.svg?v=64" alt="SM엔터테인먼트"></div>
+            <div class="cv-body">
+              <div class="cv-date">2024.06 – 2024.12</div>
+              <h4>SM엔터테인먼트 기업연계</h4>
+              <p class="kr">「나이비스」 프로젝트 리더 · AI 영상과 쇼케이스 기획 및 제작</p>
+            </div>
+          </div>
+          <div class="cv-row">
+            <div class="cv-logo"><img src="assets/img/software/org_native.png?v=64" alt="NATIVE 버추얼 스튜디오"></div>
+            <div class="cv-body">
+              <div class="cv-date">2024.02 – 2024.06</div>
+              <h4>NATIVE 버추얼 스튜디오</h4>
+              <p class="kr">AI · 게임엔진 단편영상 기획 및 배경 · AI 아트 제작</p>
+            </div>
+          </div>
+        </div>
+        </div>
+       </div>
+
+        <div class="about-actions">
+          <a class="btn btn-solid" href="assets/docs/곽승민_경력기술서.pdf" target="_blank" rel="noopener">경력기술서 다운로드</a>
+          <a class="btn" href="#contact">Contact Me</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tools-wrap">
+      <div class="tools">
+        <div class="tool-header"><h6>3D / DCC</h6></div>
+        <div class="tool-item"><div class="tool-image"><img src="assets/img/software/autodeskmaya.svg?v=64" alt=""></div><div class="tool-title">Maya</div></div>
+        <div class="tool-item"><div class="tool-image"><img src="assets/img/software/3dsmax.svg?v=64" alt=""></div><div class="tool-title">3ds Max</div></div>
+        <div class="tool-item"><div class="tool-image"><img src="assets/img/software/zbrush.png?v=64" alt=""></div><div class="tool-title">ZBrush</div></div>
+        <div class="tool-item"><div class="tool-image"><img src="assets/img/software/unreal.png?v=64" alt=""></div><div class="tool-title">Unreal Engine</div></div>
+        <div class="tool-item"><div class="tool-image"><img src="assets/img/software/unity.svg?v=64" alt=""></div><div class="tool-title">Unity</div></div>
+        <div class="tool-item"><div class="tool-image"><img src="assets/img/software/substance.svg?v=64" alt=""></div><div class="tool-title">Substance Painter</div></div>
+        <div class="tool-item"><div class="tool-image"><img src="assets/img/software/blender.png?v=64" alt=""></div><div class="tool-title">Blender</div></div>
+      </div>
+
+      <div class="tools tools-wide">
+        <div class="tool-header"><h6>AI &amp; Workflow</h6></div>
+        <div class="tool-cols">
+          <!-- 1열: 코딩 에이전트 → 이미지 생성 → 영상 생성 -->
+          <div class="tool-item"><div class="tool-image"><img src="assets/img/software/claude.svg?v=64" alt=""></div><div class="tool-title">Claude Code</div></div>
+          <div class="tool-item"><div class="tool-image"><img src="assets/img/software/codex.svg?v=64" alt=""></div><div class="tool-title">Codex</div></div>
+          <div class="tool-item tool-gap"><div class="tool-image"><img src="assets/img/software/midjourney.svg?v=64" alt=""></div><div class="tool-title">Midjourney</div></div>
+          <div class="tool-item"><div class="tool-image"><img src="assets/img/software/krea.png?v=64" alt=""></div><div class="tool-title">Krea</div></div>
+          <div class="tool-item tool-gap"><div class="tool-image"><img src="assets/img/software/googlegemini.svg?v=64" alt=""></div><div class="tool-title">Veo 3</div></div>
+          <div class="tool-item"><div class="tool-image"><img src="assets/img/software/seedance.svg?v=64" alt=""></div><div class="tool-title">Seedance</div></div>
+          <div class="tool-item"><div class="tool-image"><img src="assets/img/software/kling.png?v=64" alt=""></div><div class="tool-title">Kling</div></div>
+          <div class="tool-item"><div class="tool-image"><img src="assets/img/software/runway.svg?v=64" alt=""></div><div class="tool-title">Runway</div></div>
+          <!-- 2열: 3D 생성 → 개발 · 협업 -->
+          <div class="tool-item"><div class="tool-image"><img src="assets/img/software/tripo.png?v=64" alt=""></div><div class="tool-title">Tripo</div></div>
+          <div class="tool-item"><div class="tool-image"><img src="assets/img/software/meshy.png?v=64" alt=""></div><div class="tool-title">Meshy</div></div>
+          <div class="tool-item tool-gap"><div class="tool-image"><img src="assets/img/software/python.png?v=64" alt=""></div><div class="tool-title">Python</div></div>
+          <div class="tool-item"><div class="tool-image"><img src="assets/img/software/javascript.svg?v=64" alt=""></div><div class="tool-title">JavaScript</div></div>
+          <div class="tool-item"><div class="tool-image"><img src="assets/img/software/github.svg?v=64" alt=""></div><div class="tool-title">Git · GitHub</div></div>
+        </div>
+      </div>
+
+      <div class="tools">
+        <div class="tool-header"><h6>Adobe</h6></div>
+        <div class="tool-item"><div class="tool-image"><img src="assets/img/software/photoshop.svg?v=64" alt=""></div><div class="tool-title">Photoshop</div></div>
+        <div class="tool-item"><div class="tool-image"><img src="assets/img/software/illustrator.svg?v=64" alt=""></div><div class="tool-title">Illustrator</div></div>
+        <div class="tool-item"><div class="tool-image"><img src="assets/img/software/adobepremierepro.svg?v=64" alt=""></div><div class="tool-title">Premiere Pro</div></div>
+        <div class="tool-item"><div class="tool-image"><img src="assets/img/software/after-effects.svg?v=64" alt=""></div><div class="tool-title">After Effects</div></div>
+        <div class="tool-item"><div class="tool-image"><img src="assets/img/software/animate.svg?v=64" alt=""></div><div class="tool-title">Animate</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact">
+  <div class="container">
+    <div class="section-header">
+      <h2>Contact</h2>
+    </div>
+    <p class="lead kr">포트폴리오나 파이프라인 작업에 대해 더 이야기 나누고 싶으시면 편하게 연락 주세요.</p>
+    <div class="contact-links">
+      <a class="btn btn-solid" href="mailto:lava2761@naver.com">lava2761@naver.com</a>
+      <a class="btn" href="https://github.com/key86798674-bit" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="assets/docs/곽승민_경력기술서.pdf" target="_blank" rel="noopener">경력기술서 PDF</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <span>© 2026 Kwak Seungmin</span>
+    <span>Technical Artist · Seoul</span>
+  </div>
+</footer>
+
+<div class="modal-back" id="modal">
+  <button class="modal-close">Close ✕</button>
+  <div class="modal-box">
+    <div class="m-stage">
+      <img class="m-hero" src="" alt="">
+      <video class="m-video" controls preload="none" playsinline></video>
+      <button class="m-nav m-prev" type="button" aria-label="이전">‹</button>
+      <button class="m-nav m-next" type="button" aria-label="다음">›</button>
+      <div class="m-counter"></div>
+    </div>
+    <div class="m-caption"></div>
+    <div class="m-thumbs"></div>
+    <div class="modal-body">
+      <div class="m-cat"></div>
+      <h3></h3>
+      <div class="m-meta"></div>
+      <p class="m-lead kr"></p>
+      <div class="m-text"></div>
+    </div>
+  </div>
+</div>
+
+<a href="#intro" class="back-top">↑</a>
+
+<script>
+window.GAME_SHOWCASE = [
+    { src:'assets/video/game_abyssal.mp4', poster:'assets/video/poster_game_abyssal.jpg',
+      title:'심연의 사슬', genre:'로그라이크 · 액션 퍼즐',
+      desc:['심해 잠수정 파일럿이 압력 균열의 사슬을 따라 내려가는 탑다운 로그라이크입니다. 층마다 60초의 산소가 주어지고, 그 안에 폭뢰를 배치해 터뜨리면 폭발이 가스 주머니를 가진 생물과 휘발성 분출구를 타고 번져 화면 전체가 빛의 벽이 됩니다.','폭발은 단단한 지형에 가려지고 연쇄는 시야선 안의 물체를 통해서만 이동합니다. 한 번의 폭발로 층 반대편까지 닿게 하려면 생물과 분출구를 디딤돌 삼아 경로를 짜야 하는, 제한 시간 안에 푸는 공간 퍼즐인 셈입니다.','산소는 초당 1씩 줄고 다시 채우는 방법은 균열을 열고 더 내려가는 것뿐이라, 가만히 서 있어도 안전한 순간이 없습니다. 죽으면 그 런에서 모은 광물이 적립돼 잠수정을 영구히 재건하고, 지난번에 죽었던 층이 다음에는 도달 가능한 곳이 됩니다.'],
+      specs:[['구조','탑다운 · 절차적으로 생성되는 층'],['코어 루프','이동 → 폭뢰 배치 → 재배치 → 폭발 → 수집'],['제한','층당 산소 60초 · 초당 1 감소'],['보상','연쇄 길이에 비례해 최대 ×5'],['진행','15층 하강 · 보스 3종'],['메타','사망 시 광물 적립 → 영구 업그레이드']] },
+    { src:'assets/video/game_starless.mp4', poster:'assets/video/poster_game_starless.jpg',
+      title:'별이 스러지는 밤에', genre:'비주얼 노벨',
+      desc:['현대 판타지 도시 호시미야를 배경으로, 시립 천문대의 인턴 연구원이 되어 별자리 운명에 엮인 네 인물과 관계를 쌓아 가는 분기형 비주얼 노벨입니다.','화면 아래 텍스트를 읽고 선택지를 고르면 캐릭터별 호감도와 글로벌 플래그가 바뀝니다. 챕터 말미의 분기 조건을 충족하면 해당 인물의 루트로 들어가고, 루트 안의 선택에 따라 굿·배드·트루 엔딩 중 하나에 도달합니다.','천문대라는 설정이 별자리 운명 시스템에 근거를 주기 때문에, 호감도가 단순한 숫자가 아니라 서사적 의미를 갖습니다. 게임 오버는 없고 배드 엔딩도 이야기의 일부로 다루며, 모든 루트를 마치면 트루 엔딩 전용 에필로그가 열립니다.'],
+      specs:[['배경','현대 판타지 도시 호시미야'],['공략 캐릭터','4명 · 별자리 운명 플래그'],['분기','호감도 + 플래그 → 굿 · 배드 · 트루'],['분량','1회차 3~5시간 · 전 루트 15~20시간'],['규칙','게임 오버 없음 · 배드 엔딩도 서사'],['구현','HTML5 · DOM과 CSS 트랜지션']] },
+    { src:'assets/video/game_pixelrunner.mp4', poster:'assets/video/poster_game_pixelrunner.jpg',
+      title:'픽셀런너 8-9', genre:'횡스크롤 플랫포머',
+      desc:['달리기·점프·스톰프 세 가지 동작만으로 여덟 개 테마 월드를 차례로 돌파하는 횡스크롤 플랫포머입니다. 규칙은 단순하게 두고, 스테이지 구조를 읽어 최적 동선을 찾는 데서 재미가 나오도록 설계했습니다.','스테이지 하나가 60~120초라 언제든 시작하고 끝낼 수 있고, 클리어 시간과 코인 수가 기록으로 남아 자기 기록을 갱신하려고 다시 도전하게 만듭니다. 조작 학습 비용을 없애기 위해 고전 플랫포머의 조작감을 기준점으로 잡았습니다.','월드마다 새 메카닉이 하나씩 추가되고 이전 것들이 누적됩니다. 영상은 마지막 월드인 우주 챕터로, 저중력 구간에 들어가면 중력이 평소의 3분의 1로 떨어져 체공 시간이 세 배로 늘어나고 구간을 벗어나면 즉시 원래대로 돌아옵니다.'],
+      specs:[['조작','달리기 · 점프 · 스톰프'],['구성','8개 테마 월드 · 월드당 스테이지 10'],['세션','스테이지당 60~120초'],['규격','32×32 픽셀 · 높이 17타일 고정'],['레퍼런스','Super Mario Bros. · Celeste 조작감'],['영상 구간','8-9 우주 · 저중력 600px/s²']] },
+    { src:'assets/video/game_sprout.mp4', poster:'assets/video/poster_game_sprout.jpg',
+      title:'새싹 요새', genre:'타워 디펜스',
+      desc:['햇빛과 물 두 자원을 순환시켜 식물 타워를 심고, 빈 칸을 막아 곤충의 이동 경로를 늘리는 미로형 타워 디펜스입니다. 햇빛으로 공격 타워를 짓고 물로 키워, 세계수 새싹을 지켜냅니다.','곤충은 A*로 경로를 다시 찾기 때문에 어디를 막느냐에 따라 동선이 통째로 바뀝니다. 건설 단계에는 시간 제한이 없어 미로를 충분히 설계한 뒤 직접 웨이브를 시작하고, 전투 중에는 배속을 올려 진행을 당길 수 있습니다.','타일을 캐릭터 게임보다 크게 잡아 격자 전체가 한 화면에 들어옵니다. 경로가 어떻게 꼬였는지, 어느 칸을 더 막아야 하는지를 화면을 옮기지 않고도 항상 조망할 수 있습니다.'],
+      specs:[['자원','햇빛(건설) · 물(성장)'],['방어','스테이지당 10~12웨이브'],['격자','18×11 · 타일 24×24'],['세션','스테이지당 5~8분'],['템포','건설 시간 무제한 → 수동 시작 · 배속 1·2·4배'],['구현','Canvas 2D · A* 경로 탐색']] },
+    { src:'assets/video/game_fogfall.mp4', poster:'assets/video/poster_game_fogfall.jpg',
+      title:'안개 항로', genre:'경로 계획 퍼즐',
+      desc:['안개로 덮인 바다에서 여러 칸을 잇는 항로를 마우스로 그려 확정하면, 배가 그 경로를 한 칸씩 자동으로 항해하는 경로 계획 퍼즐입니다.','안개 반경 안만 진짜 아이콘을 보여주고 그 너머는 가끔만 맞는 추정 아이콘이라, 불확실한 상태에서 다음 홉을 확정해야 합니다. 운석은 떨어지기 한 턴 전에 낙하 지점을 예고하고 바다를 통과할 수 없는 암초로 바꿔 놓기 때문에, 모든 경로가 앞을 내다보는 퍼즐이 됩니다.','도착한 화물 칸마다 낚시가 열려 화물을 건져 올립니다. 무거운 화물은 값이 높지만 여섯 칸 선창에서 두 칸을 차지해, 매 항해가 무엇을 싣고 무엇을 버릴지 정하는 작은 배낭 문제가 됩니다.'],
+      specs:[['계획','다중 홉 경로를 그려 확정 · 홉당 0.5초'],['시야','안개 반경 밖은 추정 아이콘'],['변수','운석 1턴 전 예고 → 암초화'],['적재','6칸 선창 · 화물 무게 1~2'],['수확','3초 타이밍 바 + 0.4초 방향 플릭'],['성장','4×5 업그레이드 트리 · 수집 로그 50종']] }
+];
+</script>
+<script src="projects.js?v=64"></script>
+<script src="main.js?v=64"></script>
+</body>
+</html>
