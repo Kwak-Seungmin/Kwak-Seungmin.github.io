@@ -101,7 +101,6 @@ const PROJECTS = {
     ],
     media: [
       { type:'image', src:'assets/img/p04_cover.jpg', cap:'Arcimboldo Winter — 원작과 3D 재해석' },
-      { type:'image', src:'assets/img/p04_painting_ref.jpg', cap:'원작 「겨울」, 1563 — 조형과 텍스처의 기준 레퍼런스' },
       { type:'image', src:'assets/img/p04_storyboard.jpg', cap:'스토리보드 — 겨울에서 봄으로, 새가 날아드는 여섯 컷' },
       { type:'video', src:'assets/video/arcimboldo_turntable.mp4', poster:'assets/video/poster_arcimboldo_tt.jpg', cap:'턴테이블 — Winter Head' },
       { type:'image', src:'assets/img/p04_woodhead_3view.jpg', cap:'Winter Head, 3방향 — 갈라진 수피 텍스처와 옹이 코' },
@@ -169,7 +168,6 @@ const PROJECTS = {
       { type:'video', src:'assets/video/bonfire_ep1.mp4', poster:'assets/video/poster_bonfire_ep1.jpg', cap:'Episode 1 — 횃불의 춤 (1:08)' },
       { type:'video', src:'assets/video/bonfire_ep2.mp4', poster:'assets/video/poster_bonfire_ep2.jpg', cap:'Episode 2 — 심장탑, 여신의 의식 (0:51)' },
       { type:'video', src:'assets/video/bonfire_ep3.mp4', poster:'assets/video/poster_bonfire_ep3.jpg', cap:'Episode 3 — 심장 적출 성인식 (0:30)' },
-      { type:'video', src:'assets/video/bonfire_ep4.mp4', poster:'assets/video/poster_bonfire_ep4.jpg', cap:'Episode 4 — 나가 종족의 공간 (0:15)' },
       { type:'image', src:'assets/img/p02_hearttower.jpg', cap:'심장탑 전경 — 세대가 축적되는 신전' },
       { type:'image', src:'assets/img/p02_shaman_night.jpg', cap:'여신 앞의 기도, 춤채를 든 샤먼' }
     ]
