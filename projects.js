@@ -29,7 +29,7 @@ const PROJECTS = {
       { label:'arXiv 논문', href:'https://arxiv.org/abs/2609.39564' },
       { label:'Project Page', href:'https://a2z-gamespec-bench.github.io' },
       { label:'논문 GitHub', href:'https://github.com/krafton-ai/a2z-gamespec-bench' },
-      { label:'파이프라인 GitHub', href:'https://github.com/Kwak-Seungmin/game-art-pipeline' }
+      { label:'아트 파이프라인 GitHub', href:'https://github.com/Kwak-Seungmin/game-art-pipeline' }
     ]
   },
 
