@@ -27,6 +27,9 @@
   document.body.appendChild(bar);
   const heroVideo = intro && intro.querySelector('.video');
   const timeline = document.querySelector('.tl');
+  const tlItems = timeline ? [...timeline.querySelectorAll('.tl-item')] : [];
+  // 항목마다 세로 위치(0~1) — 점·날짜 색이 하늘색에서 초록으로 변한다
+  tlItems.forEach((item, i) => item.style.setProperty('--pos', (tlItems.length > 1 ? i / (tlItems.length - 1) : 0).toFixed(3)));
   let ticking = false;
   const onScrollFrame = () => {
     ticking = false;
@@ -35,8 +38,16 @@
     // 타임라인 가운데 선 — 화면 가운데가 지나간 만큼 위에서부터 그려진다
     if (timeline) {
       const r = timeline.getBoundingClientRect();
-      const p = (window.innerHeight * 0.6 - r.top) / r.height;
+      const mark = window.innerHeight * 0.6;
+      const p = (mark - r.top) / r.height;
       timeline.style.setProperty('--tl-progress', Math.max(0, Math.min(1, p)).toFixed(3));
+      // 선 끝(화면 60% 지점)에 가장 가까운 항목을 강조
+      let best = null, bestDist = Infinity;
+      tlItems.forEach(item => {
+        const d = Math.abs(item.getBoundingClientRect().top + 30 - mark);
+        if (d < bestDist) { bestDist = d; best = item; }
+      });
+      tlItems.forEach(item => item.classList.toggle('is-active', item === best && bestDist < window.innerHeight * 0.35));
     }
     if (heroVideo && window.scrollY < window.innerHeight) {
       heroVideo.style.transform = `translateY(${window.scrollY * 0.35}px) scale(1.04)`;

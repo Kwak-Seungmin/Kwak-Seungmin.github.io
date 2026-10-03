@@ -18,7 +18,11 @@ html.motion.splash body::before{
   animation:splash-curtain .75s cubic-bezier(.76,0,.24,1) 1.35s forwards;
 }
 html.motion.splash body::after{
-  color:var(--accent);
+  /* 이름 글자 폭(화면의 약 20~80%)에 맞춘 하늘색 → 초록 그라데이션 */
+  color:transparent;
+  background:linear-gradient(90deg, var(--accent) 22%, var(--accent2) 78%);
+  -webkit-background-clip:text;background-clip:text;
+  filter:drop-shadow(0 0 22px rgba(10,160,210,0.35));
   clip-path:inset(0 100% 0 0);
   animation:splash-fill .95s cubic-bezier(.65,0,.35,1) .2s forwards,
             splash-curtain .75s cubic-bezier(.76,0,.24,1) 1.35s forwards;
@@ -115,8 +119,8 @@ html.motion .tl-item.rv .tl-card{
 html.motion .tl-l.rv .tl-card{transform:translateX(-60px);}
 html.motion .tl-r.rv .tl-card{transform:translateX(60px);}
 html.motion .tl-item.rv.is-in .tl-card{opacity:1;transform:none;}
-html.motion .tl-item.rv .tl-dot{transform:scale(0);transition:transform .45s cubic-bezier(.34,1.56,.64,1) .35s,box-shadow .6s ease .5s;}
-html.motion .tl-item.rv.is-in .tl-dot{transform:scale(1);box-shadow:0 0 0 6px rgba(10,160,210,0.18);}
+html.motion .tl-item.rv .tl-dot{transform:scale(0);transition:transform .45s cubic-bezier(.34,1.56,.64,1) .35s,background .35s ease,box-shadow .35s ease;}
+html.motion .tl-item.rv.is-in .tl-dot{transform:scale(1);}
 @media (max-width:880px){
   html.motion .tl-l.rv .tl-card,html.motion .tl-r.rv .tl-card{transform:translateX(40px);}
 }
