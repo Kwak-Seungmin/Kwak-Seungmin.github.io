@@ -28,8 +28,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700;800;900&display=swap">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="style.css?v=101">
-<link rel="stylesheet" href="motion.css?v=101">
+<link rel="stylesheet" href="style.css?v=102">
+<link rel="stylesheet" href="motion.css?v=102">
 <script>(function(){var r=document.documentElement;if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;r.classList.add('motion');try{if(!sessionStorage.getItem('ksm-splash'))r.classList.add('splash')}catch(e){}})();</script>
 </head>
 <body>
@@ -710,7 +710,7 @@ coding agent implements the GDD in a shared Phaser starter project
         <h3 class="paper-title"><b>Simulation City</b> — 월드모델용 시뮬레이션 도시 배경</h3>
         <p class="paper-oneline kr">월드모델에 쓸 시뮬레이션 도시 배경을 언리얼 엔진 5로 제작했습니다. 이를 위해 언리얼 PCG를 따로 공부하며 도시 생성기와 환경 연출을 함께 실험했습니다.</p>
         <div class="chips"><span>Simulation City</span><span>KRAFTON inZOI 에셋</span><span>PCG 학습</span></div>
-        <span class="paper-toggle"><span class="pt-open">자세히 보기</span><span class="pt-close">접기</span></span>
+        <span class="paper-toggle"><span class="pt-open">시뮬레이션 도시 자세히 보기</span><span class="pt-close">접기</span></span>
       </summary>
       <div class="pipe-fold-body">
 
@@ -758,6 +758,30 @@ coding agent implements the GDD in a shared Phaser starter project
           <div class="chips"><span>PCG</span><span>Packed Level Actor</span><span>Sequencer</span><span>Movie Render</span></div>
         </article>
 
+      </div>
+    </details>
+
+    <!-- ── 게임 이펙트 스터디 (접고 펼치기) ── -->
+    <details class="pipe-fold" id="fx-study">
+      <summary>
+        <div class="paper-tags">
+          <span class="paper-tag">Game FX</span>
+          <span class="paper-venue">Unreal Engine 5 · Niagara · 2026</span>
+        </div>
+        <h3 class="paper-title"><b>Game FX Study</b> — 스킬 이펙트 스터디</h3>
+        <p class="paper-oneline kr">Paragon 기디언 애니메이션에 맞춰 Niagara로 스킬 이펙트를 만들고, 시퀀서로 타이밍과 카메라를 연출했습니다.</p>
+        <div class="chips"><span>Niagara</span><span>Chaos Destruction</span><span>Camera Shake</span><span>Sequencer</span></div>
+        <span class="paper-toggle"><span class="pt-open">이펙트 스터디 자세히 보기</span><span class="pt-close">접기</span></span>
+      </summary>
+      <div class="pipe-fold-body">
+        <div class="rnd-media rnd-media--2">
+          <figure><video src="assets/video/fx_study_wave.mp4?v=102" poster="assets/video/poster_fx_study_wave.jpg?v=102" muted loop playsinline controls preload="none"></video><figcaption>Wave Slam — 블랙홀 차지 후 내려찍기, 충격파 · 지면 균열(Chaos) · 카메라 셰이크</figcaption></figure>
+          <figure><video src="assets/video/fx_bird_projectile.mp4?v=102" poster="assets/video/poster_fx_bird_projectile.jpg?v=102" muted loop playsinline controls preload="none"></video><figcaption>Bird Projectile — 리본 트레일 투사체, 적중 시 히트 이펙트 · 카메라 셰이크</figcaption></figure>
+        </div>
+        <ul class="rubric fx-notes">
+          <li><b>Wave Slam</b> <i>준비(Ready) · 웨이브 메시 · 히트 이펙트를 Niagara 시스템으로 나누고, 바닥 균열은 Chaos 캐시로 재생해 착지 타이밍에 맞췄습니다.</i></li>
+          <li><b>Bird Projectile</b> <i>새 형태 메시와 리본 머티리얼로 투사체를 만들고, 적중 프레임에 히트 이펙트와 카메라 셰이크가 함께 터지도록 시퀀서로 맞췄습니다.</i></li>
+        </ul>
       </div>
     </details>
 
@@ -982,6 +1006,6 @@ window.GAME_SHOWCASE = [
 </script>
 <script src="projects.js?v=99"></script>
 <script src="main.js?v=99"></script>
-<script src="motion.js?v=101"></script>
+<script src="motion.js?v=102"></script>
 </body>
 </html>
