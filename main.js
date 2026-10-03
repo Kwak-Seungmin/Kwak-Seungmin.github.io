@@ -53,8 +53,8 @@ if (heroVideo && window.matchMedia('(min-width:761px)').matches) {
   heroVideo.src = heroVideo.dataset.src;
 }
 
-// ---------- 인트로 직함 타이핑 — 두 직함을 번갈아 쓰고 지운다 ----------
-const TITLES = ['Technical Artist', 'AI Artist'];
+// ---------- 인트로 직함 타이핑 — 'Artist' 는 고정, 앞 단어만 번갈아 쓰고 지운다 ----------
+const TITLES = ['Technical', 'AI'];
 const TYPE_MS = 90;
 const ERASE_MS = 45;
 const HOLD_MS = 2200;
