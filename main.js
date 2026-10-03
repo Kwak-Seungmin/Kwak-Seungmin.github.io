@@ -53,16 +53,36 @@ if (heroVideo && window.matchMedia('(min-width:761px)').matches) {
   heroVideo.src = heroVideo.dataset.src;
 }
 
-// ---------- 인트로 직함 타이핑 ----------
-const TITLE = 'Technical Artist';
+// ---------- 인트로 직함 타이핑 — 두 직함을 번갈아 쓰고 지운다 ----------
+const TITLES = ['Technical Artist', 'AI Artist'];
+const TYPE_MS = 90;
+const ERASE_MS = 45;
+const HOLD_MS = 2200;
 const typedEl = document.getElementById('typed');
+let titleIndex = 0;
 let charIndex = 0;
+let erasing = false;
 
 const tick = () => {
-  if (charIndex >= TITLE.length) return;
-  charIndex += 1;
-  typedEl.textContent = TITLE.slice(0, charIndex);
-  setTimeout(tick, 90);
+  const title = TITLES[titleIndex];
+  if (!erasing) {
+    charIndex += 1;
+    typedEl.textContent = title.slice(0, charIndex);
+    if (charIndex >= title.length) {
+      erasing = true;
+      setTimeout(tick, HOLD_MS);
+      return;
+    }
+    setTimeout(tick, TYPE_MS);
+    return;
+  }
+  charIndex -= 1;
+  typedEl.textContent = title.slice(0, charIndex);
+  if (charIndex <= 0) {
+    erasing = false;
+    titleIndex = (titleIndex + 1) % TITLES.length;
+  }
+  setTimeout(tick, ERASE_MS);
 };
 tick();
 
