@@ -625,6 +625,18 @@ section{padding:60px 0;}
   counter-increment:cv;transition:border-color .3s ease;
 }
 .cv-card:hover{border-color:rgba(10,160,210,0.45);}
+/* 대외활동 · 학력 — 전체 폭 카드, 항목을 3열로 나란히 (빈칸 없이) */
+.cv-card--wide{grid-column:1 / -1;display:grid;grid-template-columns:repeat(3,1fr);column-gap:22px;align-items:start;}
+.cv-card--wide > h6{grid-column:1 / -1;}
+/* 프로필 카드는 오른쪽 열 높이에 맞춰 늘리고 내용을 세로 가운데로 — 빈칸 없이 */
+.about-layout{align-items:stretch;}
+.profile-card{position:relative;top:auto;display:flex;flex-direction:column;justify-content:center;}
+.cv-card--wide .cv-row{flex-direction:column;gap:12px;margin:0;padding:14px 0 4px;}
+.cv-card--wide .cv-row + .cv-row{border-top:0;}
+.cv-card--wide .cv-row:hover{background:none;}
+.cv-card--wide .cv-logo{width:auto;height:30px;justify-content:flex-start;}
+@media (max-width:1080px){.cv-card--wide{grid-template-columns:1fr 1fr;}}
+@media (max-width:760px){.cv-card--wide{grid-template-columns:1fr;}.cv-card--wide .cv-row + .cv-row{border-top:1px solid rgba(255,255,255,0.06);}}
 .cv-card > h6{
   display:flex;justify-content:space-between;align-items:baseline;
   font-family:var(--head);font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
