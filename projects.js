@@ -5,13 +5,17 @@ const PROJECTS = {
   aiartpipeline: {
     cat: 'Tool / Automation',
     title: 'AI Game & Art Pipeline',
-    meta: 'Claude Code Agent Pipeline',
-    lead: '기획서를 넣으면 엔진에 올릴 수 있는 에셋이 나온다.',
+    meta: 'A2Z GameSpec-Bench (arXiv 2026 · Co-author) · Claude Code Agent Pipeline',
+    lead: 'A2Z GameSpec-Bench: How Faithfully Can Coding Agents Generate Games from Game Design Specifications?',
     text: [
+      'KRAFTON AI가 발표한 A2Z GameSpec-Bench 논문(arXiv 2609.39564)에 공동 저자로 참여했습니다. 코딩 에이전트가 긴 게임 기획서(GDD)를 플레이 가능한 게임으로 얼마나 충실하게 구현하는지 측정하는 벤치마크로, 100개의 GDD(Small 50 · Big 50)를 각각 고정된 Dependency-Aware Contract로 변환하고 소스 코드 검사 · 시나리오 기반 리플레이 · 적응형 플레이테스트 세 축으로 같은 요구사항을 평가합니다.',
+      '평가 결과, 현재 에이전트들은 코드 구현과 실제 플레이 양쪽에서 서로 얽힌 요구사항을 함께 만족시키는 데 어려움을 겪었습니다. 요구사항별 피드백은 두 라운드 뒤 self-revision 대비 GDD Fidelity를 10.9% (상대 향상) 끌어올렸습니다.',
       '게임 기획서(GDD)의 아트 바이블 섹션을 입력으로 받아, 컨셉 아트에서 2D 에셋을 거쳐 픽셀 스프라이트까지 만들어내는 에셋 생성 파이프라인입니다. 컨셉·2D·픽셀 단계를 각각 독립된 에이전트로 분리하고, 단계마다 자체 품질 게이트를 두어 기준에 못 미치면 다음 단계로 넘기지 않도록 구성했습니다.',
       '아트 바이블의 에셋 스펙을 단일 기준으로 삼는 것이 핵심입니다. 캔버스 크기와 에셋 종류, 프레임 수, fps, 팔레트, 네이밍까지 기획서에 명시된 값만 사용하고, 파일명이나 설명에서 추론하지 않습니다. 값이 비어 있으면 작업을 멈추고 기획서를 채우도록 되돌립니다. 픽셀 변환에는 생성 모델을 쓰지 않고 색과 형태를 분리해 팔레트를 밝기 순으로 직접 할당하며, 타일셋은 이어 붙였을 때 이음매가 보이지 않는지 따로 검증합니다.'
     ],
     media: [
+      { type:'video', src:'assets/video/paper_teaser_intro.mp4', poster:'assets/video/poster_paper_teaser.jpg', cap:'A2Z GameSpec-Bench 티저 — GDD와 그 GDD로 코딩 에이전트가 만든 게임 (논문)' },
+      { type:'image', src:'assets/img/paper/teaser.jpg', cap:'A2Z GameSpec-Bench 평가 구조 — Dependency-Aware Contract → 소스 검사 · 시나리오 리플레이 · 적응형 플레이테스트 → 요구사항 단위 피드백 (논문)' },
       { type:'video', src:'assets/video/game_abyssal.mp4', poster:'assets/video/poster_game_abyssal.jpg', cap:'심연의 사슬 — 체인을 이어 터뜨리는 심해 아케이드 (인게임)' },
       { type:'video', src:'assets/video/game_starless.mp4', poster:'assets/video/poster_game_starless.jpg', cap:'별이 스러지는 밤에 — 에셋 97종으로 구성한 비주얼 노벨 (인게임)' },
       { type:'video', src:'assets/video/game_pixelrunner.mp4', poster:'assets/video/poster_game_pixelrunner.jpg', cap:'픽셀런너 8-9 — 파이프라인 에셋으로 만든 2D 플랫포머 (인게임)' },
@@ -20,6 +24,12 @@ const PROJECTS = {
       { type:'image', src:'assets/img/unity_boss.jpg', cap:'3D AI 아트 파이프라인으로 만든 에셋을 Unity 씬으로 구성 — 안개 낀 성채' },
       { type:'video', src:'assets/video/pipe_normalmap.mp4', poster:'assets/video/poster_pipe_normalmap.jpg', cap:'픽셀 노멀맵 · 양자화 라이팅 — 40×60 도트, 16색 팔레트, 5방향 노멀' },
       { type:'video', src:'assets/video/pipe_humanoid_normal.mp4', poster:'assets/video/poster_pipe_humanoid_normal.jpg', cap:'휴머노이드 스프라이트 노멀맵 라이팅 — 64×88, 6프레임 각각에 노멀 매칭' }
+    ],
+    links: [
+      { label:'arXiv 논문', href:'https://arxiv.org/abs/2609.39564' },
+      { label:'Project Page', href:'https://a2z-gamespec-bench.github.io' },
+      { label:'논문 GitHub', href:'https://github.com/krafton-ai/a2z-gamespec-bench' },
+      { label:'파이프라인 GitHub', href:'https://github.com/Kwak-Seungmin/game-art-pipeline' }
     ]
   },
 
