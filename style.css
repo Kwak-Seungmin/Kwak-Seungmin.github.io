@@ -302,6 +302,12 @@ section{padding:60px 0;}
 .pipe-fold > summary .chips{margin-top:14px;}
 .pipe-fold-body{padding:24px 32px 32px;border-top:1px solid rgba(255,255,255,0.08);}
 .pipe-fold-body > .arch{margin-top:0;}
+.pipe-fold-body > .gj{margin:0 0 24px;}
+/* 섹션 제목 위 회사 · 기간 */
+.section-eyebrow{
+  display:inline-block;margin-bottom:10px;
+  font-family:var(--head);font-size:13px;font-weight:700;letter-spacing:3px;color:var(--accent);
+}
 @media (max-width:880px){
   .pipe-fold > summary{padding:22px 18px;}
   .pipe-fold-body{padding:18px 12px 20px;}
