@@ -1,39 +1,9 @@
-// ---------- 모션 추가: 커서 · 마그넷 · 키워드 띠 · 와이프 · 카운트업 · 영상 자동재생 · 헤더 숨김 · 맨 위로 링 · 스크램블 ----------
+// ---------- 모션 추가: 마그넷 · 와이프 · 카운트업 · 영상 자동재생 · 헤더 숨김 · 맨 위로 링 · 스크램블 ----------
 (() => {
   const root = document.documentElement;
   if (!root.classList.contains('motion')) return;
   const fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
   const lerp = (a, b, t) => a + (b - a) * t;
-
-  /* 커서 링 — 링은 부드럽게 따라오고 점은 즉시. 링크·미디어 위에서 모양이 바뀐다 */
-  if (fine) {
-    const ring = document.createElement('div');
-    const dot = document.createElement('div');
-    ring.className = 'cursor-ring';
-    dot.className = 'cursor-dot';
-    document.body.append(ring, dot);
-    let mx = -100, my = -100, rx = -100, ry = -100;
-    window.addEventListener('mousemove', e => {
-      mx = e.clientX; my = e.clientY;
-      dot.style.transform = `translate(${mx}px, ${my}px)`;
-      root.classList.add('has-cursor');
-    }, { passive: true });
-    document.addEventListener('mouseleave', () => root.classList.remove('has-cursor'));
-    window.addEventListener('mousedown', () => ring.classList.add('is-down'));
-    window.addEventListener('mouseup', () => ring.classList.remove('is-down'));
-    const loop = () => {
-      rx = lerp(rx, mx, 0.18); ry = lerp(ry, my, 0.18);
-      ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
-      requestAnimationFrame(loop);
-    };
-    loop();
-    document.addEventListener('mouseover', e => {
-      const media = e.target.closest('.portfolio-item, .rnd-media figure, .pg-grid figure');
-      const link = !media && e.target.closest('a, button, summary, [role="button"], #portfolio-flters li');
-      ring.classList.toggle('is-media', !!media);
-      ring.classList.toggle('is-link', !!link);
-    });
-  }
 
   /* 마그넷 버튼 — 커서 쪽으로 살짝 끌려온다 */
   if (fine) {
@@ -81,58 +51,14 @@
     wrap(h1);
   }
 
-  /* 키워드 띠 — Portfolio 와 Experience 사이, 스크롤 속도만큼 빨라지고 방향도 따라간다 */
-  const exp = document.getElementById('experience');
-  if (exp) {
-    const words2 = ['Technical Artist', 'AI Pipeline', 'Unreal Engine', 'Niagara', 'PCG', 'World Model', 'A2Z GameSpec-Bench', 'Sequencer', 'Python'];
-    const band = document.createElement('div');
-    band.className = 'marquee';
-    band.setAttribute('aria-hidden', 'true');
-    const html = words2.map((w, i) => (i % 2 ? `<b>${w}</b>` : w) + '<i></i>').join('');
-    band.innerHTML = `<div class="marquee-track"><span>${html}</span><span>${html}</span></div>`;
-    exp.parentNode.insertBefore(band, exp);
-    const track = band.firstElementChild;
-    let x = 0, lastY = window.scrollY, vel = 0, dir = -1;
-    const run = () => {
-      const y = window.scrollY;
-      const dy = y - lastY;
-      lastY = y;
-      if (dy !== 0) dir = dy > 0 ? -1 : 1;
-      vel = lerp(vel, Math.min(Math.abs(dy), 60), 0.1);
-      const half = track.scrollWidth / 2;
-      x += dir * (0.6 + vel * 0.25);
-      if (x <= -half) x += half;
-      if (x > 0) x -= half;
-      track.style.transform = `translateX(${x}px)`;
-      requestAnimationFrame(run);
-    };
-    run();
-  }
-
-  /* 헤더 숨김 + 맨 위로 버튼 진행 링 */
+  /* 헤더 숨김 */
   const header = document.getElementById('header');
-  const back = document.querySelector('.back-top');
-  if (back) {
-    const NS = 'http://www.w3.org/2000/svg';
-    const svg = document.createElementNS(NS, 'svg');
-    svg.setAttribute('class', 'ring');
-    svg.setAttribute('viewBox', '0 0 52 52');
-    const c = document.createElementNS(NS, 'circle');
-    c.setAttribute('cx', '26'); c.setAttribute('cy', '26'); c.setAttribute('r', '24');
-    svg.appendChild(c);
-    back.style.setProperty('--len', (2 * Math.PI * 24).toFixed(1));
-    back.appendChild(svg);
-  }
   let prevY = window.scrollY;
   window.addEventListener('scroll', () => {
     const y = window.scrollY;
     const menuOpen = header && header.classList.contains('menu-open');
     if (header && !menuOpen) header.classList.toggle('hide-up', y > prevY && y > 400);
     prevY = y;
-    if (back) {
-      const max = document.documentElement.scrollHeight - window.innerHeight;
-      back.style.setProperty('--p', max > 0 ? (y / max).toFixed(3) : 0);
-    }
   }, { passive: true });
 
   /* 미디어 와이프 — 화면에 들어오면 아래에서 위로 열린다 */
@@ -153,6 +79,8 @@
   wipeGroups.forEach((_, parent) => wipeIO.observe(parent));
   document.querySelectorAll('details').forEach(d => d.addEventListener('toggle', () => {
     if (d.open) d.querySelectorAll('.wipe').forEach(el => setTimeout(() => el.classList.add('is-in'), 120));
+    // 펼치면 안의 무음 영상 재생, 접으면 정지
+    d.querySelectorAll('.rnd-media video').forEach(v => { if (d.open) { if (v.muted) v.play().catch(() => {}); } else v.pause(); });
   }));
 
   /* 숫자 카운트업 — 논문 표·노트의 숫자 */

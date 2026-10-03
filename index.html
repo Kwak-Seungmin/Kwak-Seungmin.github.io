@@ -28,9 +28,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700;800;900&display=swap">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="style.css?v=104">
+<link rel="stylesheet" href="style.css?v=106">
 <link rel="stylesheet" href="motion.css?v=104">
-<link rel="stylesheet" href="motion-extra.css?v=104">
+<link rel="stylesheet" href="motion-extra.css?v=106">
 <script>(function(){var r=document.documentElement;if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;r.classList.add('motion');try{if(!sessionStorage.getItem('ksm-splash'))r.classList.add('splash')}catch(e){}})();</script>
 </head>
 <body>
@@ -775,7 +775,18 @@ coding agent implements the GDD in a shared Phaser starter project
       <h2>Game FX Study</h2>
       <p class="kr">Paragon 기디언 애니메이션에 맞춰 Niagara로 스킬 이펙트를 만들고, 시퀀서로 타이밍과 카메라를 연출했습니다.</p>
     </div>
-    <div class="fx-grid">
+    <details class="pipe-fold" id="fx-study">
+      <summary>
+        <div class="paper-tags">
+          <span class="paper-tag">Game FX</span>
+          <span class="paper-venue">Wave Slam · Bird Projectile</span>
+        </div>
+        <h3 class="paper-title"><b>Skill FX</b> — 스킬 이펙트 시네마틱 2편</h3>
+        <div class="chips"><span>Niagara</span><span>Chaos Destruction</span><span>Camera Shake</span><span>Sequencer</span></div>
+        <span class="paper-toggle"><span class="pt-open">이펙트 스터디 자세히 보기</span><span class="pt-close">접기</span></span>
+      </summary>
+      <div class="pipe-fold-body">
+        <div class="fx-grid">
         <div class="rnd-media rnd-media--2 fx-media">
           <figure><video src="assets/video/fx_study_wave.mp4?v=103" poster="assets/video/poster_fx_study_wave.jpg?v=103" muted loop playsinline controls preload="none"></video><figcaption>Wave Slam — 블랙홀 차지 후 내려찍기, 충격파 · 지면 균열(Chaos) · 카메라 셰이크</figcaption></figure>
           <figure><video src="assets/video/fx_bird_projectile.mp4?v=104" poster="assets/video/poster_fx_bird_projectile.jpg?v=104" muted loop playsinline controls preload="none"></video><figcaption>Bird Projectile — 리본 트레일 투사체, 적중 시 연쇄 히트 · 카메라 셰이크</figcaption></figure>
@@ -786,6 +797,8 @@ coding agent implements the GDD in a shared Phaser starter project
           <li><b>Bird Projectile</b> <i>새 형태 메시와 리본 머티리얼로 투사체를 만들고, 적중 순간 히트 이펙트가 연쇄로 터지고 카메라 셰이크가 함께 걸리도록 시퀀서로 맞췄습니다.</i></li>
         </ul>
     </div>
+      </div>
+    </details>
   </div>
 </section>
 
@@ -1018,7 +1031,7 @@ window.GAME_SHOWCASE = [
 </script>
 <script src="projects.js?v=104"></script>
 <script src="main.js?v=104"></script>
-<script src="motion.js?v=104"></script>
-<script src="motion-extra.js?v=105"></script>
+<script src="motion.js?v=106"></script>
+<script src="motion-extra.js?v=107"></script>
 </body>
 </html>
