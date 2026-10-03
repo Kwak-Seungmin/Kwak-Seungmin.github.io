@@ -628,6 +628,10 @@ section{padding:60px 0;}
 /* 대외활동 · 학력 — 전체 폭 카드, 항목을 3열로 나란히 (빈칸 없이) */
 .cv-card--wide{grid-column:1 / -1;display:grid;grid-template-columns:repeat(3,1fr);column-gap:22px;align-items:start;}
 .cv-card--wide > h6{grid-column:1 / -1;}
+/* 모든 이력 카드: 로고를 글씨 위에 같은 규격 칸(높이 34px, 왼쪽·세로 가운데)으로 — 로고별 높이는 index.html 에서 면적 보정 */
+.cv-card .cv-row{flex-direction:column;gap:12px;}
+.cv-card .cv-logo{width:auto;height:34px;justify-content:flex-start;align-items:center;margin-top:0;}
+.cv-card .cv-logo img{max-width:150px;max-height:none;width:auto;}
 /* 프로필 카드는 오른쪽 열 높이에 맞춰 늘리고 내용을 세로 가운데로 — 빈칸 없이 */
 .about-layout{align-items:stretch;}
 .profile-card{position:relative;top:auto;display:flex;flex-direction:column;justify-content:center;}
