@@ -310,7 +310,7 @@ section{padding:60px 0;}
 .paper-body{padding:4px 32px 32px;border-top:1px solid rgba(10,160,210,0.18);}
 .paper-links{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0;}
 .paper-header,.paper-teaser,.paper-video{display:block;width:100%;height:auto;border:1px solid rgba(255,255,255,0.08);}
-.paper-video{aspect-ratio:900/384;background:#000;margin-top:24px;}
+.paper-video{aspect-ratio:16/9;background:#000;margin-top:24px;}
 .paper-block{margin-top:30px;}
 .paper-block h4{
   font-family:var(--head);font-size:13px;font-weight:800;letter-spacing:3px;text-transform:uppercase;
