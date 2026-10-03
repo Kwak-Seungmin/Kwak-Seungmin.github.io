@@ -3,11 +3,14 @@
    링은 항상 보이고(정적), 회전·등장 모션은 html.motion 일 때만
    ============================================================ */
 
-/* ---------- 프로필 사진 링: 파랑→초록 그라데이션 선이 사진 둘레를 돈다 ---------- */
+/* About 은 파란색 계열로만 통일 */
+:root{--about-blue2:#7fd4f5;}
+
+/* ---------- 프로필 사진 링: 파랑 계열 그라데이션 선이 사진 둘레를 돈다 ---------- */
 .photo-ring{position:relative;width:212px;height:212px;margin:0 auto 22px;display:grid;place-items:center;}
 .photo-ring::before{
   content:'';position:absolute;inset:0;border-radius:50%;padding:2px;
-  background:conic-gradient(from 0deg, var(--accent), var(--accent2) 45%, rgba(134,242,166,0) 70%, var(--accent));
+  background:conic-gradient(from 0deg, var(--accent), var(--about-blue2) 45%, rgba(127,212,245,0) 70%, var(--accent));
   -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   -webkit-mask-composite:xor;mask-composite:exclude;
 }
@@ -15,7 +18,7 @@
 .ring-orbit{position:absolute;inset:-12px;border-radius:50%;border:1px dashed rgba(255,255,255,0.12);pointer-events:none;}
 .ring-orbit::after{
   content:'';position:absolute;top:-3px;left:50%;width:6px;height:6px;margin-left:-3px;border-radius:50%;
-  background:var(--accent2);box-shadow:0 0 10px var(--accent2);
+  background:var(--about-blue2);box-shadow:0 0 10px var(--about-blue2);
 }
 .photo-ring .about-photo{width:188px;height:188px;margin:0;outline:0;border:0;position:relative;z-index:1;}
 .profile-card:hover .photo-ring .about-photo{outline:0;}
@@ -49,11 +52,11 @@ html.motion .profile-card.is-in .about-actions .btn{opacity:1;transform:none;}
 html.motion .profile-card.settled .profile-links a,
 html.motion .profile-card.settled .about-actions .btn{transition:opacity .2s, transform .2s, border-color .2s, color .2s, background .2s;transition-delay:0s;}
 
-/* 직함 아래 파랑→초록 선이 그려진다 */
+/* 직함 아래 파랑 계열 선이 그려진다 */
 html.motion .profile-role{position:relative;overflow:hidden;}
 html.motion .profile-role::after{
   content:'';position:absolute;left:0;bottom:0;height:1px;width:100%;
-  background:linear-gradient(90deg, var(--accent), var(--accent2));
+  background:linear-gradient(90deg, var(--accent), var(--about-blue2));
   transform:scaleX(0);transform-origin:left;transition:transform .9s cubic-bezier(.77,0,.18,1) .9s;
 }
 html.motion .profile-card.is-in .profile-role::after{transform:scaleX(1);}
@@ -62,7 +65,7 @@ html.motion .profile-card.is-in .profile-role::after{transform:scaleX(1);}
 html.motion .cv-card > h6{position:relative;border-bottom-color:rgba(255,255,255,0.06);}
 html.motion .cv-card > h6::before{
   content:'';position:absolute;left:0;right:0;bottom:-1px;height:1px;
-  background:linear-gradient(90deg, var(--accent), var(--accent2) 60%, rgba(134,242,166,0));
+  background:linear-gradient(90deg, var(--accent), var(--about-blue2) 60%, rgba(127,212,245,0));
   transform:scaleX(0);transform-origin:left;transition:transform 1.1s cubic-bezier(.77,0,.18,1) .15s;
 }
 html.motion .cv-card.is-in > h6::before{transform:scaleX(1);}
@@ -73,11 +76,11 @@ html.motion .cv-card .cv-logo img{opacity:0;transform:translateX(-14px);filter:b
 html.motion .cv-card.is-in .cv-logo img{opacity:.92;transform:none;filter:none;}
 html.motion .cv-card .cv-row:hover .cv-logo img{opacity:1;transform:translateY(-2px);transition-delay:0s;}
 
-/* 카드 테두리: 마우스를 올리면 파랑→초록 선이 위·아래 테두리를 따라 지나간다 */
+/* 카드 테두리: 마우스를 올리면 파랑 계열 선이 위·아래 테두리를 따라 지나간다 */
 html.motion .cv-card::before,
 html.motion .cv-card::after{
   content:'';position:absolute;left:-1px;right:-1px;height:1px;pointer-events:none;
-  background:linear-gradient(90deg, rgba(10,160,210,0), var(--accent), var(--accent2), rgba(134,242,166,0));
+  background:linear-gradient(90deg, rgba(10,160,210,0), var(--accent), var(--about-blue2), rgba(127,212,245,0));
   transform:scaleX(0);transition:transform .6s cubic-bezier(.77,0,.18,1);
 }
 html.motion .cv-card::before{top:-1px;transform-origin:left;}

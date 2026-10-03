@@ -640,6 +640,12 @@ section{padding:60px 0;}
 .cv-card--wide .cv-row + .cv-row{border-top:0;}
 .cv-card--wide .cv-row:hover{background:none;}
 .cv-card--wide .cv-logo{width:auto;height:30px;justify-content:flex-start;}
+/* 대외활동 · 학력 — 세 칸의 링크 줄(끝선)을 맞춘다 */
+.cv-card--wide{align-items:stretch;}
+.cv-card--wide .cv-row{display:flex;}
+.cv-card--wide .cv-body{flex:1;display:flex;flex-direction:column;}
+.cv-card--wide .cv-body .cv-links{margin-top:12px !important;}
+
 @media (max-width:1080px){.cv-card--wide{grid-template-columns:1fr 1fr;}}
 @media (max-width:760px){.cv-card--wide{grid-template-columns:1fr;}.cv-card--wide .cv-row + .cv-row{border-top:1px solid rgba(255,255,255,0.06);}}
 .cv-card > h6{
