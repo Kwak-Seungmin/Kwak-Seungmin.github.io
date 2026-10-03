@@ -35,9 +35,8 @@ html.motion.splash .splash-name span{
 }
 .splash-line{
   width:min(560px,70vw);height:1px;margin:28px 0 18px;
-  background:linear-gradient(90deg, var(--accent), var(--accent2));
+  background:rgba(255,255,255,0.7);
   transform:scaleX(0);
-  box-shadow:0 0 12px rgba(94,240,138,0.35);
 }
 html.motion.splash .splash-line{animation:line-draw .9s cubic-bezier(.65,0,.35,1) .75s forwards;}
 @keyframes line-draw{to{transform:scaleX(1);}}
@@ -127,20 +126,32 @@ html.motion .btn::after{
 }
 html.motion .btn:hover::after{left:130%;}
 
-/* ---------- Experience 타임라인 — 연도가 먼저, 카드는 좌우에서, 점은 뒤늦게 톡 ---------- */
+/* ---------- Experience 타임라인 — 선 끝의 동그라미가 점에 닿으면 그 항목이 열린다 (.is-open: motion.js) ---------- */
 html.motion .tl-year.rv{transform:translateY(24px) scale(.92);}
 html.motion .tl-year.rv.is-in{transform:none;}
-html.motion .tl-item.rv{transform:none;opacity:1;}
-html.motion .tl-item.rv .tl-card{
-  opacity:0;transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);
-}
-html.motion .tl-l.rv .tl-card{transform:translateX(-60px);}
-html.motion .tl-r.rv .tl-card{transform:translateX(60px);}
-html.motion .tl-item.rv.is-in .tl-card{opacity:1;transform:none;}
-html.motion .tl-item.rv .tl-dot{transform:scale(0);transition:transform .45s cubic-bezier(.34,1.56,.64,1) .35s,background .35s ease,box-shadow .35s ease;}
-html.motion .tl-item.rv.is-in .tl-dot{transform:scale(1);}
+/* 점: 작게 숨어 있다가 닿는 순간 커지며 파동이 퍼진다 */
+html.motion .tl-dot{transform:scale(.45);opacity:.35;transition:transform .45s cubic-bezier(.34,1.56,.64,1),opacity .3s,background .35s,box-shadow .35s;}
+html.motion .tl-item.is-open .tl-dot{transform:scale(1);opacity:1;}
+.tl-dot::after{content:'';position:absolute;inset:-2px;border-radius:50%;border:1px solid var(--c);opacity:0;pointer-events:none;}
+html.motion .tl-item.is-open .tl-dot::after{animation:dot-ring .9s ease-out;}
+@keyframes dot-ring{from{opacity:.9;transform:scale(1);}to{opacity:0;transform:scale(3.4);}}
+/* 가지선이 점에서 카드 쪽으로 뻗고 */
+html.motion .tl-item::before{transform:scaleX(0);transition:transform .35s ease .08s,opacity .35s;}
+html.motion .tl-l::before{transform-origin:right;}
+html.motion .tl-r::before{transform-origin:left;}
+html.motion .tl-item.is-open::before{transform:scaleX(1);}
+/* 카드가 점 쪽에서부터 펼쳐진 뒤 내용이 떠오른다 */
+html.motion .tl-card{transition:clip-path .7s cubic-bezier(.65,0,.35,1) .3s,border-color .35s,background .35s;}
+html.motion .tl-l .tl-card{clip-path:inset(0 0 0 100%);}
+html.motion .tl-r .tl-card{clip-path:inset(0 100% 0 0);}
+html.motion .tl-item.is-open .tl-card{clip-path:inset(0 0 0 0);}
+html.motion .tl-card > *{opacity:0;transform:translateY(10px);transition:opacity .45s ease,transform .45s ease;}
+html.motion .tl-item.is-open .tl-card > *{opacity:1;transform:none;transition-delay:.7s;}
+html.motion .tl-item.is-open .tl-card > :nth-child(2){transition-delay:.78s;}
+html.motion .tl-item.is-open .tl-card > :nth-child(3){transition-delay:.86s;}
 @media (max-width:880px){
-  html.motion .tl-l.rv .tl-card,html.motion .tl-r.rv .tl-card{transform:translateX(40px);}
+  html.motion .tl-l .tl-card{clip-path:inset(0 100% 0 0);}
+  html.motion .tl-l::before{transform-origin:left;}
 }
 
 /* ---------- 접이식 카드 — 펼칠 때 내용이 내려오며 나타난다 ---------- */

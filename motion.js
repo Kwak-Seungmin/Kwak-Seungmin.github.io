@@ -52,6 +52,12 @@
         if (d < bestDist) { bestDist = d; best = item; }
       });
       tlItems.forEach(item => item.classList.toggle('is-active', item === best && bestDist < window.innerHeight * 0.35));
+      // 선 끝의 동그라미(헤드)가 항목의 점에 닿으면 열고, 위로 되돌아가면 닫는다
+      const headY = r.top + Math.max(0, Math.min(1, p)) * r.height;
+      tlItems.forEach(item => {
+        const dot = item.querySelector('.tl-dot').getBoundingClientRect();
+        item.classList.toggle('is-open', dot.top + dot.height / 2 <= headY + 2);
+      });
     }
     if (heroVideo && window.scrollY < window.innerHeight) {
       heroVideo.style.transform = `translateY(${window.scrollY * 0.35}px) scale(1.04)`;
@@ -91,8 +97,8 @@
   const GROUPS = [
     '.section-header h2', '.section-header p', '.section-eyebrow',
     '#portfolio-flters', '.portfolio-item',
-    '.tl-year', '.tl-item', '.gj', '.paper', '.pipe-fold',
-    '.profile-card', '.stat', '.cv-card',
+    '.tl-year', '.gj', '.paper', '.pipe-fold',
+    '.profile-card', '.cv-card',
     '.tool-header', '.tool-item',
     '.contact-links',
   ];
