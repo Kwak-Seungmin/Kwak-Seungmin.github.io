@@ -44,3 +44,6 @@ html:not(.motion) .scroll-rail *{transition:none !important;}
 .tl-card .is-ko{font-family:var(--kr);}
 html.motion .tl-card .lang-swap{animation:lang-swap .35s ease;}
 @keyframes lang-swap{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:none;}}
+
+/* 마우스 반딧불 레이어 (firefly.js) */
+.firefly-layer{position:fixed;inset:0;width:100vw;height:100vh;pointer-events:none;z-index:2000;}
