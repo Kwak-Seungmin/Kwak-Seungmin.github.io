@@ -537,8 +537,7 @@ section{padding:60px 0;}
 .tl-year span{
   position:relative;font-family:var(--head);font-size:15px;font-weight:700;letter-spacing:6px;color:var(--white);
   background:var(--sec3);padding:7px 18px 7px 24px;
-  border:1px solid transparent;
-  border-image:linear-gradient(90deg, var(--accent), var(--accent2)) 1;
+  border:1px solid rgba(255,255,255,0.22);
 }
 .tl-item{position:relative;display:flex;margin:0 0 26px;--c:color-mix(in srgb, var(--accent2) calc(var(--pos,0) * 100%), var(--accent));}
 .tl-item.tl-l{justify-content:flex-start;padding-right:calc(50% + 44px);}
@@ -560,7 +559,7 @@ section{padding:60px 0;}
 /* 화면 가운데 근처의 항목 — 테두리 그라데이션 + 점 채움 */
 .tl-item.is-active .tl-card{
   background:rgba(255,255,255,0.045);
-  border-image:linear-gradient(135deg, var(--accent), var(--accent2)) 1;
+  border-color:var(--c);
   box-shadow:0 18px 40px rgba(0,0,0,0.35);
 }
 .tl-item.is-active .tl-card::before{opacity:1;}

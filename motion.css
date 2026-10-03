@@ -3,36 +3,54 @@
    html.motion 이 붙었을 때만 동작한다 (JS 없음 / 동작 줄이기 = 원래 화면 그대로).
    ============================================================ */
 
-/* ---------- 첫 진입 스플래시: 이름 글자가 왼쪽부터 색으로 차오른 뒤 막이 걷힌다 ---------- */
-html.motion.splash body::before,
-html.motion.splash body::after{
-  content:'KWAK SEUNGMIN';
-  position:fixed;inset:0;z-index:2000;
-  display:flex;align-items:center;justify-content:center;
-  font-family:var(--head);font-weight:800;letter-spacing:.32em;text-indent:.32em;
-  font-size:clamp(26px,5vw,64px);
-  pointer-events:none;
+/* ---------- 첫 진입 스플래시 ----------
+   흰 이름이 한 글자씩 블러에서 또렷하게 올라오고 → 이름 아래 선이 가운데에서 양옆으로 그려지며(선에만 그라데이션)
+   → 직함이 떠오른 뒤 → 화면이 위아래로 갈라지며 사이트가 열린다. html.motion.splash 일 때만 보인다. */
+.splash-screen{display:none;}
+html.motion.splash .splash-screen{display:block;position:fixed;inset:0;z-index:2000;pointer-events:none;}
+.splash-half{position:absolute;left:0;right:0;height:50.5%;background:#05060a;}
+.splash-half.top{top:0;}
+.splash-half.bot{bottom:0;}
+html.motion.splash .splash-half.top{animation:split-up .9s cubic-bezier(.76,0,.24,1) 2.05s forwards;}
+html.motion.splash .splash-half.bot{animation:split-down .9s cubic-bezier(.76,0,.24,1) 2.05s forwards;}
+@keyframes split-up{to{transform:translateY(-100%);}}
+@keyframes split-down{to{transform:translateY(100%);}}
+.splash-inner{
+  position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;
 }
-html.motion.splash body::before{
-  background:var(--bg);color:rgba(255,255,255,0.14);
-  animation:splash-curtain .75s cubic-bezier(.76,0,.24,1) 1.35s forwards;
+html.motion.splash .splash-inner{animation:splash-out .45s ease 1.85s forwards;}
+@keyframes splash-out{to{opacity:0;transform:scale(1.04);letter-spacing:.02em;}}
+.splash-name{
+  display:flex;font-family:var(--head);font-weight:700;color:#fff;margin:0;
+  font-size:clamp(28px,5.2vw,72px);letter-spacing:.28em;text-indent:.28em;line-height:1;
 }
-html.motion.splash body::after{
-  /* 이름 글자 폭(화면의 약 20~80%)에 맞춘 하늘색 → 초록 그라데이션 */
-  color:transparent;
-  background:linear-gradient(90deg, var(--accent) 22%, var(--accent2) 78%);
-  -webkit-background-clip:text;background-clip:text;
-  filter:drop-shadow(0 0 22px rgba(10,160,210,0.35));
-  clip-path:inset(0 100% 0 0);
-  animation:splash-fill .95s cubic-bezier(.65,0,.35,1) .2s forwards,
-            splash-curtain .75s cubic-bezier(.76,0,.24,1) 1.35s forwards;
+.splash-name span{display:inline-block;opacity:0;}
+.splash-name .sp{width:.6em;}
+html.motion.splash .splash-name span{
+  animation:letter-in .8s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:calc(.15s + var(--i) * .05s);
 }
-@keyframes splash-fill{to{clip-path:inset(0 0 0 0);}}
-@keyframes splash-curtain{to{transform:translateY(-100%);}}
+@keyframes letter-in{
+  from{opacity:0;transform:translateY(.45em);filter:blur(10px);}
+  to{opacity:1;transform:none;filter:blur(0);}
+}
+.splash-line{
+  width:min(560px,70vw);height:1px;margin:28px 0 18px;
+  background:linear-gradient(90deg, var(--accent), var(--accent2));
+  transform:scaleX(0);
+  box-shadow:0 0 12px rgba(94,240,138,0.35);
+}
+html.motion.splash .splash-line{animation:line-draw .9s cubic-bezier(.65,0,.35,1) .75s forwards;}
+@keyframes line-draw{to{transform:scaleX(1);}}
+.splash-sub{
+  font-family:var(--head);font-size:clamp(11px,1.1vw,14px);font-weight:600;letter-spacing:.42em;text-indent:.42em;
+  text-transform:uppercase;color:rgba(255,255,255,0.55);opacity:0;margin:0;
+}
+html.motion.splash .splash-sub{animation:sub-in .7s ease 1.15s forwards;}
+@keyframes sub-in{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
 
 /* ---------- 헤더 · 히어로 등장 ---------- */
 html.motion{--enter:.15s;}
-html.motion.splash{--enter:1.7s;}
+html.motion.splash{--enter:2.35s;}
 html.motion #header{animation:rise-header .8s cubic-bezier(.2,.7,.2,1) var(--enter) both;}
 html.motion #intro h1,
 html.motion #intro .intro-subtitle,

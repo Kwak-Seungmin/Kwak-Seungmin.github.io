@@ -7,7 +7,11 @@
   // 스플래시는 세션당 한 번 — 끝나면 클래스를 떼어 이후 렌더에 영향이 없게 한다
   if (root.classList.contains('splash')) {
     try { sessionStorage.setItem('ksm-splash', '1'); } catch (e) { /* 저장 불가 환경은 무시 */ }
-    setTimeout(() => root.classList.remove('splash'), 2300);
+    setTimeout(() => {
+      root.classList.remove('splash');
+      const el = document.querySelector('.splash-screen');
+      if (el) el.remove();
+    }, 3100);
   }
 
   // 히어로 하단 스크롤 유도 아이콘 — 조금이라도 스크롤하면 사라진다
