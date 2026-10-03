@@ -28,7 +28,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Raleway:wght@300;400;500;600;700;800&display=swap">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="style.css?v=75">
+<link rel="stylesheet" href="style.css?v=76">
 </head>
 <body>
 
@@ -207,31 +207,31 @@
         <div class="gj-left">
         <div class="gj-stage">
           <video id="gjVideo" muted loop playsinline preload="metadata" controls
-                 poster="assets/video/poster_game_abyssal.jpg?v=75">
-            <source src="assets/video/game_abyssal.mp4?v=75" type="video/mp4">
+                 poster="assets/video/poster_game_abyssal.jpg?v=76">
+            <source src="assets/video/game_abyssal.mp4?v=76" type="video/mp4">
           </video>
           <button class="gj-nav gj-prev" type="button" aria-label="이전 게임">&#8249;</button>
           <button class="gj-nav gj-next" type="button" aria-label="다음 게임">&#8250;</button>
         </div>
         <div class="gj-strip">
           <button class="gj-thumb is-on" data-i="0" type="button" aria-label="심연의 사슬">
-            <img src="assets/video/poster_game_abyssal.jpg?v=75" alt="">
+            <img src="assets/video/poster_game_abyssal.jpg?v=76" alt="">
             <span>심연의 사슬</span>
           </button>
           <button class="gj-thumb" data-i="1" type="button" aria-label="별이 스러지는 밤에">
-            <img src="assets/video/poster_game_starless.jpg?v=75" alt="">
+            <img src="assets/video/poster_game_starless.jpg?v=76" alt="">
             <span>별이 스러지는 밤에</span>
           </button>
           <button class="gj-thumb" data-i="2" type="button" aria-label="픽셀런너 8-9">
-            <img src="assets/video/poster_game_pixelrunner.jpg?v=75" alt="">
+            <img src="assets/video/poster_game_pixelrunner.jpg?v=76" alt="">
             <span>픽셀런너 8-9</span>
           </button>
           <button class="gj-thumb" data-i="3" type="button" aria-label="새싹 요새">
-            <img src="assets/video/poster_game_sprout.jpg?v=75" alt="">
+            <img src="assets/video/poster_game_sprout.jpg?v=76" alt="">
             <span>새싹 요새</span>
           </button>
           <button class="gj-thumb" data-i="4" type="button" aria-label="안개 항로">
-            <img src="assets/video/poster_game_fogfall.jpg?v=75" alt="">
+            <img src="assets/video/poster_game_fogfall.jpg?v=76" alt="">
             <span>안개 항로</span>
           </button>
         </div>
@@ -356,6 +356,156 @@
       </svg>
       <figcaption class="kr">기획서와 아트 스펙을 입력으로 받아 세 단계 에이전트를 거치고, 마지막에 엔진에 변환 없이 올릴 수 있는 에셋이 나옵니다. 첫 단계에서 스펙이 비어 있으면 추론하지 않고 작업을 멈춥니다.</figcaption>
     </figure>
+
+    <!-- ── 논문 (접고 펼치기) ── -->
+    <details class="paper" id="paper">
+      <summary>
+        <div class="paper-tags">
+          <span class="paper-tag">Publication</span>
+          <span class="paper-tag paper-tag--me">Co-author</span>
+          <span class="paper-venue">arXiv 2609.39564 · cs.AI · 2026.09</span>
+        </div>
+        <h3 class="paper-title"><b>A2Z GameSpec-Bench</b>: How Faithfully Can Coding Agents Generate Games from Game Design Specifications?</h3>
+        <p class="paper-authors">Seonho Lee, Wonryeol Jeong, Alberto Cereser, Inha Kang, Hyeonjong Kim, <mark>Seungmin Kwak</mark>, Dongmin Park</p>
+        <p class="paper-affil">KRAFTON · KAIST · Korea National University of Arts</p>
+        <p class="paper-oneline kr">KRAFTON AI가 발표한 논문에 공동 저자로 참여했습니다. 코딩 에이전트가 긴 게임 기획서(GDD)를 플레이 가능한 게임으로 얼마나 충실하게 구현하는지 측정하는 벤치마크입니다.</p>
+        <span class="paper-toggle"><span class="pt-open">논문 자세히 보기</span><span class="pt-close">접기</span></span>
+      </summary>
+
+      <div class="paper-body">
+        <div class="paper-links">
+          <a class="btn btn-solid" href="https://arxiv.org/abs/2609.39564" target="_blank" rel="noopener">arXiv 논문 ↗</a>
+          <a class="btn" href="https://a2z-gamespec-bench.github.io" target="_blank" rel="noopener">Project Page ↗</a>
+          <a class="btn" href="https://github.com/krafton-ai/a2z-gamespec-bench" target="_blank" rel="noopener">GitHub ↗</a>
+        </div>
+
+        <img class="paper-header" src="assets/img/paper/header.jpg?v=76" alt="A2Z GameSpec-Bench" loading="lazy">
+
+        <div class="paper-block">
+          <h4>TL;DR</h4>
+          <p class="kr">A2Z GameSpec-Bench는 코딩 에이전트가 <b>긴 게임 기획서(GDD)</b>를 플레이 가능한 게임으로 얼마나 충실하게 옮기는지 측정합니다. <b>100개의 GDD</b>(Small 50 · Big 50)는 각각 고정된 <b>Dependency-Aware Contract</b>로 변환되고, 모든 빌드는 같은 계약에 대해 <b>소스 코드 검사</b>뿐 아니라 <b>시나리오 기반 리플레이</b>와 <b>적응형 플레이테스트</b>를 포함한 <b>Test Policies</b>로 평가됩니다. 평가 결과는 요구사항 단위 피드백이 되어 수정을 이끕니다.</p>
+          <p class="kr">평가 결과, 현재 에이전트들은 코드 구현과 실제 플레이 양쪽에서 서로 얽힌 요구사항을 함께 만족시키는 데 어려움을 겪었습니다. 요구사항별 피드백은 두 라운드 뒤 self-revision 대비 GDD Fidelity를 <b>10.9% (상대 향상)</b> 끌어올렸습니다.</p>
+        </div>
+
+        <video class="paper-video" src="assets/video/paper_teaser_intro.mp4?v=76" poster="assets/video/poster_paper_teaser.jpg?v=76" muted loop playsinline controls preload="none"></video>
+
+        <div class="paper-block">
+          <h4>Benchmark Overview</h4>
+          <ul class="rubric">
+            <li><b>Dependency-Aware Contract</b> <i>각 GDD를 규칙(rule), 불변 조건(invariant), 선행 관계로 컴파일합니다. 평가 계약은 처음 게임을 생성하는 동안 에이전트에게 공개되지 않고, 에이전트와 수정 라운드가 바뀌어도 고정됩니다.</i></li>
+            <li><b>Test Policies</b> <i>에이전트가 생성한 정책이 요구사항을 실행 가능한 테스트로 바꿉니다. 대표 시나리오를 위한 고정 입력 시퀀스와, 게임을 탐색하며 아직 검증되지 않은 규칙을 시험하는 적응형 봇으로 구성됩니다.</i></li>
+            <li><b>Three Evaluation Axes</b> <i>소스 코드 검사, 시나리오 기반 리플레이, 적응형 플레이테스트가 같은 요구사항을 각각 코드 · 렌더링 결과 · 런타임 동작으로 평가합니다. 세 값의 산술 평균이 GDD Fidelity입니다.</i></li>
+          </ul>
+          <div class="paper-table-wrap">
+            <table class="paper-table">
+              <thead><tr><th></th><th><i>Small</i> (50 GDDs)</th><th><i>Big</i> (50 GDDs)</th></tr></thead>
+              <tbody>
+                <tr><th>GDD당 평균 토큰</th><td>14,085</td><td>26,297</td></tr>
+                <tr><th>GDD당 평균 결과 요구사항</th><td>54.2</td><td>84.0</td></tr>
+                <tr><th>디자인 범위</th><td>핵심 메카닉 1개, 화면 1개</td><td>캠페인 · 경제 · 내러티브 등 상호작용하는 시스템</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="paper-block">
+          <h4>The 100 GDDs</h4>
+          <p class="kr">각 GDD는 짧은 브리프와 크리에이티브 비전에서 출발해 작성되었고, 구조 적합성 · 내부 일관성 · 동작 타당성 · 수치 정확성을 검사한 뒤 벤치마크에 포함되었습니다. <i>Small</i> 50개는 8개 과제 계열을, <i>Big</i> 50개는 11개 게임 장르를 다룹니다.</p>
+          <div class="paper-cols">
+            <table class="paper-table paper-table--list">
+              <thead><tr><th><i>Small</i> task family</th><th>n</th></tr></thead>
+              <tbody>
+                <tr><td>Reaction, Inhibition &amp; Speed Classification</td><td>9</td></tr>
+                <tr><td>Continuous &amp; Precision Motor Control</td><td>9</td></tr>
+                <tr><td>Temporal Precision &amp; Rhythm</td><td>7</td></tr>
+                <tr><td>Planning &amp; Sequential Decision</td><td>7</td></tr>
+                <tr><td>Deduction &amp; Constraint Solving</td><td>6</td></tr>
+                <tr><td>Spatial Reasoning &amp; Mental Transformation</td><td>5</td></tr>
+                <tr><td>Perceptual Estimation &amp; Psychophysics</td><td>4</td></tr>
+                <tr><td>Short-Term Memory &amp; Attentional Tracking</td><td>3</td></tr>
+              </tbody>
+            </table>
+            <table class="paper-table paper-table--list">
+              <thead><tr><th><i>Big</i> genre</th><th>n</th></tr></thead>
+              <tbody>
+                <tr><td>Simulation &amp; Management</td><td>8</td></tr>
+                <tr><td>Platformer &amp; Metroidvania</td><td>7</td></tr>
+                <tr><td>Adventure &amp; Narrative</td><td>6</td></tr>
+                <tr><td>Strategy &amp; Tactics</td><td>5</td></tr>
+                <tr><td>Action Roguelite &amp; Survival</td><td>4</td></tr>
+                <tr><td>Rhythm</td><td>4</td></tr>
+                <tr><td>Puzzle</td><td>4</td></tr>
+                <tr><td>RPG</td><td>4</td></tr>
+                <tr><td>Shooter &amp; Bullet-hell</td><td>3</td></tr>
+                <tr><td>Sports &amp; Racing</td><td>3</td></tr>
+                <tr><td>Idle &amp; Clicker</td><td>2</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="paper-games">
+            <span class="pg-label"><i>Big</i></span>
+            <div class="pg-grid">
+              <figure><img src="assets/img/paper/cloud_cast.jpg?v=76" alt="Cloud Cast" loading="lazy"><figcaption>Cloud Cast</figcaption></figure>
+              <figure><img src="assets/img/paper/siege_deck_2d.jpg?v=76" alt="Siege Deck 2D" loading="lazy"><figcaption>Siege Deck 2D</figcaption></figure>
+              <figure><img src="assets/img/paper/ssitgim.jpg?v=76" alt="Ssitgim" loading="lazy"><figcaption>Ssitgim</figcaption></figure>
+              <figure><img src="assets/img/paper/afterglow_network.jpg?v=76" alt="Afterglow Network" loading="lazy"><figcaption>Afterglow Network</figcaption></figure>
+              <figure><img src="assets/img/paper/chromashade.jpg?v=76" alt="ChromaShade" loading="lazy"><figcaption>ChromaShade</figcaption></figure>
+              <figure><img src="assets/img/paper/alias_alchemy_shop.jpg?v=76" alt="Alias Alchemy Shop" loading="lazy"><figcaption>Alias Alchemy Shop</figcaption></figure>
+              <figure><img src="assets/img/paper/wham_bam_logistics.jpg?v=76" alt="Wham Bam Logistics" loading="lazy"><figcaption>Wham Bam Logistics</figcaption></figure>
+              <figure><img src="assets/img/paper/strata_keepers.jpg?v=76" alt="Strata Keepers" loading="lazy"><figcaption>Strata Keepers</figcaption></figure>
+            </div>
+            <span class="pg-label"><i>Small</i></span>
+            <div class="pg-grid">
+              <figure><img src="assets/img/paper/orbit.jpg?v=76" alt="Orbit" loading="lazy"><figcaption>Orbit</figcaption></figure>
+              <figure><img src="assets/img/paper/greedy_die.jpg?v=76" alt="Greedy Die" loading="lazy"><figcaption>Greedy Die</figcaption></figure>
+              <figure><img src="assets/img/paper/bloom_or_weed.jpg?v=76" alt="Bloom or Weed" loading="lazy"><figcaption>Bloom or Weed</figcaption></figure>
+              <figure><img src="assets/img/paper/key_under_cups.jpg?v=76" alt="Key Under Cups" loading="lazy"><figcaption>Key Under Cups</figcaption></figure>
+              <figure><img src="assets/img/paper/bin_bit.jpg?v=76" alt="Bin Bit" loading="lazy"><figcaption>Bin Bit</figcaption></figure>
+              <figure><img src="assets/img/paper/safe_dial.jpg?v=76" alt="Safe Dial" loading="lazy"><figcaption>Safe Dial</figcaption></figure>
+              <figure><img src="assets/img/paper/echo_three.jpg?v=76" alt="Echo Three" loading="lazy"><figcaption>Echo Three</figcaption></figure>
+              <figure><img src="assets/img/paper/odd_patch.jpg?v=76" alt="Odd Patch" loading="lazy"><figcaption>Odd Patch</figcaption></figure>
+            </div>
+            <p class="pg-cap kr">평가 대상 코딩 에이전트가 <i>Big</i> · <i>Small</i> GDD로 만든 게임</p>
+          </div>
+        </div>
+
+        <div class="paper-block">
+          <h4>How It Works</h4>
+          <img class="paper-teaser" src="assets/img/paper/teaser.jpg?v=76" alt="GDD가 Dependency-Aware Contract로 컴파일되고, 빌드가 소스 검사 · 시나리오 리플레이 · 적응형 플레이테스트로 판정되며, 규칙별 근거가 수정으로 이어지는 전체 구조" loading="lazy">
+<pre class="paper-pre">GDD ──► Dependency-Aware Contract (fixed for evaluation)
+ │
+ ▼
+coding agent implements the GDD in a shared Phaser starter project
+ │
+ ├── source-code inspection   is each rule / invariant implemented?   → F_src
+ ├── scenario-based replay    does the behavior render on screen?     → F_replay
+ └── adaptive playtest        does it happen when the game is played? → F_adapt</pre>
+          <p class="kr">판정 결과와 근거는 요구사항 단위 피드백이 되어 반복 수정에 쓰이고, 수정된 빌드도 모두 같은 고정 계약에 대해 세 축으로 다시 평가됩니다.</p>
+          <p class="kr"><b>Scope</b> — 메인 벤치마크는 Phaser 기반 2D 싱글플레이 브라우저 게임을 대상으로 하며, 모든 에이전트에 공통 개발 · 실행 환경을 제공합니다. 코드와 데이터셋은 공개 예정입니다.</p>
+        </div>
+
+        <details class="paper-abstract">
+          <summary>Abstract (원문)</summary>
+          <p>Delegating complete application development to coding agents requires preserving the intended design rather than simply producing plausible outputs through naïve prompting. Game development provides a demanding testbed, as long-form Game Design Documents (GDDs) describe requirements that must work together across game logic, visual rendering, and player interactions. However, existing game-development benchmarks typically use compact specifications and provide limited support for evaluating interdependent requirements across these aspects in long-form GDDs. We introduce <b>A2Z GameSpec-Bench</b>, a benchmark of 100 long-form GDDs for evaluating end-to-end game development by agents. We measure <i>faithfulness</i> by checking whether the game satisfies the GDD requirements and preserves the relationships among them. Each GDD is turned into a Dependency-Aware Contract that contains rules, constraints, and prerequisite relations. Following game-development practices, we combine source-code inspection with agent-generated Test Policies for scenario-based replay and adaptive playtesting. The contract remains fixed across agents and revision rounds, while judgments and evidence linked to the same requirements support consistent comparison and failure detection. Our evaluations show that current agents struggle to jointly satisfy interdependent requirements across code implementation and actual play. Requirement-specific feedback improves GDD Fidelity by 10.9% relative gain over self-revision after two rounds. A2Z GameSpec-Bench assesses end-to-end specification-following ability beyond implementation judgments and provides targeted feedback to support more faithful game development.</p>
+        </details>
+
+        <details class="paper-abstract">
+          <summary>Citation (BibTeX)</summary>
+<pre class="paper-pre">@misc{lee2026a2zgamespecbench,
+  title = {{A2Z GameSpec-Bench}: How Faithfully Can Coding Agents Generate Games from Game Design Specifications?},
+  author = {Lee, Seonho and Jeong, Wonryeol and Cereser, Alberto and Kang, Inha and Kim, Hyeonjong and Kwak, Seungmin and Park, Dongmin},
+  year = {2026},
+  eprint = {2609.39564},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.AI},
+  url = {https://arxiv.org/abs/2609.39564}
+}</pre>
+        </details>
+
+        <p class="paper-note">Figures and game images © 2026 KRAFTON, Inc. — from the A2Z GameSpec-Bench repository. Code, GDDs, and contracts are released under the MIT License. Scenario-based replay uses the judge interface and model-provider implementations from GameCraft-Bench (Apache License 2.0).</p>
+      </div>
+    </details>
 
     <div class="tool-grid">
       <div class="tool-col tool-col--past">
@@ -519,7 +669,7 @@
         <div class="cv-block">
           <h6>학력</h6>
           <div class="cv-row">
-            <div class="cv-logo"><img src="assets/img/software/edu_sunhwa_ms.png?v=75" alt="선화예술중학교"></div>
+            <div class="cv-logo"><img src="assets/img/software/edu_sunhwa_ms.png?v=76" alt="선화예술중학교"></div>
             <div class="cv-body">
               <div class="cv-date">2013.03 – 2016.02</div>
               <h4>선화예술중학교</h4>
@@ -527,7 +677,7 @@
             </div>
           </div>
           <div class="cv-row">
-            <div class="cv-logo"><img src="assets/img/software/edu_sunhwa.png?v=75" alt="선화예술고등학교"></div>
+            <div class="cv-logo"><img src="assets/img/software/edu_sunhwa.png?v=76" alt="선화예술고등학교"></div>
             <div class="cv-body">
               <div class="cv-date">2016.03 – 2019.02</div>
               <h4>선화예술고등학교</h4>
@@ -535,7 +685,7 @@
             </div>
           </div>
           <div class="cv-row">
-            <div class="cv-logo"><img src="assets/img/software/edu_karts.png?v=75" alt="한국예술종합학교"></div>
+            <div class="cv-logo"><img src="assets/img/software/edu_karts.png?v=76" alt="한국예술종합학교"></div>
             <div class="cv-body">
               <div class="cv-date">2021.03 – 2027.02</div>
               <h4>한국예술종합학교</h4>
@@ -549,7 +699,7 @@
         <div class="cv-block">
           <h6>경력</h6>
           <div class="cv-row">
-            <div class="cv-logo"><img src="assets/img/software/org_krafton.png?v=75" alt="KRAFTON"></div>
+            <div class="cv-logo"><img src="assets/img/software/org_krafton.png?v=76" alt="KRAFTON"></div>
             <div class="cv-body">
               <div class="cv-date">2025.09 – 현재</div>
               <h4>크래프톤 · Technical Artist</h4>
@@ -561,7 +711,7 @@
         <div class="cv-block">
           <h6>대외활동</h6>
           <div class="cv-row">
-            <div class="cv-logo"><img src="assets/img/software/org_sm.svg?v=75" alt="SM엔터테인먼트"></div>
+            <div class="cv-logo"><img src="assets/img/software/org_sm.svg?v=76" alt="SM엔터테인먼트"></div>
             <div class="cv-body">
               <div class="cv-date">2024.06 – 2024.12</div>
               <h4>SM엔터테인먼트 기업연계</h4>
@@ -569,7 +719,7 @@
             </div>
           </div>
           <div class="cv-row">
-            <div class="cv-logo"><img src="assets/img/software/org_native.png?v=75" alt="NATIVE 버추얼 스튜디오"></div>
+            <div class="cv-logo"><img src="assets/img/software/org_native.png?v=76" alt="NATIVE 버추얼 스튜디오"></div>
             <div class="cv-body">
               <div class="cv-date">2024.02 – 2024.06</div>
               <h4>NATIVE 버추얼 스튜디오</h4>
@@ -590,43 +740,43 @@
     <div class="tools-wrap">
       <div class="tools">
         <div class="tool-header"><h6>3D / DCC</h6></div>
-        <div class="tool-item"><div class="tool-image"><img src="assets/img/software/autodeskmaya.svg?v=75" alt=""></div><div class="tool-title">Maya</div></div>
-        <div class="tool-item"><div class="tool-image"><img src="assets/img/software/3dsmax.svg?v=75" alt=""></div><div class="tool-title">3ds Max</div></div>
-        <div class="tool-item"><div class="tool-image"><img src="assets/img/software/zbrush.png?v=75" alt=""></div><div class="tool-title">ZBrush</div></div>
-        <div class="tool-item"><div class="tool-image"><img src="assets/img/software/unreal.png?v=75" alt=""></div><div class="tool-title">Unreal Engine</div></div>
-        <div class="tool-item"><div class="tool-image"><img src="assets/img/software/unity.svg?v=75" alt=""></div><div class="tool-title">Unity</div></div>
-        <div class="tool-item"><div class="tool-image"><img src="assets/img/software/substance.svg?v=75" alt=""></div><div class="tool-title">Substance Painter</div></div>
-        <div class="tool-item"><div class="tool-image"><img src="assets/img/software/blender.png?v=75" alt=""></div><div class="tool-title">Blender</div></div>
+        <div class="tool-item"><div class="tool-image"><img src="assets/img/software/autodeskmaya.svg?v=76" alt=""></div><div class="tool-title">Maya</div></div>
+        <div class="tool-item"><div class="tool-image"><img src="assets/img/software/3dsmax.svg?v=76" alt=""></div><div class="tool-title">3ds Max</div></div>
+        <div class="tool-item"><div class="tool-image"><img src="assets/img/software/zbrush.png?v=76" alt=""></div><div class="tool-title">ZBrush</div></div>
+        <div class="tool-item"><div class="tool-image"><img src="assets/img/software/unreal.png?v=76" alt=""></div><div class="tool-title">Unreal Engine</div></div>
+        <div class="tool-item"><div class="tool-image"><img src="assets/img/software/unity.svg?v=76" alt=""></div><div class="tool-title">Unity</div></div>
+        <div class="tool-item"><div class="tool-image"><img src="assets/img/software/substance.svg?v=76" alt=""></div><div class="tool-title">Substance Painter</div></div>
+        <div class="tool-item"><div class="tool-image"><img src="assets/img/software/blender.png?v=76" alt=""></div><div class="tool-title">Blender</div></div>
       </div>
 
       <div class="tools tools-wide">
         <div class="tool-header"><h6>AI &amp; Workflow</h6></div>
         <div class="tool-cols">
           <!-- 1열: 코딩 에이전트 → 이미지 생성 → 영상 생성 -->
-          <div class="tool-item"><div class="tool-image"><img src="assets/img/software/claude.svg?v=75" alt=""></div><div class="tool-title">Claude Code</div></div>
-          <div class="tool-item"><div class="tool-image"><img src="assets/img/software/codex.svg?v=75" alt=""></div><div class="tool-title">Codex</div></div>
-          <div class="tool-item tool-gap"><div class="tool-image"><img src="assets/img/software/midjourney.svg?v=75" alt=""></div><div class="tool-title">Midjourney</div></div>
-          <div class="tool-item"><div class="tool-image"><img src="assets/img/software/krea.png?v=75" alt=""></div><div class="tool-title">Krea</div></div>
-          <div class="tool-item tool-gap"><div class="tool-image"><img src="assets/img/software/googlegemini.svg?v=75" alt=""></div><div class="tool-title">Veo 3</div></div>
-          <div class="tool-item"><div class="tool-image"><img src="assets/img/software/seedance.svg?v=75" alt=""></div><div class="tool-title">Seedance</div></div>
-          <div class="tool-item"><div class="tool-image"><img src="assets/img/software/kling.png?v=75" alt=""></div><div class="tool-title">Kling</div></div>
-          <div class="tool-item"><div class="tool-image"><img src="assets/img/software/runway.svg?v=75" alt=""></div><div class="tool-title">Runway</div></div>
+          <div class="tool-item"><div class="tool-image"><img src="assets/img/software/claude.svg?v=76" alt=""></div><div class="tool-title">Claude Code</div></div>
+          <div class="tool-item"><div class="tool-image"><img src="assets/img/software/codex.svg?v=76" alt=""></div><div class="tool-title">Codex</div></div>
+          <div class="tool-item tool-gap"><div class="tool-image"><img src="assets/img/software/midjourney.svg?v=76" alt=""></div><div class="tool-title">Midjourney</div></div>
+          <div class="tool-item"><div class="tool-image"><img src="assets/img/software/krea.png?v=76" alt=""></div><div class="tool-title">Krea</div></div>
+          <div class="tool-item tool-gap"><div class="tool-image"><img src="assets/img/software/googlegemini.svg?v=76" alt=""></div><div class="tool-title">Veo 3</div></div>
+          <div class="tool-item"><div class="tool-image"><img src="assets/img/software/seedance.svg?v=76" alt=""></div><div class="tool-title">Seedance</div></div>
+          <div class="tool-item"><div class="tool-image"><img src="assets/img/software/kling.png?v=76" alt=""></div><div class="tool-title">Kling</div></div>
+          <div class="tool-item"><div class="tool-image"><img src="assets/img/software/runway.svg?v=76" alt=""></div><div class="tool-title">Runway</div></div>
           <!-- 2열: 3D 생성 → 개발 · 협업 -->
-          <div class="tool-item"><div class="tool-image"><img src="assets/img/software/tripo.png?v=75" alt=""></div><div class="tool-title">Tripo</div></div>
-          <div class="tool-item"><div class="tool-image"><img src="assets/img/software/meshy.png?v=75" alt=""></div><div class="tool-title">Meshy</div></div>
-          <div class="tool-item tool-gap"><div class="tool-image"><img src="assets/img/software/python.png?v=75" alt=""></div><div class="tool-title">Python</div></div>
-          <div class="tool-item"><div class="tool-image"><img src="assets/img/software/javascript.svg?v=75" alt=""></div><div class="tool-title">JavaScript</div></div>
-          <div class="tool-item"><div class="tool-image"><img src="assets/img/software/github.svg?v=75" alt=""></div><div class="tool-title">Git · GitHub</div></div>
+          <div class="tool-item"><div class="tool-image"><img src="assets/img/software/tripo.png?v=76" alt=""></div><div class="tool-title">Tripo</div></div>
+          <div class="tool-item"><div class="tool-image"><img src="assets/img/software/meshy.png?v=76" alt=""></div><div class="tool-title">Meshy</div></div>
+          <div class="tool-item tool-gap"><div class="tool-image"><img src="assets/img/software/python.png?v=76" alt=""></div><div class="tool-title">Python</div></div>
+          <div class="tool-item"><div class="tool-image"><img src="assets/img/software/javascript.svg?v=76" alt=""></div><div class="tool-title">JavaScript</div></div>
+          <div class="tool-item"><div class="tool-image"><img src="assets/img/software/github.svg?v=76" alt=""></div><div class="tool-title">Git · GitHub</div></div>
         </div>
       </div>
 
       <div class="tools">
         <div class="tool-header"><h6>Adobe</h6></div>
-        <div class="tool-item"><div class="tool-image"><img src="assets/img/software/photoshop.svg?v=75" alt=""></div><div class="tool-title">Photoshop</div></div>
-        <div class="tool-item"><div class="tool-image"><img src="assets/img/software/illustrator.svg?v=75" alt=""></div><div class="tool-title">Illustrator</div></div>
-        <div class="tool-item"><div class="tool-image"><img src="assets/img/software/adobepremierepro.svg?v=75" alt=""></div><div class="tool-title">Premiere Pro</div></div>
-        <div class="tool-item"><div class="tool-image"><img src="assets/img/software/after-effects.svg?v=75" alt=""></div><div class="tool-title">After Effects</div></div>
-        <div class="tool-item"><div class="tool-image"><img src="assets/img/software/animate.svg?v=75" alt=""></div><div class="tool-title">Animate</div></div>
+        <div class="tool-item"><div class="tool-image"><img src="assets/img/software/photoshop.svg?v=76" alt=""></div><div class="tool-title">Photoshop</div></div>
+        <div class="tool-item"><div class="tool-image"><img src="assets/img/software/illustrator.svg?v=76" alt=""></div><div class="tool-title">Illustrator</div></div>
+        <div class="tool-item"><div class="tool-image"><img src="assets/img/software/adobepremierepro.svg?v=76" alt=""></div><div class="tool-title">Premiere Pro</div></div>
+        <div class="tool-item"><div class="tool-image"><img src="assets/img/software/after-effects.svg?v=76" alt=""></div><div class="tool-title">After Effects</div></div>
+        <div class="tool-item"><div class="tool-image"><img src="assets/img/software/animate.svg?v=76" alt=""></div><div class="tool-title">Animate</div></div>
       </div>
     </div>
   </div>
@@ -659,6 +809,7 @@
     <div class="m-stage">
       <img class="m-hero" src="" alt="">
       <video class="m-video" controls preload="none" playsinline></video>
+      <iframe class="m-yt" title="YouTube 영상" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       <button class="m-nav m-prev" type="button" aria-label="이전">‹</button>
       <button class="m-nav m-next" type="button" aria-label="다음">›</button>
       <div class="m-counter"></div>
@@ -671,6 +822,7 @@
       <div class="m-meta"></div>
       <p class="m-lead kr"></p>
       <div class="m-text"></div>
+      <div class="m-links"></div>
     </div>
   </div>
 </div>
@@ -701,7 +853,7 @@ window.GAME_SHOWCASE = [
       specs:[['계획','다중 홉 경로를 그려 확정 · 홉당 0.5초'],['시야','안개 반경 밖은 추정 아이콘'],['변수','운석 1턴 전 예고 → 암초화'],['적재','6칸 선창 · 화물 무게 1~2'],['수확','3초 타이밍 바 + 0.4초 방향 플릭'],['성장','4×5 업그레이드 트리 · 수집 로그 50종']] }
 ];
 </script>
-<script src="projects.js?v=75"></script>
-<script src="main.js?v=75"></script>
+<script src="projects.js?v=76"></script>
+<script src="main.js?v=76"></script>
 </body>
 </html>

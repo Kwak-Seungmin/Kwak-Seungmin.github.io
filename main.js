@@ -33,6 +33,17 @@ navMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () 
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });
 document.addEventListener('click', (e) => { if (!header.contains(e.target)) setMenu(false); });
 
+// ---------- 논문 카드: 펼칠 때만 티저 영상 재생 ----------
+const paper = document.getElementById('paper');
+if (paper) {
+  const paperVideo = paper.querySelector('.paper-video');
+  paper.addEventListener('toggle', () => {
+    if (!paperVideo) return;
+    if (paper.open) paperVideo.play().catch(() => {});
+    else paperVideo.pause();
+  });
+}
+
 // ---------- 인트로 영상: 모바일에서는 포스터만 ----------
 const heroVideo = document.querySelector('#intro .video');
 if (heroVideo && window.matchMedia('(min-width:761px)').matches) {
@@ -71,6 +82,8 @@ filterItems.forEach(li => {
 const modal = document.getElementById('modal');
 const mHero = modal.querySelector('.m-hero');
 const mVideo = modal.querySelector('.m-video');
+const mYt = modal.querySelector('.m-yt');
+const mLinks = modal.querySelector('.m-links');
 const mCat = modal.querySelector('.m-cat');
 const mTitle = modal.querySelector('h3');
 const mMeta = modal.querySelector('.m-meta');
@@ -85,13 +98,28 @@ const mNext = modal.querySelector('.m-next');
 let slides = [];
 let slideIndex = 0;
 
-// 한 장씩 보여준다 — 영상이면 플레이어, 이미지면 <img>
+// 유튜브 iframe 을 비워 재생을 멈춘다
+const stopYoutube = () => {
+  mYt.classList.remove('show');
+  mYt.removeAttribute('src');
+};
+
+// 한 장씩 보여준다 — 영상이면 플레이어, 유튜브면 iframe, 이미지면 <img>
 const showSlide = (i, autoplay = false) => {
   if (!slides.length) return;
   slideIndex = (i + slides.length) % slides.length;
   const s = slides[slideIndex];
 
-  if (s.type === 'video') {
+  if (s.type === 'youtube') {
+    mVideo.pause();
+    mVideo.classList.remove('show');
+    mVideo.removeAttribute('src');
+    mHero.classList.add('hide');
+    mHero.removeAttribute('src');
+    mYt.src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(s.id)}?rel=0&playsinline=1${autoplay ? '&autoplay=1' : ''}`;
+    mYt.classList.add('show');
+  } else if (s.type === 'video') {
+    stopYoutube();
     mVideo.src = s.src;
     if (s.poster) mVideo.poster = s.poster;
     mVideo.classList.add('show');
@@ -99,6 +127,7 @@ const showSlide = (i, autoplay = false) => {
     mHero.removeAttribute('src');
     if (autoplay) mVideo.play().catch(() => {});
   } else {
+    stopYoutube();
     mVideo.pause();
     mVideo.classList.remove('show');
     mVideo.removeAttribute('src');
@@ -129,9 +158,10 @@ const openProject = (key) => {
     const btn = document.createElement('button');
     btn.type = 'button';
     btn.className = 'm-thumb' + (i === 0 ? ' active' : '');
-    const thumbSrc = s.type === 'video' ? (s.poster || '') : s.src;
+    const isMotion = s.type === 'video' || s.type === 'youtube';
+    const thumbSrc = isMotion ? (s.poster || '') : s.src;
     btn.innerHTML = `<img src="${thumbSrc}" alt="" loading="lazy">` +
-                    (s.type === 'video' ? '<span class="t-play">▶</span>' : '');
+                    (isMotion ? '<span class="t-play">▶</span>' : '');
     btn.addEventListener('click', () => showSlide(i, true));
     mThumbs.appendChild(btn);
   });
@@ -154,6 +184,18 @@ const openProject = (key) => {
     mText.appendChild(el);
   });
 
+  mLinks.innerHTML = '';
+  (p.links || []).forEach(({ label, href }) => {
+    const a = document.createElement('a');
+    a.className = 'btn';
+    a.href = href;
+    a.target = '_blank';
+    a.rel = 'noopener';
+    a.textContent = label + ' ↗';
+    mLinks.appendChild(a);
+  });
+  mLinks.style.display = (p.links || []).length ? '' : 'none';
+
   showSlide(0);
   modal.classList.add('open');
   modal.querySelector('.modal-box').scrollTop = 0;
@@ -166,6 +208,7 @@ mNext.addEventListener('click', (e) => { e.stopPropagation(); showSlide(slideInd
 const closeModal = () => {
   modal.classList.remove('open');
   mVideo.pause();
+  stopYoutube();
   document.body.style.overflow = '';
 };
 

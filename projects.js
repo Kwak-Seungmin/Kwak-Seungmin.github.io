@@ -1,5 +1,6 @@
 // 프로젝트 상세 데이터 — 텍스트는 기존 포트폴리오 원문 기준
-// media: [{type:'video'|'image', src, poster?, cap}] — 모달에서 한 장씩 넘겨 본다
+// media: [{type:'video'|'image', src, poster?, cap} | {type:'youtube', id, poster, cap}] — 모달에서 한 장씩 넘겨 본다
+// links?: [{label, href}] — 본문 아래 외부 링크 버튼
 const PROJECTS = {
   aiartpipeline: {
     cat: 'Tool / Automation',
@@ -33,6 +34,7 @@ const PROJECTS = {
     ],
     media: [
       { type:'image', src:'assets/img/naevis_hero.png', cap:'나이비스 포트레이트' },
+      { type:'youtube', id:'1xPpFn-jTrU', poster:'assets/img/p07_youtube_thumb.jpg', cap:'프로젝트 영상 — [NCA 단기과정 2기] Welcome to MY World (에듀코카 YouTube)' },
       { type:'image', src:'assets/img/p07_concept_sheet.jpg', cap:'나이비스 · 빌런 컨셉 아트 시트 — 모든 결과물의 출발점' },
       { type:'image', src:'assets/img/p07_poster.jpg', cap:'쇼케이스 메인 포스터, KOCCA' },
       { type:'image', src:'assets/img/p07_sevas_poster.jpg', cap:'SEVAS 캐릭터 포스터' },
@@ -40,7 +42,13 @@ const PROJECTS = {
       { type:'image', src:'assets/img/p07_walk.jpg', cap:'리얼월드 거리를 세바스와 함께 걷는 나이비스' },
       { type:'image', src:'assets/img/p07_loading.jpg', cap:'Maya 뷰포트 로딩 스크린 — naevis_cat · naevis_pose' },
       { type:'image', src:'assets/img/p07_caption.jpg', cap:'에피소드 캡션 3종 — 세바스 · 블랙맘바 · 에테르' },
-      { type:'image', src:'assets/img/p07_showcase.jpg', cap:'KOCCA 쇼케이스 전시장 · 크레딧' }
+      { type:'image', src:'assets/img/p07_showcase.jpg', cap:'KOCCA 쇼케이스 전시장 · 크레딧' },
+      { type:'image', src:'assets/img/p07_kocca_booth.jpg', cap:'KOCCA 쇼케이스 MNM 부스 — 포스터 · 숏폼 모니터 · 컨셉 아트북 · 굿즈 (사진: 에듀코카 성과아카이브)' },
+      { type:'image', src:'assets/img/p07_kocca_booth_side.jpg', cap:'MNM 부스 측면 — 헤드폰으로 숏폼을 감상하는 관람객 (사진: 에듀코카 성과아카이브)' }
+    ],
+    links: [
+      { label:'KOCCA 성과아카이브', href:'https://edu.kocca.kr/edu/archiveUser/contentsDeptList.do?menuNo=500266&taskSeq=338' },
+      { label:'프로젝트 영상 · YouTube', href:'https://www.youtube.com/watch?v=1xPpFn-jTrU' }
     ]
   },
 

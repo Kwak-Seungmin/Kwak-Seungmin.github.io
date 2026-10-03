@@ -260,6 +260,81 @@ section{padding:60px 0;}
 .rubric b sub{font-size:10px;font-weight:600;}
 .rubric i{display:block;font-style:normal;font-size:12.5px;color:rgba(189,193,199,0.65);margin-top:1px;}
 
+/* ---------- 논문 — 접고 펼치는 카드 ---------- */
+.paper{
+  margin:15px 0 0;background:rgba(10,160,210,0.045);
+  border:1px solid rgba(10,160,210,0.28);border-left:3px solid var(--accent);
+}
+.paper > summary{list-style:none;cursor:pointer;padding:28px 32px;position:relative;}
+.paper > summary::-webkit-details-marker{display:none;}
+.paper > summary:hover{background:rgba(10,160,210,0.05);}
+.paper-tags{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:14px;}
+.paper-tag{
+  font-family:var(--head);font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+  color:#05060a;background:var(--accent);padding:4px 9px;
+}
+.paper-tag--me{background:var(--accent2);}
+.paper-venue{font-family:var(--head);font-size:12px;font-weight:600;letter-spacing:1px;color:rgba(189,193,199,0.75);}
+.paper-title{font-family:var(--head);font-size:22px;font-weight:600;line-height:1.4;color:var(--white);margin-bottom:12px;}
+.paper-title b{color:var(--accent);font-weight:800;}
+.paper-authors{font-family:var(--body);font-size:14px;line-height:24px;color:var(--muted);}
+.paper-authors mark{background:none;color:var(--accent2);font-weight:700;}
+.paper-affil{font-family:var(--body);font-size:12.5px;color:rgba(189,193,199,0.6);margin-top:2px;}
+.paper-oneline{font-size:15px;line-height:27px;color:var(--soft);margin-top:14px;max-width:900px;}
+.paper-toggle{
+  display:inline-flex;align-items:center;gap:8px;margin-top:16px;
+  font-family:var(--head);font-size:13px;font-weight:700;letter-spacing:1px;color:var(--accent);
+}
+.paper-toggle::after{content:'';width:7px;height:7px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;
+  transform:rotate(45deg) translate(-2px,-2px);transition:transform .2s;}
+.paper[open] .paper-toggle::after{transform:rotate(-135deg) translate(-2px,-2px);}
+.paper .pt-close,.paper[open] .pt-open{display:none;}
+.paper[open] .pt-close{display:inline;}
+
+.paper-body{padding:4px 32px 32px;border-top:1px solid rgba(10,160,210,0.18);}
+.paper-links{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0;}
+.paper-header,.paper-teaser,.paper-video{display:block;width:100%;height:auto;border:1px solid rgba(255,255,255,0.08);}
+.paper-video{aspect-ratio:900/384;background:#000;margin-top:24px;}
+.paper-block{margin-top:30px;}
+.paper-block h4{
+  font-family:var(--head);font-size:13px;font-weight:800;letter-spacing:3px;text-transform:uppercase;
+  color:var(--accent);margin-bottom:14px;
+}
+.paper-block p{font-family:var(--kr);font-size:15px;line-height:28px;color:var(--muted);margin-bottom:14px;}
+.paper-block p b{color:var(--white);}
+.paper-table-wrap{overflow-x:auto;}
+.paper-table{width:100%;border-collapse:collapse;font-family:var(--kr);font-size:14px;color:var(--muted);}
+.paper-table th,.paper-table td{border-bottom:1px solid rgba(255,255,255,0.08);padding:10px 12px;text-align:left;vertical-align:top;}
+.paper-table thead th{font-family:var(--head);font-size:12px;letter-spacing:1px;color:var(--white);border-bottom-color:rgba(255,255,255,0.18);}
+.paper-table tbody th{font-weight:600;color:var(--soft);white-space:nowrap;}
+.paper-table--list td:last-child,.paper-table--list th:last-child{text-align:right;width:40px;color:var(--accent2);}
+.paper-cols{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start;margin-bottom:24px;}
+.paper-games{display:grid;grid-template-columns:auto 1fr;gap:10px 14px;align-items:center;}
+.pg-label{font-family:var(--head);font-size:13px;font-weight:700;color:var(--white);writing-mode:vertical-rl;transform:rotate(180deg);}
+.pg-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;}
+.pg-grid figure{margin:0;}
+.pg-grid img{width:100%;aspect-ratio:16/9;object-fit:cover;background:#000;border:1px solid rgba(255,255,255,0.08);}
+.pg-grid figcaption{font-family:var(--body);font-size:12px;color:var(--muted);margin-top:4px;text-align:center;}
+.pg-cap{grid-column:1 / -1;font-size:13px !important;text-align:center;margin:4px 0 0 !important;}
+.paper-pre{
+  font-family:Consolas,'SFMono-Regular',Menlo,monospace;font-size:12.5px;line-height:20px;color:#cfefff;
+  background:rgba(0,0,0,0.35);border:1px solid rgba(255,255,255,0.08);padding:16px 18px;margin:16px 0;
+  overflow-x:auto;white-space:pre;
+}
+.paper-abstract{margin-top:18px;border:1px solid rgba(255,255,255,0.1);}
+.paper-abstract > summary{cursor:pointer;padding:12px 16px;font-family:var(--head);font-size:13px;font-weight:700;letter-spacing:1px;color:var(--soft);}
+.paper-abstract > summary:hover{color:var(--accent);}
+.paper-abstract > p{font-family:var(--body);font-size:14px;line-height:25px;color:var(--muted);padding:0 16px 16px;}
+.paper-abstract > .paper-pre{margin:0 16px 16px;}
+.paper-note{font-family:var(--body);font-size:11.5px;line-height:18px;color:rgba(189,193,199,0.5);margin-top:22px;}
+@media (max-width:880px){
+  .paper > summary{padding:22px 18px;}
+  .paper-body{padding:4px 18px 24px;}
+  .paper-title{font-size:18px;}
+  .paper-cols{grid-template-columns:1fr;}
+  .pg-grid{grid-template-columns:repeat(2,1fr);}
+}
+
 /* ============================================================
    파이프라인으로 만든 게임 쇼케이스
    ============================================================ */
@@ -544,6 +619,10 @@ footer .container{display:flex;justify-content:space-between;flex-wrap:wrap;gap:
 }
 .m-stage .m-video{display:none;}
 .m-stage .m-video.show{display:block;}
+/* 유튜브 — 좌우 넘김 버튼이 플레이어 컨트롤을 가리지 않도록 버튼 폭만큼 안쪽에 둔다 */
+.m-stage .m-yt{display:none;position:absolute;top:0;bottom:0;left:46px;right:46px;width:calc(100% - 92px);height:100%;border:0;background:#000;}
+.m-stage .m-yt.show{display:block;}
+.m-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;}
 .m-stage .m-hero.hide{display:none;}
 
 .m-nav{
