@@ -34,7 +34,7 @@ const PROJECTS = {
   },
 
   naevis: {
-    cat: 'SM Entertainment · IP Showcase · Team Lead (80%)',
+    cat: 'SM Entertainment · IP Showcase · Team Lead (70%)',
     title: 'nævis Project',
     meta: 'Midjourney · Runway AI · Maya · Unreal Engine 5 — KOCCA 2024.12.18–19 / MNM Team',
     lead: '가상에서 현실로 온다.',
