@@ -28,7 +28,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700;800;900&display=swap">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="style.css?v=88">
+<link rel="stylesheet" href="style.css?v=89">
+<link rel="stylesheet" href="motion.css?v=89">
+<script>(function(){var r=document.documentElement;if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;r.classList.add('motion');try{if(!sessionStorage.getItem('ksm-splash'))r.classList.add('splash')}catch(e){}})();</script>
 </head>
 <body>
 
@@ -203,7 +205,7 @@
     </div>
 
     <!-- ── 논문 (접고 펼치기) ── -->
-    <details class="paper" id="paper" open>
+    <details class="paper" id="paper">
       <summary>
         <div class="paper-tags">
           <span class="paper-tag">Publication</span>
@@ -684,14 +686,14 @@ coding agent implements the GDD in a shared Phaser starter project
             <h4>언리얼 도시 PCG 제작</h4>
             <span class="t-year">UE 5.5 · 2026.09–10</span>
           </div>
-          <p class="kr">절차적으로 생성된 맨해튼풍 도시 데이터를 언리얼 엔진 5로 옮겨, 엔진 안에서 살아 움직이는 도시로 확장했습니다. 건물 외벽 셰이더를 HLSL로 포팅해 창문·실내 시차·블라인드를 재현하고, 가로수 37,390그루와 소품 58종 약 27만 개를 HISM 인스턴스로 배치했습니다.</p>
-          <p class="kr">차선·회전 연결과 90초 신호 계획을 따라 달리는 차량 교통, 횡단보도 신호에 맞춰 건너는 보행자, Mass 기반 군중 회피를 붙였고, 신호등·가로등·간판 같은 소품은 고품질 메시로 다시 만들어 교체했습니다.</p>
+          <p class="kr">절차적으로 생성된 도시 데이터를 언리얼 엔진 5로 옮겨, 엔진 안에서 살아 움직이는 도시로 확장했습니다. 건물 외벽 셰이더를 HLSL로 포팅해 창문·실내 시차·블라인드를 재현하고, 가로수 37,390그루와 소품 58종 약 27만 개를 HISM 인스턴스로 배치했습니다.</p>
+          <p class="kr">차선·회전 연결과 90초 신호 계획을 따라 달리는 차량 교통, 횡단보도 신호에 맞춰 건너는 보행자, Mass 기반 군중 회피를 붙였습니다. 보행자·차량과 가로 소품 일부는 크래프톤 inZOI 에셋으로 교체했고, 신호등·가로등·간판 같은 나머지 소품은 고품질 메시로 다시 만들었습니다.</p>
           <div class="rnd-media">
-            <figure><img src="assets/img/pcg/city_import_aerial.jpg?v=88" alt="언리얼로 옮긴 절차적 도시 항공 전경" loading="lazy"><figcaption>항공 전경 — 공원과 고층 블록</figcaption></figure>
-            <figure><img src="assets/img/pcg/city_import_mid.jpg?v=88" alt="중간 높이에서 본 도시와 가로수" loading="lazy"><figcaption>가로수 HISM과 외벽 셰이더</figcaption></figure>
-            <figure><img src="assets/img/pcg/city_import_street.jpg?v=88" alt="거리 시점의 상점가와 소품" loading="lazy"><figcaption>거리 시점 — 간판 · 비계 · 소품</figcaption></figure>
+            <figure><img src="assets/img/pcg/city_import_aerial.jpg?v=89" alt="건물 블록과 도로망 항공 사선" loading="lazy"><figcaption>건물 블록과 도로망</figcaption></figure>
+            <figure><img src="assets/img/pcg/city_import_mid.jpg?v=89" alt="차량이 달리는 대로와 교차로" loading="lazy"><figcaption>대로 — 신호를 따라 달리는 차량</figcaption></figure>
+            <figure><img src="assets/img/pcg/city_import_street.jpg?v=89" alt="고층 건물 외벽과 옥상 설비" loading="lazy"><figcaption>외벽 셰이더 · 옥상 설비 · 간판</figcaption></figure>
           </div>
-          <div class="chips"><span>HLSL 외벽 셰이더</span><span>HISM 인스턴싱</span><span>교통 · 신호 시뮬레이션</span><span>Mass Crowd</span></div>
+          <div class="chips"><span>HLSL 외벽 셰이더</span><span>HISM 인스턴싱</span><span>교통 · 신호 시뮬레이션</span><span>Mass Crowd</span><span>KRAFTON inZOI 에셋</span></div>
         </article>
 
         <article class="rnd-item">
@@ -699,7 +701,7 @@ coding agent implements the GDD in a shared Phaser starter project
             <h4>PCG 도시 생성기</h4>
             <span class="t-year">UE 5.8 · 2026.09</span>
           </div>
-          <p class="kr">Procedural Minds의 도시 생성기 튜토리얼을 따라 학습하며 PCG 그래프로 구성한 생성기입니다. 스플라인으로 그린 도로에서 교차로를 찾아 배치하고, 도로 양옆을 따라 건물과 진입로를 세웁니다. 도로를 고치면 교차로와 건물 배치가 함께 다시 생성됩니다.</p>
+          <p class="kr">Procedural Minds의 도시 생성기 튜토리얼을 따라 학습하며 PCG 그래프로 구성한 생성기입니다. 스플라인으로 그린 도로에서 교차로를 찾아 배치하고, 도로 양옆을 따라 건물과 진입로를 세웁니다. 도로를 고치면 교차로와 건물 배치가 함께 다시 생성됩니다. 건물은 크래프톤 inZOI 에셋을 사용했습니다.</p>
           <div class="rnd-media">
             <figure><img src="assets/img/pcg/citygen_aerial.jpg?v=88" alt="PCG 도시 생성기 항공 사선" loading="lazy"><figcaption>스플라인 도로를 따라 생성된 블록</figcaption></figure>
             <figure><img src="assets/img/pcg/citygen_top.jpg?v=88" alt="PCG 도시 생성기 탑뷰" loading="lazy"><figcaption>탑뷰 — 도로망 · 교차로 · 건물 배치</figcaption></figure>
@@ -941,7 +943,8 @@ window.GAME_SHOWCASE = [
       specs:[['계획','다중 홉 경로를 그려 확정 · 홉당 0.5초'],['시야','안개 반경 밖은 추정 아이콘'],['변수','운석 1턴 전 예고 → 암초화'],['적재','6칸 선창 · 화물 무게 1~2'],['수확','3초 타이밍 바 + 0.4초 방향 플릭'],['성장','4×5 업그레이드 트리 · 수집 로그 50종']] }
 ];
 </script>
-<script src="projects.js?v=88"></script>
-<script src="main.js?v=88"></script>
+<script src="projects.js?v=89"></script>
+<script src="main.js?v=89"></script>
+<script src="motion.js?v=90"></script>
 </body>
 </html>

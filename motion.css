@@ -1,0 +1,82 @@
+/* ============================================================
+   MOTION — 진입 스플래시 · 히어로 등장 · 스크롤 리빌
+   html.motion 이 붙었을 때만 동작한다 (JS 없음 / 동작 줄이기 = 원래 화면 그대로).
+   ============================================================ */
+
+/* ---------- 첫 진입 스플래시: 이름 글자가 왼쪽부터 색으로 차오른 뒤 막이 걷힌다 ---------- */
+html.motion.splash body::before,
+html.motion.splash body::after{
+  content:'KWAK SEUNGMIN';
+  position:fixed;inset:0;z-index:2000;
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--head);font-weight:800;letter-spacing:.32em;text-indent:.32em;
+  font-size:clamp(26px,5vw,64px);
+  pointer-events:none;
+}
+html.motion.splash body::before{
+  background:var(--bg);color:rgba(255,255,255,0.14);
+  animation:splash-curtain .75s cubic-bezier(.76,0,.24,1) 1.35s forwards;
+}
+html.motion.splash body::after{
+  color:var(--accent);
+  clip-path:inset(0 100% 0 0);
+  animation:splash-fill .95s cubic-bezier(.65,0,.35,1) .2s forwards,
+            splash-curtain .75s cubic-bezier(.76,0,.24,1) 1.35s forwards;
+}
+@keyframes splash-fill{to{clip-path:inset(0 0 0 0);}}
+@keyframes splash-curtain{to{transform:translateY(-100%);}}
+
+/* ---------- 헤더 · 히어로 등장 ---------- */
+html.motion{--enter:.15s;}
+html.motion.splash{--enter:1.7s;}
+html.motion #header{animation:rise-header .8s cubic-bezier(.2,.7,.2,1) var(--enter) both;}
+html.motion #intro h1,
+html.motion #intro .intro-subtitle,
+html.motion #intro .intro-actions{animation:rise-in .9s cubic-bezier(.2,.7,.2,1) both;}
+html.motion #intro h1{animation-delay:calc(var(--enter) + .05s);}
+html.motion #intro .intro-subtitle{animation-delay:calc(var(--enter) + .2s);}
+html.motion #intro .intro-actions{animation-delay:calc(var(--enter) + .35s);}
+html.motion #intro .video{animation:hero-zoom 2.4s cubic-bezier(.2,.7,.2,1) var(--enter) both;}
+@keyframes rise-in{from{opacity:0;transform:translateY(34px);}to{opacity:1;transform:none;}}
+@keyframes rise-header{from{opacity:0;transform:translateY(-18px);}to{opacity:1;transform:none;}}
+@keyframes hero-zoom{from{opacity:0;transform:scale(1.08);}to{opacity:1;transform:none;}}
+
+/* ---------- 스크롤 유도 아이콘 (마우스 + 올라가는 휠) ---------- */
+.scroll-cue{
+  position:absolute;left:50%;bottom:26px;z-index:3;width:24px;height:38px;margin-left:-12px;
+  border:2px solid rgba(255,255,255,0.55);border-radius:12px;
+  opacity:0;transition:opacity .4s;
+}
+.scroll-cue::after{
+  content:'';position:absolute;left:50%;top:7px;width:3px;height:8px;margin-left:-1.5px;
+  border-radius:2px;background:var(--accent);animation:cue-wheel 1.6s ease-in-out infinite;
+}
+html.motion .scroll-cue{animation:rise-in .8s ease calc(var(--enter) + .7s) both;}
+html.motion .scroll-cue.gone{opacity:0 !important;animation:none;}
+@keyframes cue-wheel{0%{transform:translateY(0);opacity:1;}70%{transform:translateY(12px);opacity:0;}100%{opacity:0;}}
+
+/* ---------- 스크롤 리빌 ---------- */
+html.motion .rv{
+  opacity:0;transform:translateY(40px);
+  transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1);
+  transition-delay:var(--d,0s);
+}
+html.motion .rv.is-in{opacity:1;transform:none;}
+/* 섹션 제목 — 아래에서 밀려 올라오는 마스크 */
+html.motion .section-header h2.rv{
+  opacity:1;transform:none;clip-path:inset(0 0 100% 0);
+  transition:clip-path 1s cubic-bezier(.76,0,.24,1);
+}
+html.motion .section-header h2.rv.is-in{clip-path:inset(-10% 0 -10% 0);}
+/* 이미지 카드 — 살짝 확대된 상태에서 제자리로 */
+html.motion .portfolio-item.rv{transform:translateY(40px) scale(.97);}
+html.motion .portfolio-item.rv.is-in{transform:none;}
+
+/* ---------- 메뉴 활성 밑줄 ---------- */
+.nav-menu a{position:relative;}
+.nav-menu a::after{
+  content:'';position:absolute;left:8px;right:8px;bottom:2px;height:2px;
+  background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .35s ease;
+}
+.nav-menu a.active::after,.nav-menu a:hover::after{transform:scaleX(1);}
+@media (max-width:760px){.nav-menu a::after{display:none;}}
