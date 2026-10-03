@@ -63,7 +63,7 @@ const PROJECTS = {
   },
 
   utopia: {
-    cat: 'Creature / Hard-surface · Solo 100%',
+    cat: 'Hard-surface 3D Modeling · Solo 100%',
     title: 'Utopia Garden',
     meta: 'Unreal · Maya · Arnold · Substance Painter — 2024.04–06 (2개월)',
     lead: '고도의 인공지능을 지닌 정교한 기계 곤충들이 희귀 식물들의 보호구역, 유토피아 가든을 관리한다.',
