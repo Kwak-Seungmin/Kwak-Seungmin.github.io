@@ -19,6 +19,26 @@ const onScroll = () => {
 window.addEventListener('scroll', onScroll, { passive: true });
 onScroll();
 
+// ---------- 모바일 메뉴 ----------
+const navToggle = document.querySelector('.nav-toggle');
+const navMenu = document.getElementById('nav-menu');
+
+const setMenu = (open) => {
+  header.classList.toggle('menu-open', open);
+  navToggle.setAttribute('aria-expanded', String(open));
+  navToggle.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기');
+};
+navToggle.addEventListener('click', () => setMenu(!header.classList.contains('menu-open')));
+navMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setMenu(false)));
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });
+document.addEventListener('click', (e) => { if (!header.contains(e.target)) setMenu(false); });
+
+// ---------- 인트로 영상: 모바일에서는 포스터만 ----------
+const heroVideo = document.querySelector('#intro .video');
+if (heroVideo && window.matchMedia('(min-width:761px)').matches) {
+  heroVideo.src = heroVideo.dataset.src;
+}
+
 // ---------- 인트로 직함 타이핑 ----------
 const TITLE = 'Technical Artist';
 const typedEl = document.getElementById('typed');

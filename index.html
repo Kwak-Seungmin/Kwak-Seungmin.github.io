@@ -5,11 +5,30 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kwak Seungmin — Portfolio Page</title>
 <meta name="description" content="곽승민 — Technical Artist. 3D 모델링과 생성형 AI 파이프라인, 제작 자동화 툴 작업 포트폴리오.">
+<link rel="canonical" href="https://kwak-seungmin.github.io/">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#05060a">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kwak Seungmin">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:url" content="https://kwak-seungmin.github.io/">
+<meta property="og:title" content="곽승민 Kwak Seungmin — Technical Artist">
+<meta property="og:description" content="3D 모델링과 생성형 AI 파이프라인, 제작 자동화 툴 작업 포트폴리오.">
+<meta property="og:image" content="https://kwak-seungmin.github.io/assets/img/og_image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Kwak Seungmin — Technical Artist">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="곽승민 Kwak Seungmin — Technical Artist">
+<meta name="twitter:description" content="3D 모델링과 생성형 AI 파이프라인, 제작 자동화 툴 작업 포트폴리오.">
+<meta name="twitter:image" content="https://kwak-seungmin.github.io/assets/img/og_image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Raleway:wght@300;400;500;600;700;800&display=swap">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="style.css?v=74">
+<link rel="stylesheet" href="style.css?v=75">
 </head>
 <body>
 
@@ -18,19 +37,22 @@
     <div id="logo">
       <h1><a href="#intro">Kwak Seungmin</a></h1>
     </div>
-    <nav class="nav-menu">
+    <nav class="nav-menu" id="nav-menu">
       <a href="#portfolio" class="scrollto">Portfolio</a>
       <a href="#experience" class="scrollto">Experience</a>
       <a href="#pipeline" class="scrollto">Pipeline</a>
       <a href="#about" class="scrollto">About</a>
       <a href="#contact" class="scrollto">Contact</a>
     </nav>
+    <button class="nav-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="nav-menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
 
 <!-- ============ INTRO ============ -->
 <section id="intro">
-  <video class="video" src="assets/video/hero_loop.mp4" poster="assets/video/hero_poster.jpg"
+  <video class="video" data-src="assets/video/hero_loop.mp4" poster="assets/video/hero_poster.jpg"
          autoplay muted loop playsinline preload="metadata"></video>
   <div class="intro-container">
     <div class="container">
@@ -145,7 +167,7 @@
       <div class="exp-badge">SM Entertainment<br>&times; KOCCA</div>
       <div class="exp-body">
         <h3>SM Entertainment n&aelig;vis Project</h3>
-        <div class="exp-date">2024.07 &ndash; 2024.12 &middot; KOCCA Showcase 2024.12.18&ndash;19</div>
+        <div class="exp-date">2024.06 &ndash; 2024.12 &middot; KOCCA Showcase 2024.12.18&ndash;19</div>
         <p>Led the MNM team through a six-month showcase exhibition built on the IP of n&aelig;vis, SM Entertainment&rsquo;s first virtual artist. Handled concept imagery and poster visuals, 3D modeling of Sevas and Codori, and directed and produced the Unreal Engine short-form pieces (Contribution 80%).</p>
       </div>
     </div>
@@ -185,31 +207,31 @@
         <div class="gj-left">
         <div class="gj-stage">
           <video id="gjVideo" muted loop playsinline preload="metadata" controls
-                 poster="assets/video/poster_game_abyssal.jpg?v=74">
-            <source src="assets/video/game_abyssal.mp4?v=74" type="video/mp4">
+                 poster="assets/video/poster_game_abyssal.jpg?v=75">
+            <source src="assets/video/game_abyssal.mp4?v=75" type="video/mp4">
           </video>
           <button class="gj-nav gj-prev" type="button" aria-label="이전 게임">&#8249;</button>
           <button class="gj-nav gj-next" type="button" aria-label="다음 게임">&#8250;</button>
         </div>
         <div class="gj-strip">
           <button class="gj-thumb is-on" data-i="0" type="button" aria-label="심연의 사슬">
-            <img src="assets/video/poster_game_abyssal.jpg?v=74" alt="">
+            <img src="assets/video/poster_game_abyssal.jpg?v=75" alt="">
             <span>심연의 사슬</span>
           </button>
           <button class="gj-thumb" data-i="1" type="button" aria-label="별이 스러지는 밤에">
-            <img src="assets/video/poster_game_starless.jpg?v=74" alt="">
+            <img src="assets/video/poster_game_starless.jpg?v=75" alt="">
             <span>별이 스러지는 밤에</span>
           </button>
           <button class="gj-thumb" data-i="2" type="button" aria-label="픽셀런너 8-9">
-            <img src="assets/video/poster_game_pixelrunner.jpg?v=74" alt="">
+            <img src="assets/video/poster_game_pixelrunner.jpg?v=75" alt="">
             <span>픽셀런너 8-9</span>
           </button>
           <button class="gj-thumb" data-i="3" type="button" aria-label="새싹 요새">
-            <img src="assets/video/poster_game_sprout.jpg?v=74" alt="">
+            <img src="assets/video/poster_game_sprout.jpg?v=75" alt="">
             <span>새싹 요새</span>
           </button>
           <button class="gj-thumb" data-i="4" type="button" aria-label="안개 항로">
-            <img src="assets/video/poster_game_fogfall.jpg?v=74" alt="">
+            <img src="assets/video/poster_game_fogfall.jpg?v=75" alt="">
             <span>안개 항로</span>
           </button>
         </div>
@@ -497,7 +519,7 @@
         <div class="cv-block">
           <h6>학력</h6>
           <div class="cv-row">
-            <div class="cv-logo"><img src="assets/img/software/edu_sunhwa_ms.png?v=74" alt="선화예술중학교"></div>
+            <div class="cv-logo"><img src="assets/img/software/edu_sunhwa_ms.png?v=75" alt="선화예술중학교"></div>
             <div class="cv-body">
               <div class="cv-date">2013.03 – 2016.02</div>
               <h4>선화예술중학교</h4>
@@ -505,7 +527,7 @@
             </div>
           </div>
           <div class="cv-row">
-            <div class="cv-logo"><img src="assets/img/software/edu_sunhwa.png?v=74" alt="선화예술고등학교"></div>
+            <div class="cv-logo"><img src="assets/img/software/edu_sunhwa.png?v=75" alt="선화예술고등학교"></div>
             <div class="cv-body">
               <div class="cv-date">2016.03 – 2019.02</div>
               <h4>선화예술고등학교</h4>
@@ -513,7 +535,7 @@
             </div>
           </div>
           <div class="cv-row">
-            <div class="cv-logo"><img src="assets/img/software/edu_karts.png?v=74" alt="한국예술종합학교"></div>
+            <div class="cv-logo"><img src="assets/img/software/edu_karts.png?v=75" alt="한국예술종합학교"></div>
             <div class="cv-body">
               <div class="cv-date">2021.03 – 2027.02</div>
               <h4>한국예술종합학교</h4>
@@ -527,7 +549,7 @@
         <div class="cv-block">
           <h6>경력</h6>
           <div class="cv-row">
-            <div class="cv-logo"><img src="assets/img/software/org_krafton.png?v=74" alt="KRAFTON"></div>
+            <div class="cv-logo"><img src="assets/img/software/org_krafton.png?v=75" alt="KRAFTON"></div>
             <div class="cv-body">
               <div class="cv-date">2025.09 – 현재</div>
               <h4>크래프톤 · Technical Artist</h4>
@@ -539,7 +561,7 @@
         <div class="cv-block">
           <h6>대외활동</h6>
           <div class="cv-row">
-            <div class="cv-logo"><img src="assets/img/software/org_sm.svg?v=74" alt="SM엔터테인먼트"></div>
+            <div class="cv-logo"><img src="assets/img/software/org_sm.svg?v=75" alt="SM엔터테인먼트"></div>
             <div class="cv-body">
               <div class="cv-date">2024.06 – 2024.12</div>
               <h4>SM엔터테인먼트 기업연계</h4>
@@ -547,7 +569,7 @@
             </div>
           </div>
           <div class="cv-row">
-            <div class="cv-logo"><img src="assets/img/software/org_native.png?v=74" alt="NATIVE 버추얼 스튜디오"></div>
+            <div class="cv-logo"><img src="assets/img/software/org_native.png?v=75" alt="NATIVE 버추얼 스튜디오"></div>
             <div class="cv-body">
               <div class="cv-date">2024.02 – 2024.06</div>
               <h4>NATIVE 버추얼 스튜디오</h4>
@@ -568,43 +590,43 @@
     <div class="tools-wrap">
       <div class="tools">
         <div class="tool-header"><h6>3D / DCC</h6></div>
-        <div class="tool-item"><div class="tool-image"><img src="assets/img/software/autodeskmaya.svg?v=74" alt=""></div><div class="tool-title">Maya</div></div>
-        <div class="tool-item"><div class="tool-image"><img src="assets/img/software/3dsmax.svg?v=74" alt=""></div><div class="tool-title">3ds Max</div></div>
-        <div class="tool-item"><div class="tool-image"><img src="assets/img/software/zbrush.png?v=74" alt=""></div><div class="tool-title">ZBrush</div></div>
-        <div class="tool-item"><div class="tool-image"><img src="assets/img/software/unreal.png?v=74" alt=""></div><div class="tool-title">Unreal Engine</div></div>
-        <div class="tool-item"><div class="tool-image"><img src="assets/img/software/unity.svg?v=74" alt=""></div><div class="tool-title">Unity</div></div>
-        <div class="tool-item"><div class="tool-image"><img src="assets/img/software/substance.svg?v=74" alt=""></div><div class="tool-title">Substance Painter</div></div>
-        <div class="tool-item"><div class="tool-image"><img src="assets/img/software/blender.png?v=74" alt=""></div><div class="tool-title">Blender</div></div>
+        <div class="tool-item"><div class="tool-image"><img src="assets/img/software/autodeskmaya.svg?v=75" alt=""></div><div class="tool-title">Maya</div></div>
+        <div class="tool-item"><div class="tool-image"><img src="assets/img/software/3dsmax.svg?v=75" alt=""></div><div class="tool-title">3ds Max</div></div>
+        <div class="tool-item"><div class="tool-image"><img src="assets/img/software/zbrush.png?v=75" alt=""></div><div class="tool-title">ZBrush</div></div>
+        <div class="tool-item"><div class="tool-image"><img src="assets/img/software/unreal.png?v=75" alt=""></div><div class="tool-title">Unreal Engine</div></div>
+        <div class="tool-item"><div class="tool-image"><img src="assets/img/software/unity.svg?v=75" alt=""></div><div class="tool-title">Unity</div></div>
+        <div class="tool-item"><div class="tool-image"><img src="assets/img/software/substance.svg?v=75" alt=""></div><div class="tool-title">Substance Painter</div></div>
+        <div class="tool-item"><div class="tool-image"><img src="assets/img/software/blender.png?v=75" alt=""></div><div class="tool-title">Blender</div></div>
       </div>
 
       <div class="tools tools-wide">
         <div class="tool-header"><h6>AI &amp; Workflow</h6></div>
         <div class="tool-cols">
           <!-- 1열: 코딩 에이전트 → 이미지 생성 → 영상 생성 -->
-          <div class="tool-item"><div class="tool-image"><img src="assets/img/software/claude.svg?v=74" alt=""></div><div class="tool-title">Claude Code</div></div>
-          <div class="tool-item"><div class="tool-image"><img src="assets/img/software/codex.svg?v=74" alt=""></div><div class="tool-title">Codex</div></div>
-          <div class="tool-item tool-gap"><div class="tool-image"><img src="assets/img/software/midjourney.svg?v=74" alt=""></div><div class="tool-title">Midjourney</div></div>
-          <div class="tool-item"><div class="tool-image"><img src="assets/img/software/krea.png?v=74" alt=""></div><div class="tool-title">Krea</div></div>
-          <div class="tool-item tool-gap"><div class="tool-image"><img src="assets/img/software/googlegemini.svg?v=74" alt=""></div><div class="tool-title">Veo 3</div></div>
-          <div class="tool-item"><div class="tool-image"><img src="assets/img/software/seedance.svg?v=74" alt=""></div><div class="tool-title">Seedance</div></div>
-          <div class="tool-item"><div class="tool-image"><img src="assets/img/software/kling.png?v=74" alt=""></div><div class="tool-title">Kling</div></div>
-          <div class="tool-item"><div class="tool-image"><img src="assets/img/software/runway.svg?v=74" alt=""></div><div class="tool-title">Runway</div></div>
+          <div class="tool-item"><div class="tool-image"><img src="assets/img/software/claude.svg?v=75" alt=""></div><div class="tool-title">Claude Code</div></div>
+          <div class="tool-item"><div class="tool-image"><img src="assets/img/software/codex.svg?v=75" alt=""></div><div class="tool-title">Codex</div></div>
+          <div class="tool-item tool-gap"><div class="tool-image"><img src="assets/img/software/midjourney.svg?v=75" alt=""></div><div class="tool-title">Midjourney</div></div>
+          <div class="tool-item"><div class="tool-image"><img src="assets/img/software/krea.png?v=75" alt=""></div><div class="tool-title">Krea</div></div>
+          <div class="tool-item tool-gap"><div class="tool-image"><img src="assets/img/software/googlegemini.svg?v=75" alt=""></div><div class="tool-title">Veo 3</div></div>
+          <div class="tool-item"><div class="tool-image"><img src="assets/img/software/seedance.svg?v=75" alt=""></div><div class="tool-title">Seedance</div></div>
+          <div class="tool-item"><div class="tool-image"><img src="assets/img/software/kling.png?v=75" alt=""></div><div class="tool-title">Kling</div></div>
+          <div class="tool-item"><div class="tool-image"><img src="assets/img/software/runway.svg?v=75" alt=""></div><div class="tool-title">Runway</div></div>
           <!-- 2열: 3D 생성 → 개발 · 협업 -->
-          <div class="tool-item"><div class="tool-image"><img src="assets/img/software/tripo.png?v=74" alt=""></div><div class="tool-title">Tripo</div></div>
-          <div class="tool-item"><div class="tool-image"><img src="assets/img/software/meshy.png?v=74" alt=""></div><div class="tool-title">Meshy</div></div>
-          <div class="tool-item tool-gap"><div class="tool-image"><img src="assets/img/software/python.png?v=74" alt=""></div><div class="tool-title">Python</div></div>
-          <div class="tool-item"><div class="tool-image"><img src="assets/img/software/javascript.svg?v=74" alt=""></div><div class="tool-title">JavaScript</div></div>
-          <div class="tool-item"><div class="tool-image"><img src="assets/img/software/github.svg?v=74" alt=""></div><div class="tool-title">Git · GitHub</div></div>
+          <div class="tool-item"><div class="tool-image"><img src="assets/img/software/tripo.png?v=75" alt=""></div><div class="tool-title">Tripo</div></div>
+          <div class="tool-item"><div class="tool-image"><img src="assets/img/software/meshy.png?v=75" alt=""></div><div class="tool-title">Meshy</div></div>
+          <div class="tool-item tool-gap"><div class="tool-image"><img src="assets/img/software/python.png?v=75" alt=""></div><div class="tool-title">Python</div></div>
+          <div class="tool-item"><div class="tool-image"><img src="assets/img/software/javascript.svg?v=75" alt=""></div><div class="tool-title">JavaScript</div></div>
+          <div class="tool-item"><div class="tool-image"><img src="assets/img/software/github.svg?v=75" alt=""></div><div class="tool-title">Git · GitHub</div></div>
         </div>
       </div>
 
       <div class="tools">
         <div class="tool-header"><h6>Adobe</h6></div>
-        <div class="tool-item"><div class="tool-image"><img src="assets/img/software/photoshop.svg?v=74" alt=""></div><div class="tool-title">Photoshop</div></div>
-        <div class="tool-item"><div class="tool-image"><img src="assets/img/software/illustrator.svg?v=74" alt=""></div><div class="tool-title">Illustrator</div></div>
-        <div class="tool-item"><div class="tool-image"><img src="assets/img/software/adobepremierepro.svg?v=74" alt=""></div><div class="tool-title">Premiere Pro</div></div>
-        <div class="tool-item"><div class="tool-image"><img src="assets/img/software/after-effects.svg?v=74" alt=""></div><div class="tool-title">After Effects</div></div>
-        <div class="tool-item"><div class="tool-image"><img src="assets/img/software/animate.svg?v=74" alt=""></div><div class="tool-title">Animate</div></div>
+        <div class="tool-item"><div class="tool-image"><img src="assets/img/software/photoshop.svg?v=75" alt=""></div><div class="tool-title">Photoshop</div></div>
+        <div class="tool-item"><div class="tool-image"><img src="assets/img/software/illustrator.svg?v=75" alt=""></div><div class="tool-title">Illustrator</div></div>
+        <div class="tool-item"><div class="tool-image"><img src="assets/img/software/adobepremierepro.svg?v=75" alt=""></div><div class="tool-title">Premiere Pro</div></div>
+        <div class="tool-item"><div class="tool-image"><img src="assets/img/software/after-effects.svg?v=75" alt=""></div><div class="tool-title">After Effects</div></div>
+        <div class="tool-item"><div class="tool-image"><img src="assets/img/software/animate.svg?v=75" alt=""></div><div class="tool-title">Animate</div></div>
       </div>
     </div>
   </div>
@@ -679,7 +701,7 @@ window.GAME_SHOWCASE = [
       specs:[['계획','다중 홉 경로를 그려 확정 · 홉당 0.5초'],['시야','안개 반경 밖은 추정 아이콘'],['변수','운석 1턴 전 예고 → 암초화'],['적재','6칸 선창 · 화물 무게 1~2'],['수확','3초 타이밍 바 + 0.4초 방향 플릭'],['성장','4×5 업그레이드 트리 · 수집 로그 50종']] }
 ];
 </script>
-<script src="projects.js?v=74"></script>
-<script src="main.js?v=74"></script>
+<script src="projects.js?v=75"></script>
+<script src="main.js?v=75"></script>
 </body>
 </html>

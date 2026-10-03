@@ -26,10 +26,10 @@ const PROJECTS = {
     cat: 'SM Entertainment · IP Showcase · Team Lead (80%)',
     title: 'nævis Project',
     meta: 'Midjourney · Runway AI · Maya · Unreal Engine 5 — KOCCA 2024.12.18–19 / MNM Team',
-    lead: '가상의 존재가 리얼월드로 걸어 나온다.',
+    lead: '가상에서 현실로 온다.',
     text: [
       'SM엔터테인먼트 기업연계 프로젝트로, 6개월에 걸쳐 SM의 첫 번째 버추얼 아티스트 나이비스의 IP를 기반으로 한 쇼케이스 전시를 기획했습니다. 세바스, 블랙맘바, 에테르펜 세 개의 에피소드를 중심으로 세계관을 구성했고, AI 영상·언리얼 숏폼·마야 로딩 스크린·포스터·캡션·컨셉 아트북·스티커까지 일곱 가지 결과물로 완성해 KOCCA 쇼케이스에서 선보였습니다.',
-      'MNM 팀 프로젝트에서 팀 리더로 참여해 컨셉 이미지 제작과 포스터 비주얼, 세바스·코도리의 3D 모델링, AI 영상, Unreal Engine 숏폼 연출·제작을 담당했습니다. 미드저니로 에피소드별 컨셉 이미지를 만들고 Photoshop으로 보정해 포스터로 완성했으며, 완성된 캐릭터로 언리얼 숏폼 3부작을 제작했습니다.'
+      'MNM 팀 프로젝트에서 팀 리더로 참여해 컨셉 이미지 제작과 포스터 비주얼, 세바스·코도리의 3D 모델링, AI 영상, Unreal Engine 숏폼 연출·제작을 담당했습니다. Midjourney로 에피소드별 컨셉 이미지를 만들고 Photoshop으로 보정해 포스터로 완성했으며, 완성된 캐릭터로 언리얼 숏폼 3부작을 제작했습니다.'
     ],
     media: [
       { type:'image', src:'assets/img/naevis_hero.png', cap:'나이비스 포트레이트' },
