@@ -105,13 +105,21 @@ html.motion .btn::after{
 }
 html.motion .btn:hover::after{left:130%;}
 
-/* ---------- 경력 배지 — 등장할 때 왼쪽 강조선이 자란다 ---------- */
-html.motion .exp-row .exp-badge{position:relative;}
-html.motion .exp-row .exp-badge::before{
-  content:'';position:absolute;left:-1px;top:-1px;bottom:-1px;width:3px;background:var(--accent);
-  transform:scaleY(0);transform-origin:top;transition:transform .7s cubic-bezier(.2,.7,.2,1) .25s;
+/* ---------- Experience 타임라인 — 연도가 먼저, 카드는 좌우에서, 점은 뒤늦게 톡 ---------- */
+html.motion .tl-year.rv{transform:translateY(24px) scale(.92);}
+html.motion .tl-year.rv.is-in{transform:none;}
+html.motion .tl-item.rv{transform:none;opacity:1;}
+html.motion .tl-item.rv .tl-card{
+  opacity:0;transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);
 }
-html.motion .exp-row.is-in .exp-badge::before{transform:scaleY(1);}
+html.motion .tl-l.rv .tl-card{transform:translateX(-60px);}
+html.motion .tl-r.rv .tl-card{transform:translateX(60px);}
+html.motion .tl-item.rv.is-in .tl-card{opacity:1;transform:none;}
+html.motion .tl-item.rv .tl-dot{transform:scale(0);transition:transform .45s cubic-bezier(.34,1.56,.64,1) .35s,box-shadow .6s ease .5s;}
+html.motion .tl-item.rv.is-in .tl-dot{transform:scale(1);box-shadow:0 0 0 6px rgba(10,160,210,0.18);}
+@media (max-width:880px){
+  html.motion .tl-l.rv .tl-card,html.motion .tl-r.rv .tl-card{transform:translateX(40px);}
+}
 
 /* ---------- 접이식 카드 — 펼칠 때 내용이 내려오며 나타난다 ---------- */
 html.motion details[open] > .paper-body,

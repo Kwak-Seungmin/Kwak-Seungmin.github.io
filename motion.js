@@ -26,11 +26,18 @@
   bar.className = 'scroll-progress';
   document.body.appendChild(bar);
   const heroVideo = intro && intro.querySelector('.video');
+  const timeline = document.querySelector('.tl');
   let ticking = false;
   const onScrollFrame = () => {
     ticking = false;
     const max = document.documentElement.scrollHeight - window.innerHeight;
     bar.style.transform = `scaleX(${max > 0 ? window.scrollY / max : 0})`;
+    // 타임라인 가운데 선 — 화면 가운데가 지나간 만큼 위에서부터 그려진다
+    if (timeline) {
+      const r = timeline.getBoundingClientRect();
+      const p = (window.innerHeight * 0.6 - r.top) / r.height;
+      timeline.style.setProperty('--tl-progress', Math.max(0, Math.min(1, p)).toFixed(3));
+    }
     if (heroVideo && window.scrollY < window.innerHeight) {
       heroVideo.style.transform = `translateY(${window.scrollY * 0.35}px) scale(1.04)`;
     }
@@ -69,8 +76,8 @@
   const GROUPS = [
     '.section-header h2', '.section-header p', '.section-eyebrow',
     '#portfolio-flters', '.portfolio-item',
-    '.exp-row', '.gj', '.paper', '.pipe-fold',
-    '.about-photo', '.cv-row', '.about-actions',
+    '.tl-year', '.tl-item', '.gj', '.paper', '.pipe-fold',
+    '.profile-card', '.stat', '.cv-card',
     '.tool-header', '.tool-item',
     '.contact-links',
   ];
@@ -82,7 +89,9 @@
       if (el.closest('.modal-back')) return;
       const siblings = [...el.parentElement.children].filter(s => s.matches(sel));
       const order = siblings.indexOf(el);
-      el.style.setProperty('--d', Math.min(order * STEP, MAX_DELAY) + 's');
+      // 타임라인은 스크롤 위치대로 하나씩 나오므로 형제 순서 지연을 두지 않는다
+      const delay = el.matches('.tl-year, .tl-item') ? 0 : Math.min(order * STEP, MAX_DELAY);
+      el.style.setProperty('--d', delay + 's');
       el.classList.add('rv');
       targets.push(el);
     });
