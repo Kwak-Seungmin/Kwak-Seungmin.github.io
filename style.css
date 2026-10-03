@@ -296,7 +296,7 @@ section{padding:60px 0;}
 .pipe-fold > summary{list-style:none;cursor:pointer;padding:28px 32px;}
 .pipe-fold > summary::-webkit-details-marker{display:none;}
 .pipe-fold > summary:hover{background:rgba(255,255,255,0.03);}
-.pipe-fold .paper-tag{background:var(--soft);}
+.pipe-fold .paper-tag{background:var(--accent);}
 .pipe-fold > summary .chips{margin-top:14px;}
 .pipe-fold-body{padding:24px 32px 32px;border-top:1px solid rgba(255,255,255,0.08);}
 .pipe-fold-body > .arch{margin-top:0;}

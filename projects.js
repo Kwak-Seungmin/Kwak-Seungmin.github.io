@@ -14,7 +14,7 @@ const PROJECTS = {
       '아트 바이블의 에셋 스펙을 단일 기준으로 삼는 것이 핵심입니다. 캔버스 크기와 에셋 종류, 프레임 수, fps, 팔레트, 네이밍까지 기획서에 명시된 값만 사용하고, 파일명이나 설명에서 추론하지 않습니다. 값이 비어 있으면 작업을 멈추고 기획서를 채우도록 되돌립니다. 픽셀 변환에는 생성 모델을 쓰지 않고 색과 형태를 분리해 팔레트를 밝기 순으로 직접 할당하며, 타일셋은 이어 붙였을 때 이음매가 보이지 않는지 따로 검증합니다.'
     ],
     media: [
-      { type:'video', src:'assets/video/paper_case_study.mp4?v=84', poster:'assets/video/poster_paper_case_study.jpg', cap:'A2Z GameSpec-Bench 케이스 스터디 — GDD로 생성된 게임과, 요구사항 피드백 전후의 빌드 비교 (논문)' },
+      { type:'video', src:'assets/video/paper_case_study.mp4?v=84', poster:'assets/video/poster_paper_case_study.jpg?v=92', cap:'A2Z GameSpec-Bench 케이스 스터디 — GDD로 생성된 게임과, 요구사항 피드백 전후의 빌드 비교 (논문)' },
       { type:'image', src:'assets/img/paper/teaser.jpg', cap:'A2Z GameSpec-Bench 평가 구조 — Dependency-Aware Contract → 소스 검사 · 시나리오 리플레이 · 적응형 플레이테스트 → 요구사항 단위 피드백 (논문)' },
       { type:'video', src:'assets/video/game_abyssal.mp4?v=84', poster:'assets/video/poster_game_abyssal.jpg', cap:'심연의 사슬 — 체인을 이어 터뜨리는 심해 아케이드 (인게임)' },
       { type:'video', src:'assets/video/game_starless.mp4?v=84', poster:'assets/video/poster_game_starless.jpg', cap:'별이 스러지는 밤에 — 에셋 97종으로 구성한 비주얼 노벨 (인게임)' },
