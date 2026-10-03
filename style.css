@@ -287,9 +287,25 @@ section{padding:60px 0;}
 }
 .paper-toggle::after{content:'';width:7px;height:7px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;
   transform:rotate(45deg) translate(-2px,-2px);transition:transform .2s;}
-.paper[open] .paper-toggle::after{transform:rotate(-135deg) translate(-2px,-2px);}
-.paper .pt-close,.paper[open] .pt-open{display:none;}
-.paper[open] .pt-close{display:inline;}
+.paper[open] > summary .paper-toggle::after,
+.pipe-fold[open] > summary .paper-toggle::after{transform:rotate(-135deg) translate(-2px,-2px);}
+.paper .pt-close,.paper[open] > summary .pt-open,
+.pipe-fold .pt-close,.pipe-fold[open] > summary .pt-open{display:none;}
+.paper[open] > summary .pt-close,.pipe-fold[open] > summary .pt-close{display:inline;}
+
+/* 아트 파이프라인 — 논문 카드와 같은 틀, 중립색 */
+.pipe-fold{margin:15px 0 0;background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.1);border-left:3px solid rgba(255,255,255,0.35);}
+.pipe-fold > summary{list-style:none;cursor:pointer;padding:28px 32px;}
+.pipe-fold > summary::-webkit-details-marker{display:none;}
+.pipe-fold > summary:hover{background:rgba(255,255,255,0.03);}
+.pipe-fold .paper-tag{background:var(--soft);}
+.pipe-fold > summary .chips{margin-top:14px;}
+.pipe-fold-body{padding:24px 32px 32px;border-top:1px solid rgba(255,255,255,0.08);}
+.pipe-fold-body > .arch{margin-top:0;}
+@media (max-width:880px){
+  .pipe-fold > summary{padding:22px 18px;}
+  .pipe-fold-body{padding:18px 12px 20px;}
+}
 
 .paper-body{padding:4px 32px 32px;border-top:1px solid rgba(10,160,210,0.18);}
 .paper-links{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0;}

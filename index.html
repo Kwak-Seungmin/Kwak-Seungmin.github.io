@@ -28,7 +28,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Raleway:wght@300;400;500;600;700;800&display=swap">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="style.css?v=76">
+<link rel="stylesheet" href="style.css?v=77">
 </head>
 <body>
 
@@ -261,104 +261,8 @@
       <p class="kr">기존 아트 파이프라인을 단계로 분해해 AI가 실제로 대체할 수 있는 지점을 찾고, 그 결과를 판단할 평가 기준을 만든 뒤, 기획서를 넣으면 엔진에 올릴 수 있는 에셋이 나오는 파이프라인으로 구현했습니다.</p>
     </div>
 
-    <!-- ── 파이프라인 구조도 ── -->
-    <figure class="arch">
-      <svg viewBox="0 0 1250 380" role="img" aria-label="AI 아트 파이프라인 구조도">
-        <defs>
-          <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-            <path d="M0,0 L10,5 L0,10 z" fill="#8b929d"/>
-          </marker>
-          <marker id="ar-c" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-            <path d="M0,0 L10,5 L0,10 z" fill="#0aa0d2"/>
-          </marker>
-          <marker id="ar-w" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-            <path d="M0,0 L10,5 L0,10 z" fill="#9aa1ab"/>
-          </marker>
-        </defs>
-
-        <!-- 입력 -->
-        <rect class="grp" x="20" y="64" width="200" height="292" rx="3"/>
-        <text class="grp-t" x="40" y="90">INPUT</text>
-        <g class="nd">
-          <g class="ico" transform="translate(100,112) scale(1.25)"><path d="M8 3h11l5 5v21H8z"/><path d="M19 3v5h5"/><path d="M12 16h8M12 21h8M12 26h5"/></g>
-          <text class="n-t" x="120" y="176">GDD</text>
-          <text class="n-s" x="120" y="194">게임 기획서 · 아트 바이블</text>
-        </g>
-        <g class="nd">
-          <g class="ico" transform="translate(100,242) scale(1.25)"><path d="M6 7h8a2 2 0 0 1 2 2v18a2 2 0 0 0-2-2H6z"/><path d="M26 7h-8a2 2 0 0 0-2 2v18a2 2 0 0 1 2-2h8z"/></g>
-          <text class="n-t" x="120" y="306">art-bible</text>
-          <text class="n-s" x="120" y="324">에셋 스펙 · 품질 기준</text>
-        </g>
-
-        <!-- 생성 서비스 -->
-        <rect class="grp grp-main" x="260" y="28" width="700" height="328" rx="3"/>
-        <text class="grp-t grp-t-main" x="282" y="70">ART GENERATION SERVICE</text>
-        <g class="nd">
-          <g class="ico" transform="translate(312,112) scale(1.25)"><path d="M11 6H8a2 2 0 0 0-2 2v18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-3"/><rect x="11" y="4" width="10" height="5" rx="1"/><path d="M11 18l3.5 3.5L21 15"/></g>
-          <text class="n-t" x="332" y="176">Spec Check</text>
-          <text class="n-s" x="332" y="194">에셋 스펙 확인</text>
-        </g>
-        <g class="nd">
-          <g class="ico" transform="translate(488,112) scale(1.25)"><path d="M7 26l1-5L21 8l4 4L12 25z"/><path d="M18 11l3 3"/><path d="M7 26l4.5-1"/></g>
-          <text class="n-t" x="508" y="176">Concept</text>
-          <text class="n-s" x="508" y="194">컨셉 아트</text>
-        </g>
-        <g class="nd">
-          <g class="ico" transform="translate(664,112) scale(1.25)"><path d="M16 4l11 6-11 6-11-6z"/><path d="M5 16.5l11 6 11-6"/><path d="M5 22l11 6 11-6"/></g>
-          <text class="n-t" x="684" y="176">2D Asset</text>
-          <text class="n-s" x="684" y="194">2D 에셋 · 프레임</text>
-        </g>
-        <g class="nd">
-          <g class="ico" transform="translate(840,112) scale(1.25)"><rect x="6" y="6" width="8" height="8" rx="1"/><rect class="f" x="18" y="6" width="8" height="8" rx="1"/><rect class="f" x="6" y="18" width="8" height="8" rx="1"/><rect x="18" y="18" width="8" height="8" rx="1"/></g>
-          <text class="n-t" x="860" y="176">Pixel</text>
-          <text class="n-s" x="860" y="194">픽셀 변환</text>
-        </g>
-
-        <!-- 출력 -->
-        <rect class="grp" x="1000" y="64" width="230" height="292" rx="3"/>
-        <text class="grp-t" x="1020" y="90">OUTPUT</text>
-        <g class="nd">
-          <g class="ico" transform="translate(1095,112) scale(1.25)"><path d="M16 4l11 6v12l-11 6-11-6V10z"/><path d="M5 10l11 6 11-6"/><path d="M16 16v12"/></g>
-          <text class="n-t" x="1115" y="176">런타임 에셋</text>
-          <text class="n-s" x="1115" y="194">스프라이트 · 타일셋 · UI</text>
-        </g>
-        <g class="nd">
-          <g class="ico" transform="translate(1095,242) scale(1.25)"><rect x="4" y="7" width="24" height="18" rx="2"/><path class="f" d="M14 12.5l6 3.5-6 3.5z"/></g>
-          <text class="n-t" x="1115" y="306">엔진 적용</text>
-          <text class="n-s" x="1115" y="324">변환 없이 그대로</text>
-        </g>
-
-        <!-- 연결선 -->
-        <path class="ln" d="M140,132 H236"/>
-        <path class="ln" d="M140,262 H236 V132"/>
-        <path class="ln" d="M236,132 H306" marker-end="url(#ar)"/>
-
-        <path class="ln ln-c" d="M352,132 H482" marker-end="url(#ar-c)"/>
-        <text class="e-t" x="404" y="122">스펙 통과</text>
-        <path class="ln ln-c" d="M528,132 H658" marker-end="url(#ar-c)"/>
-        <text class="e-t" x="593" y="122">컨셉 확정</text>
-        <path class="ln ln-c cond" d="M704,132 H834" marker-end="url(#ar-c)"/>
-        <text class="e-t" x="769" y="106">GDD에 픽셀 아트로</text>
-        <text class="e-t" x="769" y="122">명시된 경우</text>
-        <path class="ln ln-c" d="M880,132 H1089" marker-end="url(#ar-c)"/>
-        <text class="e-t" x="985" y="122">규격 맞춘 에셋</text>
-
-        <path class="ln ln-c" d="M718,132 V60 H1115 V106" marker-end="url(#ar-c)"/>
-        <text class="e-t" x="916" y="52">그 외 · 2D 에셋 그대로</text>
-
-        <path class="ln" d="M1135,132 H1196 V262 H1141" marker-end="url(#ar)"/>
-
-        <!-- 스펙 미기재 시 중단 -->
-        <circle class="brp" cx="443" cy="132" r="3.5"/>
-        <path class="ln warn" d="M443,132 V244" marker-end="url(#ar-w)"/>
-        <text class="warn-t" x="458" y="232">스펙이 비어 있으면 중단</text>
-        <text class="warn-t warn-t2" x="458" y="250">추론하지 않고 기획서로 되돌림</text>
-      </svg>
-      <figcaption class="kr">기획서와 아트 스펙을 입력으로 받아 세 단계 에이전트를 거치고, 마지막에 엔진에 변환 없이 올릴 수 있는 에셋이 나옵니다. 첫 단계에서 스펙이 비어 있으면 추론하지 않고 작업을 멈춥니다.</figcaption>
-    </figure>
-
     <!-- ── 논문 (접고 펼치기) ── -->
-    <details class="paper" id="paper">
+    <details class="paper" id="paper" open>
       <summary>
         <div class="paper-tags">
           <span class="paper-tag">Publication</span>
@@ -507,6 +411,115 @@ coding agent implements the GDD in a shared Phaser starter project
       </div>
     </details>
 
+    <!-- ── 아트 파이프라인 (접고 펼치기) ── -->
+    <details class="pipe-fold" id="art-pipeline">
+      <summary>
+        <div class="paper-tags">
+          <span class="paper-tag">Art Pipeline</span>
+          <span class="paper-venue">Research 2025 · Pipeline 2026</span>
+        </div>
+        <h3 class="paper-title"><b>AI Game &amp; Art Pipeline</b> — 기획서에서 엔진용 에셋까지</h3>
+        <p class="paper-oneline kr">모델 리서치와 2D·3D 파이프라인 설계(2025)를 거쳐, 기획서를 넣으면 엔진에 올릴 에셋이 나오는 생성 서비스와 평가 루브릭(2026)을 만들었습니다.</p>
+        <div class="chips"><span>Art Generation Service</span><span>Service Composition</span><span>Evaluation Rubric</span><span>Model Research</span></div>
+        <span class="paper-toggle"><span class="pt-open">파이프라인 자세히 보기</span><span class="pt-close">접기</span></span>
+      </summary>
+      <div class="pipe-fold-body">
+    <!-- ── 파이프라인 구조도 ── -->
+    <figure class="arch">
+      <svg viewBox="0 0 1250 380" role="img" aria-label="AI 아트 파이프라인 구조도">
+        <defs>
+          <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="#8b929d"/>
+          </marker>
+          <marker id="ar-c" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="#0aa0d2"/>
+          </marker>
+          <marker id="ar-w" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="#9aa1ab"/>
+          </marker>
+        </defs>
+
+        <!-- 입력 -->
+        <rect class="grp" x="20" y="64" width="200" height="292" rx="3"/>
+        <text class="grp-t" x="40" y="90">INPUT</text>
+        <g class="nd">
+          <g class="ico" transform="translate(100,112) scale(1.25)"><path d="M8 3h11l5 5v21H8z"/><path d="M19 3v5h5"/><path d="M12 16h8M12 21h8M12 26h5"/></g>
+          <text class="n-t" x="120" y="176">GDD</text>
+          <text class="n-s" x="120" y="194">게임 기획서 · 아트 바이블</text>
+        </g>
+        <g class="nd">
+          <g class="ico" transform="translate(100,242) scale(1.25)"><path d="M6 7h8a2 2 0 0 1 2 2v18a2 2 0 0 0-2-2H6z"/><path d="M26 7h-8a2 2 0 0 0-2 2v18a2 2 0 0 1 2-2h8z"/></g>
+          <text class="n-t" x="120" y="306">art-bible</text>
+          <text class="n-s" x="120" y="324">에셋 스펙 · 품질 기준</text>
+        </g>
+
+        <!-- 생성 서비스 -->
+        <rect class="grp grp-main" x="260" y="28" width="700" height="328" rx="3"/>
+        <text class="grp-t grp-t-main" x="282" y="70">ART GENERATION SERVICE</text>
+        <g class="nd">
+          <g class="ico" transform="translate(312,112) scale(1.25)"><path d="M11 6H8a2 2 0 0 0-2 2v18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-3"/><rect x="11" y="4" width="10" height="5" rx="1"/><path d="M11 18l3.5 3.5L21 15"/></g>
+          <text class="n-t" x="332" y="176">Spec Check</text>
+          <text class="n-s" x="332" y="194">에셋 스펙 확인</text>
+        </g>
+        <g class="nd">
+          <g class="ico" transform="translate(488,112) scale(1.25)"><path d="M7 26l1-5L21 8l4 4L12 25z"/><path d="M18 11l3 3"/><path d="M7 26l4.5-1"/></g>
+          <text class="n-t" x="508" y="176">Concept</text>
+          <text class="n-s" x="508" y="194">컨셉 아트</text>
+        </g>
+        <g class="nd">
+          <g class="ico" transform="translate(664,112) scale(1.25)"><path d="M16 4l11 6-11 6-11-6z"/><path d="M5 16.5l11 6 11-6"/><path d="M5 22l11 6 11-6"/></g>
+          <text class="n-t" x="684" y="176">2D Asset</text>
+          <text class="n-s" x="684" y="194">2D 에셋 · 프레임</text>
+        </g>
+        <g class="nd">
+          <g class="ico" transform="translate(840,112) scale(1.25)"><rect x="6" y="6" width="8" height="8" rx="1"/><rect class="f" x="18" y="6" width="8" height="8" rx="1"/><rect class="f" x="6" y="18" width="8" height="8" rx="1"/><rect x="18" y="18" width="8" height="8" rx="1"/></g>
+          <text class="n-t" x="860" y="176">Pixel</text>
+          <text class="n-s" x="860" y="194">픽셀 변환</text>
+        </g>
+
+        <!-- 출력 -->
+        <rect class="grp" x="1000" y="64" width="230" height="292" rx="3"/>
+        <text class="grp-t" x="1020" y="90">OUTPUT</text>
+        <g class="nd">
+          <g class="ico" transform="translate(1095,112) scale(1.25)"><path d="M16 4l11 6v12l-11 6-11-6V10z"/><path d="M5 10l11 6 11-6"/><path d="M16 16v12"/></g>
+          <text class="n-t" x="1115" y="176">런타임 에셋</text>
+          <text class="n-s" x="1115" y="194">스프라이트 · 타일셋 · UI</text>
+        </g>
+        <g class="nd">
+          <g class="ico" transform="translate(1095,242) scale(1.25)"><rect x="4" y="7" width="24" height="18" rx="2"/><path class="f" d="M14 12.5l6 3.5-6 3.5z"/></g>
+          <text class="n-t" x="1115" y="306">엔진 적용</text>
+          <text class="n-s" x="1115" y="324">변환 없이 그대로</text>
+        </g>
+
+        <!-- 연결선 -->
+        <path class="ln" d="M140,132 H236"/>
+        <path class="ln" d="M140,262 H236 V132"/>
+        <path class="ln" d="M236,132 H306" marker-end="url(#ar)"/>
+
+        <path class="ln ln-c" d="M352,132 H482" marker-end="url(#ar-c)"/>
+        <text class="e-t" x="404" y="122">스펙 통과</text>
+        <path class="ln ln-c" d="M528,132 H658" marker-end="url(#ar-c)"/>
+        <text class="e-t" x="593" y="122">컨셉 확정</text>
+        <path class="ln ln-c cond" d="M704,132 H834" marker-end="url(#ar-c)"/>
+        <text class="e-t" x="769" y="106">GDD에 픽셀 아트로</text>
+        <text class="e-t" x="769" y="122">명시된 경우</text>
+        <path class="ln ln-c" d="M880,132 H1089" marker-end="url(#ar-c)"/>
+        <text class="e-t" x="985" y="122">규격 맞춘 에셋</text>
+
+        <path class="ln ln-c" d="M718,132 V60 H1115 V106" marker-end="url(#ar-c)"/>
+        <text class="e-t" x="916" y="52">그 외 · 2D 에셋 그대로</text>
+
+        <path class="ln" d="M1135,132 H1196 V262 H1141" marker-end="url(#ar)"/>
+
+        <!-- 스펙 미기재 시 중단 -->
+        <circle class="brp" cx="443" cy="132" r="3.5"/>
+        <path class="ln warn" d="M443,132 V244" marker-end="url(#ar-w)"/>
+        <text class="warn-t" x="458" y="232">스펙이 비어 있으면 중단</text>
+        <text class="warn-t warn-t2" x="458" y="250">추론하지 않고 기획서로 되돌림</text>
+      </svg>
+      <figcaption class="kr">기획서와 아트 스펙을 입력으로 받아 세 단계 에이전트를 거치고, 마지막에 엔진에 변환 없이 올릴 수 있는 에셋이 나옵니다. 첫 단계에서 스펙이 비어 있으면 추론하지 않고 작업을 멈춥니다.</figcaption>
+    </figure>
+
     <div class="tool-grid">
       <div class="tool-col tool-col--past">
         <div class="col-head">
@@ -649,6 +662,8 @@ coding agent implements the GDD in a shared Phaser starter project
         </div>
       </div>
     </div>
+      </div>
+    </details>
 
   </div>
 </section>
@@ -853,7 +868,7 @@ window.GAME_SHOWCASE = [
       specs:[['계획','다중 홉 경로를 그려 확정 · 홉당 0.5초'],['시야','안개 반경 밖은 추정 아이콘'],['변수','운석 1턴 전 예고 → 암초화'],['적재','6칸 선창 · 화물 무게 1~2'],['수확','3초 타이밍 바 + 0.4초 방향 플릭'],['성장','4×5 업그레이드 트리 · 수집 로그 50종']] }
 ];
 </script>
-<script src="projects.js?v=76"></script>
-<script src="main.js?v=76"></script>
+<script src="projects.js?v=77"></script>
+<script src="main.js?v=77"></script>
 </body>
 </html>

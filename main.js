@@ -33,15 +33,18 @@ navMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () 
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });
 document.addEventListener('click', (e) => { if (!header.contains(e.target)) setMenu(false); });
 
-// ---------- 논문 카드: 펼칠 때만 티저 영상 재생 ----------
+// ---------- 논문 카드: 펼쳐져 있고 화면에 보일 때만 티저 영상 재생 ----------
 const paper = document.getElementById('paper');
-if (paper) {
-  const paperVideo = paper.querySelector('.paper-video');
-  paper.addEventListener('toggle', () => {
-    if (!paperVideo) return;
-    if (paper.open) paperVideo.play().catch(() => {});
+const paperVideo = paper && paper.querySelector('.paper-video');
+if (paperVideo) {
+  let inView = false;
+  const sync = () => {
+    if (paper.open && inView) paperVideo.play().catch(() => {});
     else paperVideo.pause();
-  });
+  };
+  new IntersectionObserver(([entry]) => { inView = entry.isIntersecting; sync(); }, { threshold: 0.4 })
+    .observe(paperVideo);
+  paper.addEventListener('toggle', sync);
 }
 
 // ---------- 인트로 영상: 모바일에서는 포스터만 ----------
