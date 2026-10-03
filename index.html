@@ -28,7 +28,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700;800;900&display=swap">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="style.css?v=111">
+<link rel="stylesheet" href="style.css?v=112">
 <link rel="stylesheet" href="motion.css?v=104">
 <link rel="stylesheet" href="motion-extra.css?v=106">
 <link rel="stylesheet" href="about-motion.css?v=1">
@@ -724,10 +724,8 @@ coding agent implements the GDD in a shared Phaser starter project
           </div>
           <p class="kr">월드모델에 쓸 시뮬레이션 도시 배경을 언리얼 엔진 5로 제작했습니다. 건물 외벽 셰이더를 HLSL로 포팅해 창문·실내 시차·블라인드를 재현하고, 가로수 37,390그루와 소품 58종 약 27만 개를 HISM 인스턴스로 배치했습니다.</p>
           <p class="kr">도시는 크래프톤 inZOI 에셋들로 만들었습니다.</p>
-          <div class="rnd-media">
-            <figure><img src="assets/img/pcg/city_import_aerial.jpg?v=89" alt="건물 블록과 도로망 항공 사선" loading="lazy"><figcaption>건물 블록과 도로망</figcaption></figure>
-            <figure><img src="assets/img/pcg/city_import_mid.jpg?v=89" alt="차량이 달리는 대로와 교차로" loading="lazy"><figcaption>대로 — 신호를 따라 달리는 차량</figcaption></figure>
-            <figure><img src="assets/img/pcg/city_import_street.jpg?v=89" alt="고층 건물 외벽과 옥상 설비" loading="lazy"><figcaption>외벽 셰이더 · 옥상 설비 · 간판</figcaption></figure>
+          <div class="rnd-media rnd-media--1">
+            <figure><video src="assets/video/pcg_city_fly.mp4?v=110" poster="assets/video/poster_pcg_city_fly.jpg?v=110" muted loop playsinline controls preload="none"></video><figcaption>도시 플라이스루 — 대로를 따라 낮게 날다가 상승해 블록 전경으로 (신호를 따라 달리는 차량 · 보행자)</figcaption></figure>
           </div>
           <div class="chips"><span>World Model</span><span>HLSL 외벽 셰이더</span><span>HISM 인스턴싱</span><span>KRAFTON inZOI 에셋</span></div>
         </article>
@@ -740,10 +738,8 @@ coding agent implements the GDD in a shared Phaser starter project
             <span class="t-year">UE 5.8 · 2026.09</span>
           </div>
           <p class="kr">Procedural Minds의 도시 생성기 튜토리얼을 따라 학습하며 PCG 그래프로 구성한 생성기입니다. 스플라인으로 그린 도로에서 교차로를 찾아 배치하고, 도로 양옆을 따라 건물과 진입로를 세웁니다. 도로를 고치면 교차로와 건물 배치가 함께 다시 생성됩니다. 건물은 크래프톤 inZOI 에셋을 사용했습니다.</p>
-          <div class="rnd-media">
-            <figure><img src="assets/img/pcg/citygen_aerial.jpg?v=88" alt="PCG 도시 생성기 항공 사선" loading="lazy"><figcaption>스플라인 도로를 따라 생성된 블록</figcaption></figure>
-            <figure><img src="assets/img/pcg/citygen_top.jpg?v=88" alt="PCG 도시 생성기 탑뷰" loading="lazy"><figcaption>탑뷰 — 도로망 · 교차로 · 건물 배치</figcaption></figure>
-            <figure><img src="assets/img/pcg/citygen_mid.jpg?v=88" alt="PCG 도시 생성기 거리 시점" loading="lazy"><figcaption>교차로 주변 건물</figcaption></figure>
+          <div class="rnd-media rnd-media--1">
+            <figure><video src="assets/video/pcg_citygen_spline.mp4?v=110" poster="assets/video/poster_pcg_citygen_spline.jpg?v=110" muted loop playsinline controls preload="none"></video><figcaption>도로 스플라인(하늘색 선 · 제어점)을 움직일 때마다 교차로 · 건물 · 진입로가 다시 생성되는 과정</figcaption></figure>
           </div>
           <div class="chips"><span>PCG Graph</span><span>Spline Intersection</span><span>PCGExtendedToolkit</span><span>튜토리얼 기반 학습</span></div>
         </article>
