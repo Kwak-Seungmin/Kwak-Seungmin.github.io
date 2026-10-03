@@ -14,17 +14,10 @@
   -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   -webkit-mask-composite:xor;mask-composite:exclude;
 }
-/* 바깥 궤도: 얇은 점선 원과 그 위를 도는 작은 점 */
-.ring-orbit{position:absolute;inset:-12px;border-radius:50%;border:1px dashed rgba(255,255,255,0.12);pointer-events:none;}
-.ring-orbit::after{
-  content:'';position:absolute;top:-3px;left:50%;width:6px;height:6px;margin-left:-3px;border-radius:50%;
-  background:var(--about-blue2);box-shadow:0 0 10px var(--about-blue2);
-}
 .photo-ring .about-photo{width:188px;height:188px;margin:0;outline:0;border:0;position:relative;z-index:1;}
 .profile-card:hover .photo-ring .about-photo{outline:0;}
 
 html.motion .photo-ring::before{animation:ring-spin 6s linear infinite;}
-html.motion .ring-orbit{animation:ring-spin 18s linear infinite reverse;}
 html.motion .profile-card:hover .photo-ring::before{animation-duration:2.4s;}
 html.motion .photo-ring .about-photo img{transition:transform .6s cubic-bezier(.2,.7,.2,1);}
 html.motion .profile-card:hover .photo-ring .about-photo img{transform:scale(1.06);}

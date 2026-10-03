@@ -292,7 +292,7 @@ section{padding:60px 0;}
 .paper[open] > summary .pt-close,.pipe-fold[open] > summary .pt-close{display:inline;}
 
 /* 아트 파이프라인 — 논문 카드와 같은 틀, 중립색 */
-.pipe-fold{margin:15px 0 0;background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.1);border-left:3px solid rgba(255,255,255,0.35);}
+.pipe-fold{margin:15px 0 0;background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.1);border-left:3px solid var(--accent);}
 .pipe-fold > summary{list-style:none;cursor:pointer;padding:28px 32px;}
 .pipe-fold > summary::-webkit-details-marker{display:none;}
 .pipe-fold > summary:hover{background:rgba(255,255,255,0.03);}
@@ -849,3 +849,7 @@ footer .container{display:flex;justify-content:space-between;flex-wrap:wrap;gap:
   h2{font-size:28px;}
   .modal-body{padding:26px 22px 30px;}
 }
+
+/* FX — 영상마다 바로 밑에 제작 설명 */
+.fx-media figcaption b{color:var(--white);font-weight:700;}
+.fx-media .fx-note{display:block;margin-top:8px;padding-left:12px;border-left:2px solid rgba(10,160,210,0.45);color:var(--soft);font-size:13.5px;line-height:1.75;}
