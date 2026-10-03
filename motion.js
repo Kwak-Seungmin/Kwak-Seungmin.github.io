@@ -21,6 +21,50 @@
     window.addEventListener('scroll', hideCue, { passive: true });
   }
 
+  // 상단 스크롤 진행 바 + 히어로 영상 패럴랙스 (한 프레임에 한 번만 계산)
+  const bar = document.createElement('div');
+  bar.className = 'scroll-progress';
+  document.body.appendChild(bar);
+  const heroVideo = intro && intro.querySelector('.video');
+  let ticking = false;
+  const onScrollFrame = () => {
+    ticking = false;
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.transform = `scaleX(${max > 0 ? window.scrollY / max : 0})`;
+    if (heroVideo && window.scrollY < window.innerHeight) {
+      heroVideo.style.transform = `translateY(${window.scrollY * 0.35}px) scale(1.04)`;
+    }
+  };
+  window.addEventListener('scroll', () => {
+    if (!ticking) { ticking = true; requestAnimationFrame(onScrollFrame); }
+  }, { passive: true });
+  onScrollFrame();
+
+  // 포트폴리오 카드 3D 틸트 + 커서를 따라가는 빛 — 마우스가 있는 기기에서만
+  if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    const MAX_TILT = 6;
+    document.querySelectorAll('.portfolio-item').forEach(card => {
+      const glare = document.createElement('span');
+      glare.className = 'glare';
+      card.appendChild(glare);
+      // 등장 순서용 지연(--d)이 틸트에 걸리지 않도록 첫 진입부터 지연 없는 전환으로
+      card.addEventListener('mouseenter', () => card.classList.add('tilt-ready'));
+      card.addEventListener('mousemove', e => {
+        const r = card.getBoundingClientRect();
+        const px = (e.clientX - r.left) / r.width;
+        const py = (e.clientY - r.top) / r.height;
+        card.classList.add('tilting');
+        card.style.transform = `rotateY(${(px - 0.5) * MAX_TILT * 2}deg) rotateX(${(0.5 - py) * MAX_TILT * 2}deg)`;
+        card.style.setProperty('--gx', `${px * 100}%`);
+        card.style.setProperty('--gy', `${py * 100}%`);
+      });
+      card.addEventListener('mouseleave', () => {
+        card.classList.remove('tilting');
+        card.style.transform = '';
+      });
+    });
+  }
+
   // 스크롤 리빌 대상 — 같은 부모 안의 형제끼리는 순서대로 조금씩 늦게 등장
   const GROUPS = [
     '.section-header h2', '.section-header p', '.section-eyebrow',

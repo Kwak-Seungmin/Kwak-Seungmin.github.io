@@ -54,7 +54,7 @@ if (heroVideo && window.matchMedia('(min-width:761px)').matches) {
 }
 
 // ---------- 인트로 직함 타이핑 — 'Artist' 는 고정, 앞 단어만 번갈아 쓰고 지운다 ----------
-const TITLES = ['Technical', 'AI'];
+const TITLES = ['Technical', 'AI Pipeline'];
 const TYPE_MS = 90;
 const ERASE_MS = 45;
 const HOLD_MS = 2200;

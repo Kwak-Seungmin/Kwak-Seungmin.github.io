@@ -39,7 +39,8 @@ html.motion #intro .intro-actions{animation-delay:calc(var(--enter) + .35s);}
 html.motion #intro .video{animation:hero-zoom 2.4s cubic-bezier(.2,.7,.2,1) var(--enter) both;}
 @keyframes rise-in{from{opacity:0;transform:translateY(34px);}to{opacity:1;transform:none;}}
 @keyframes rise-header{from{opacity:0;transform:translateY(-18px);}to{opacity:1;transform:none;}}
-@keyframes hero-zoom{from{opacity:0;transform:scale(1.08);}to{opacity:1;transform:none;}}
+/* transform 은 스크롤 패럴랙스가 쓰므로 등장 줌은 개별 scale 속성으로 */
+@keyframes hero-zoom{from{opacity:0;scale:1.08;}to{opacity:1;scale:1;}}
 
 /* ---------- 스크롤 유도 아이콘 (마우스 + 올라가는 휠) ---------- */
 .scroll-cue{
@@ -71,6 +72,55 @@ html.motion .section-header h2.rv.is-in{clip-path:inset(-10% 0 -10% 0);}
 /* 이미지 카드 — 살짝 확대된 상태에서 제자리로 */
 html.motion .portfolio-item.rv{transform:translateY(40px) scale(.97);}
 html.motion .portfolio-item.rv.is-in{transform:none;}
+
+/* ---------- 스크롤 진행 바 ---------- */
+.scroll-progress{
+  position:fixed;top:0;left:0;right:0;height:2px;z-index:1001;pointer-events:none;
+  background:var(--accent);transform-origin:left;transform:scaleX(0);
+}
+
+/* ---------- 섹션 제목 밑줄이 그려진다 ---------- */
+html.motion .section-header h2.rv::after{
+  content:'';display:block;width:56px;height:3px;margin:14px auto 0;background:var(--accent);
+  transform:scaleX(0);transition:transform .8s cubic-bezier(.2,.7,.2,1) .45s;
+}
+html.motion .section-header h2.rv.is-in::after{transform:scaleX(1);}
+
+/* ---------- 포트폴리오 카드 3D 틸트 + 빛 반사 ---------- */
+html.motion .portfolio-grid{perspective:1200px;}
+html.motion .portfolio-item.tilt-ready{transition:transform .5s cubic-bezier(.2,.7,.2,1),opacity .9s;transition-delay:0s;}
+html.motion .portfolio-item.tilting{transition:transform .08s linear;}
+.portfolio-item .glare{
+  position:absolute;inset:0;z-index:4;pointer-events:none;opacity:0;transition:opacity .3s;
+  background:radial-gradient(circle at var(--gx,50%) var(--gy,50%), rgba(255,255,255,0.18), rgba(255,255,255,0) 55%);
+}
+.portfolio-item:hover .glare{opacity:1;}
+
+/* ---------- 버튼 — 빛이 스치고 지나간다 ---------- */
+html.motion .btn{position:relative;overflow:hidden;}
+html.motion .btn::after{
+  content:'';position:absolute;top:0;bottom:0;left:-60%;width:40%;pointer-events:none;
+  background:linear-gradient(100deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.28) 50%, rgba(255,255,255,0) 100%);
+  transform:skewX(-20deg);transition:left .6s ease;
+}
+html.motion .btn:hover::after{left:130%;}
+
+/* ---------- 경력 배지 — 등장할 때 왼쪽 강조선이 자란다 ---------- */
+html.motion .exp-row .exp-badge{position:relative;}
+html.motion .exp-row .exp-badge::before{
+  content:'';position:absolute;left:-1px;top:-1px;bottom:-1px;width:3px;background:var(--accent);
+  transform:scaleY(0);transform-origin:top;transition:transform .7s cubic-bezier(.2,.7,.2,1) .25s;
+}
+html.motion .exp-row.is-in .exp-badge::before{transform:scaleY(1);}
+
+/* ---------- 접이식 카드 — 펼칠 때 내용이 내려오며 나타난다 ---------- */
+html.motion details[open] > .paper-body,
+html.motion details[open] > .pipe-fold-body{animation:fold-open .55s cubic-bezier(.2,.7,.2,1);}
+@keyframes fold-open{from{opacity:0;transform:translateY(-12px);}to{opacity:1;transform:none;}}
+
+/* ---------- 툴 아이콘 — 호버 시 살짝 떠오름 ---------- */
+html.motion .tool-item .tool-image{transition:transform .25s ease;}
+html.motion .tool-item:hover .tool-image{transform:translateY(-3px) scale(1.12);}
 
 /* ---------- 메뉴 활성 밑줄 ---------- */
 .nav-menu a{position:relative;}
