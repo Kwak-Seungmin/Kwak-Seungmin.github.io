@@ -1,0 +1,77 @@
+/* ============================================================
+   MOTION EXTRA — 커서 · 마그넷 · 키워드 띠 · 미디어 와이프 · 카운트업 · 모달 · 헤더 숨김 · 맨 위로 링
+   모두 html.motion 일 때만 동작 (동작 줄이기 / JS 없음이면 원래 화면 그대로)
+   ============================================================ */
+
+/* ---------- 커서 링 (마우스 기기 전용) ---------- */
+.cursor-ring,.cursor-dot{position:fixed;top:0;left:0;z-index:3000;pointer-events:none;border-radius:50%;opacity:0;}
+html.motion.has-cursor .cursor-ring,html.motion.has-cursor .cursor-dot{opacity:1;}
+.cursor-ring{
+  width:34px;height:34px;margin:-17px 0 0 -17px;border:1px solid rgba(255,255,255,0.45);
+  transition:width .25s ease,height .25s ease,margin .25s ease,border-color .25s ease,background .25s ease,opacity .3s;
+}
+.cursor-dot{width:5px;height:5px;margin:-2.5px 0 0 -2.5px;background:var(--accent);transition:opacity .3s,transform .2s;}
+html.motion .cursor-ring.is-link{width:58px;height:58px;margin:-29px 0 0 -29px;border-color:var(--accent);background:rgba(10,160,210,0.08);}
+html.motion .cursor-ring.is-media{width:84px;height:84px;margin:-42px 0 0 -42px;border-color:rgba(255,255,255,0.7);}
+html.motion .cursor-ring.is-media::after{
+  content:'VIEW';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  font-family:var(--head);font-size:10px;font-weight:800;letter-spacing:2px;color:#fff;
+}
+html.motion .cursor-ring.is-down{transform:scale(.85);}
+
+/* ---------- 키워드 띠 (스크롤 속도에 반응) ---------- */
+.marquee{position:relative;overflow:hidden;border-top:1px solid rgba(255,255,255,0.07);border-bottom:1px solid rgba(255,255,255,0.07);
+  background:var(--bg);padding:18px 0;}
+.marquee-track{display:flex;width:max-content;will-change:transform;}
+.marquee-track span{
+  display:flex;align-items:center;gap:28px;padding-right:28px;white-space:nowrap;
+  font-family:var(--head);font-size:clamp(18px,2.4vw,30px);font-weight:800;letter-spacing:3px;text-transform:uppercase;
+  color:transparent;-webkit-text-stroke:1px rgba(255,255,255,0.28);
+}
+.marquee-track span b{color:var(--white);-webkit-text-stroke:0;font-weight:800;}
+.marquee-track span i{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--accent);flex:none;}
+
+/* ---------- 미디어 와이프 (이미지·영상이 아래에서 위로 열린다) ---------- */
+html.motion .wipe{clip-path:inset(100% 0 0 0);transition:clip-path 1.05s cubic-bezier(.77,0,.18,1);transition-delay:var(--wd,0s);}
+html.motion .wipe.is-in{clip-path:inset(0 0 0 0);}
+html.motion .wipe > img,html.motion .wipe > video{transform:scale(1.12);transition:transform 1.4s cubic-bezier(.2,.7,.2,1);transition-delay:var(--wd,0s);}
+html.motion .wipe.is-in > img,html.motion .wipe.is-in > video{transform:none;}
+.rnd-media figure{overflow:hidden;}
+.rnd-media img{transition:transform .6s cubic-bezier(.2,.7,.2,1);}
+.rnd-media figure:hover img{transform:scale(1.05);}
+
+/* ---------- 헤더: 아래로 스크롤하면 숨고, 위로 올리면 나타난다 ---------- */
+html.motion #header{transition:background .3s,padding .3s,transform .45s cubic-bezier(.2,.7,.2,1);}
+html.motion #header.hide-up{transform:translateY(-110%);}
+
+/* ---------- 맨 위로 버튼: 스크롤 진행 링 ---------- */
+.back-top .ring{position:absolute;inset:-5px;width:calc(100% + 10px);height:calc(100% + 10px);transform:rotate(-90deg);pointer-events:none;}
+.back-top .ring circle{fill:none;stroke:var(--accent);stroke-width:2;stroke-dasharray:var(--len);stroke-dashoffset:calc(var(--len) * (1 - var(--p,0)));}
+.back-top{position:fixed;}
+html.motion .back-top:hover{transform:translateY(-3px);}
+
+/* ---------- 모달: 확대되며 열림, 슬라이드는 크로스페이드 ---------- */
+html.motion .modal-box{transform:translateY(24px) scale(.97);opacity:0;transition:transform .45s cubic-bezier(.2,.7,.2,1),opacity .35s ease;}
+html.motion .modal-back.open .modal-box{transform:none;opacity:1;}
+html.motion .m-stage .m-hero,html.motion .m-stage .m-video{animation:slide-in .45s ease;}
+@keyframes slide-in{from{opacity:0;transform:scale(1.02);}to{opacity:1;transform:none;}}
+
+/* ---------- 포트폴리오 필터: 카드가 줄었다 다시 나타난다 ---------- */
+html.motion .portfolio-item.filter-pop{animation:filter-pop .5s cubic-bezier(.2,.7,.2,1) both;animation-delay:var(--fd,0s);}
+@keyframes filter-pop{from{opacity:0;transform:scale(.92) translateY(14px);}to{opacity:1;transform:none;}}
+
+/* ---------- 버튼 클릭 물결 ---------- */
+.btn .ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,0.35);transform:scale(0);pointer-events:none;animation:ripple .6s ease-out forwards;}
+@keyframes ripple{to{transform:scale(4);opacity:0;}}
+
+/* ---------- 히어로 이름: 글자 하나하나가 마우스에 반응해 떠오른다 ---------- */
+html.motion #intro h1 .ch{display:inline-block;transition:transform .35s cubic-bezier(.34,1.56,.64,1),color .25s;}
+html.motion #intro h1 .ch:hover{transform:translateY(-8px);}
+
+/* ---------- 섹션 아이브로우 · 메뉴 글자 디코드(스크램블) 중 고정폭 ---------- */
+.scrambling{font-variant-numeric:tabular-nums;}
+
+/* ---------- 카운트업 숫자 ---------- */
+.count{font-variant-numeric:tabular-nums;}
+
+@media (hover: none), (pointer: coarse){.cursor-ring,.cursor-dot{display:none;}}

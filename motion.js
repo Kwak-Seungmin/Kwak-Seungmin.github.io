@@ -97,7 +97,7 @@
   const GROUPS = [
     '.section-header h2', '.section-header p', '.section-eyebrow',
     '#portfolio-flters', '.portfolio-item',
-    '.tl-year', '.gj', '.paper', '.pipe-fold',
+    '.tl-year', '.gj', '.paper', '.pipe-fold', '.fx-notes li',
     '.profile-card', '.cv-card',
     '.tool-header', '.tool-item',
     '.contact-links',

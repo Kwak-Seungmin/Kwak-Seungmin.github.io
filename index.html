@@ -28,8 +28,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700;800;900&display=swap">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="style.css?v=102">
-<link rel="stylesheet" href="motion.css?v=102">
+<link rel="stylesheet" href="style.css?v=104">
+<link rel="stylesheet" href="motion.css?v=104">
+<link rel="stylesheet" href="motion-extra.css?v=104">
 <script>(function(){var r=document.documentElement;if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;r.classList.add('motion');try{if(!sessionStorage.getItem('ksm-splash'))r.classList.add('splash')}catch(e){}})();</script>
 </head>
 <body>
@@ -51,6 +52,7 @@
       <a href="#portfolio" class="scrollto">Portfolio</a>
       <a href="#experience" class="scrollto">Experience</a>
       <a href="#pipeline" class="scrollto">Work</a>
+      <a href="#fx" class="scrollto">FX</a>
       <a href="#about" class="scrollto">About</a>
       <a href="#contact" class="scrollto">Contact</a>
     </nav>
@@ -761,30 +763,29 @@ coding agent implements the GDD in a shared Phaser starter project
       </div>
     </details>
 
-    <!-- ── 게임 이펙트 스터디 (접고 펼치기) ── -->
-    <details class="pipe-fold" id="fx-study">
-      <summary>
-        <div class="paper-tags">
-          <span class="paper-tag">Game FX</span>
-          <span class="paper-venue">Unreal Engine 5 · Niagara · 2026</span>
-        </div>
-        <h3 class="paper-title"><b>Game FX Study</b> — 스킬 이펙트 스터디</h3>
-        <p class="paper-oneline kr">Paragon 기디언 애니메이션에 맞춰 Niagara로 스킬 이펙트를 만들고, 시퀀서로 타이밍과 카메라를 연출했습니다.</p>
-        <div class="chips"><span>Niagara</span><span>Chaos Destruction</span><span>Camera Shake</span><span>Sequencer</span></div>
-        <span class="paper-toggle"><span class="pt-open">이펙트 스터디 자세히 보기</span><span class="pt-close">접기</span></span>
-      </summary>
-      <div class="pipe-fold-body">
-        <div class="rnd-media rnd-media--2">
+
+  </div>
+</section>
+
+<!-- ============ GAME FX STUDY ============ -->
+<section id="fx" class="section-with-bg">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">Unreal Engine 5 · Niagara · 2026</span>
+      <h2>Game FX Study</h2>
+      <p class="kr">Paragon 기디언 애니메이션에 맞춰 Niagara로 스킬 이펙트를 만들고, 시퀀서로 타이밍과 카메라를 연출했습니다.</p>
+    </div>
+    <div class="fx-grid">
+        <div class="rnd-media rnd-media--2 fx-media">
           <figure><video src="assets/video/fx_study_wave.mp4?v=103" poster="assets/video/poster_fx_study_wave.jpg?v=103" muted loop playsinline controls preload="none"></video><figcaption>Wave Slam — 블랙홀 차지 후 내려찍기, 충격파 · 지면 균열(Chaos) · 카메라 셰이크</figcaption></figure>
-          <figure><video src="assets/video/fx_bird_projectile.mp4?v=103" poster="assets/video/poster_fx_bird_projectile.jpg?v=103" muted loop playsinline controls preload="none"></video><figcaption>Bird Projectile — 리본 트레일 투사체, 적중 시 연쇄 히트 · 카메라 셰이크</figcaption></figure>
+          <figure><video src="assets/video/fx_bird_projectile.mp4?v=104" poster="assets/video/poster_fx_bird_projectile.jpg?v=104" muted loop playsinline controls preload="none"></video><figcaption>Bird Projectile — 리본 트레일 투사체, 적중 시 연쇄 히트 · 카메라 셰이크</figcaption></figure>
         </div>
+
         <ul class="rubric fx-notes">
           <li><b>Wave Slam</b> <i>준비(Ready) · 웨이브 메시 · 히트 이펙트를 Niagara 시스템으로 나누고, 바닥 균열은 Chaos 캐시로 재생해 착지 타이밍에 맞췄습니다.</i></li>
           <li><b>Bird Projectile</b> <i>새 형태 메시와 리본 머티리얼로 투사체를 만들고, 적중 순간 히트 이펙트가 연쇄로 터지고 카메라 셰이크가 함께 걸리도록 시퀀서로 맞췄습니다.</i></li>
         </ul>
-      </div>
-    </details>
-
+    </div>
   </div>
 </section>
 
@@ -820,8 +821,8 @@ coding agent implements the GDD in a shared Phaser starter project
             <div class="cv-logo"><img src="assets/img/software/org_krafton.png?v=76" alt="KRAFTON"></div>
             <div class="cv-body">
             <div class="cv-date">2025.09 – 현재</div>
-            <h4>크래프톤 · Technical Artist</h4>
-            <p class="kr">생성형 AI 기반 게임 에셋 제작 및 파이프라인 구축</p>
+            <h4><a href="https://www.krafton.com" target="_blank" rel="noopener">크래프톤</a> · Technical Artist</h4>
+            <ul class="cv-list kr"><li>생성형 AI 기반 게임 에셋 제작 및 파이프라인 구축</li><li>월드 모델용 도시 시뮬레이션 PCG 배경 제작</li></ul>
             </div>
             </div>
         </div>
@@ -831,7 +832,7 @@ coding agent implements the GDD in a shared Phaser starter project
             <div class="cv-logo"><img src="assets/img/software/org_krafton.png?v=76" alt="KRAFTON AI"></div>
             <div class="cv-body">
             <div class="cv-date">2026.09 · arXiv 2609.39564</div>
-            <h4><a href="https://arxiv.org/abs/2609.39564" target="_blank" rel="noopener">A2Z GameSpec-Bench ↗</a></h4>
+            <h4><a href="https://arxiv.org/abs/2609.39564" target="_blank" rel="noopener">A2Z GameSpec-Bench</a></h4>
             <p class="kr">KRAFTON AI · 공동 저자 — 코딩 에이전트가 게임 기획서(GDD)를 얼마나 충실하게 구현하는지 측정하는 벤치마크</p>
             </div>
             </div>
@@ -839,19 +840,30 @@ coding agent implements the GDD in a shared Phaser starter project
         <div class="cv-card">
           <h6>대외활동</h6>
           <div class="cv-row">
+            <div class="cv-logo"><img src="assets/img/software/edu_karts.png?v=76" alt="한국예술종합학교"></div>
+            <div class="cv-body">
+            <div class="cv-date">2025</div>
+            <h4><a href="https://www.youtube.com/watch?v=gh-75I2Boa4" target="_blank" rel="noopener">한국예술종합학교 공식 홍보영상</a></h4>
+            <p class="kr">「The Call of Arts」 — 6개원 동문·학생이 함께 제작한 2025 공식 홍보영상 참여</p>
+            <p class="cv-links"><a href="https://www.youtube.com/watch?v=gh-75I2Boa4" target="_blank" rel="noopener">영상 보기</a><a href="https://www.karts.ac.kr" target="_blank" rel="noopener">K-Arts</a></p>
+            </div>
+            </div>
+          <div class="cv-row">
             <div class="cv-logo"><img src="assets/img/software/org_sm.svg?v=76" alt="SM엔터테인먼트"></div>
             <div class="cv-body">
             <div class="cv-date">2024.06 – 2024.12</div>
-            <h4>SM엔터테인먼트 기업연계</h4>
+            <h4><a href="https://edu.kocca.kr/edu/archiveUser/contentsDeptList.do?menuNo=500266&amp;taskSeq=338" target="_blank" rel="noopener">SM엔터테인먼트 기업연계</a></h4>
             <p class="kr">「나이비스」 프로젝트 리더 · AI 영상과 쇼케이스 기획 및 제작</p>
+            <p class="cv-links"><a href="https://edu.kocca.kr/edu/archiveUser/contentsDeptList.do?menuNo=500266&amp;taskSeq=338" target="_blank" rel="noopener">KOCCA 성과아카이브</a><a href="https://www.youtube.com/watch?v=1xPpFn-jTrU" target="_blank" rel="noopener">프로젝트 영상</a><a href="https://www.smentertainment.com" target="_blank" rel="noopener">SM Entertainment</a></p>
             </div>
             </div>
           <div class="cv-row">
             <div class="cv-logo"><img src="assets/img/software/org_native.png?v=76" alt="NATIVE 버추얼 스튜디오"></div>
             <div class="cv-body">
             <div class="cv-date">2024.02 – 2024.06</div>
-            <h4>NATIVE 버추얼 스튜디오</h4>
+            <h4><a href="https://nativevi.com" target="_blank" rel="noopener">NATIVE 버추얼 스튜디오</a></h4>
             <p class="kr">AI · 게임엔진 단편영상 기획 및 배경 · AI 아트 제작</p>
+            <p class="cv-links"><a href="https://www.youtube.com/watch?v=pfL0j7R_VYk" target="_blank" rel="noopener">SHAMAN short film</a><a href="https://www.youtube.com/watch?v=Tl-eiRjvRgA" target="_blank" rel="noopener">Behind the Scenes</a><a href="https://nativevi.com" target="_blank" rel="noopener">NATIVE</a></p>
             </div>
             </div>
         </div>
@@ -861,7 +873,7 @@ coding agent implements the GDD in a shared Phaser starter project
             <div class="cv-logo"><img src="assets/img/software/edu_sunhwa_ms.png?v=76" alt="선화예술중학교"></div>
             <div class="cv-body">
             <div class="cv-date">2013.03 – 2016.02</div>
-            <h4>선화예술중학교</h4>
+            <h4><a href="https://sunhwaarts.sen.ms.kr" target="_blank" rel="noopener">선화예술중학교</a></h4>
             <p class="kr">미술과 졸업</p>
             </div>
             </div>
@@ -869,7 +881,7 @@ coding agent implements the GDD in a shared Phaser starter project
             <div class="cv-logo"><img src="assets/img/software/edu_sunhwa.png?v=76" alt="선화예술고등학교"></div>
             <div class="cv-body">
             <div class="cv-date">2016.03 – 2019.02</div>
-            <h4>선화예술고등학교</h4>
+            <h4><a href="https://www.sunhwa.org" target="_blank" rel="noopener">선화예술고등학교</a></h4>
             <p class="kr">미술과 졸업</p>
             </div>
             </div>
@@ -877,7 +889,7 @@ coding agent implements the GDD in a shared Phaser starter project
             <div class="cv-logo"><img src="assets/img/software/edu_karts.png?v=76" alt="한국예술종합학교"></div>
             <div class="cv-body">
             <div class="cv-date">2021.03 – 2027.02</div>
-            <h4>한국예술종합학교</h4>
+            <h4><a href="https://www.karts.ac.kr" target="_blank" rel="noopener">한국예술종합학교</a></h4>
             <p class="kr">학점 4.18 / 4.3</p>
             </div>
             </div>
@@ -1004,8 +1016,9 @@ window.GAME_SHOWCASE = [
       specs:[['계획','다중 홉 경로를 그려 확정 · 홉당 0.5초'],['시야','안개 반경 밖은 추정 아이콘'],['변수','운석 1턴 전 예고 → 암초화'],['적재','6칸 선창 · 화물 무게 1~2'],['수확','3초 타이밍 바 + 0.4초 방향 플릭'],['성장','4×5 업그레이드 트리 · 수집 로그 50종']] }
 ];
 </script>
-<script src="projects.js?v=99"></script>
-<script src="main.js?v=99"></script>
-<script src="motion.js?v=102"></script>
+<script src="projects.js?v=104"></script>
+<script src="main.js?v=104"></script>
+<script src="motion.js?v=104"></script>
+<script src="motion-extra.js?v=105"></script>
 </body>
 </html>
