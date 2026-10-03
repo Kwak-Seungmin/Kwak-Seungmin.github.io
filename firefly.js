@@ -8,7 +8,7 @@
   const MAX = 40;          // 화면에 동시에 있는 알갱이 수 상한
   const SPAWN_DIST = 14;   // 이 거리(px)만큼 움직일 때마다 1개 생성
   const LIFE = [900, 1600]; // 수명(ms)
-  const SIZE = [1.2, 2.4];  // 반지름(px) — 작게
+  const SIZE = [1.2, 2.2];  // 반지름(px) — 작게
   const COLORS = ['10,160,210', '127,212,245', '90,190,240'];
 
   const cv = document.createElement('canvas');
@@ -54,23 +54,17 @@
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     ctx.clearRect(0, 0, innerWidth, innerHeight);
     flies = flies.filter(f => now - f.born < f.life);
-    ctx.globalCompositeOperation = 'lighter';
     flies.forEach(f => {
       const t = (now - f.born) / f.life;
       f.x += f.vx + Math.sin(now / 420 + f.phase) * 0.18; // 살랑이는 반딧불 움직임
       f.y += f.vy;
       const flicker = 0.65 + 0.35 * Math.sin(now / 110 + f.phase);
       const a = Math.sin(Math.PI * t) * flicker;            // 서서히 켜졌다 꺼진다
-      const g = ctx.createRadialGradient(f.x, f.y, 0, f.x, f.y, f.r * 4);
-      g.addColorStop(0, `rgba(${f.c},${(0.9 * a).toFixed(3)})`);
-      g.addColorStop(0.35, `rgba(${f.c},${(0.35 * a).toFixed(3)})`);
-      g.addColorStop(1, `rgba(${f.c},0)`);
-      ctx.fillStyle = g;
+      ctx.fillStyle = `rgba(${f.c},${(0.95 * a).toFixed(3)})`; // 글로우 없이 작은 점만
       ctx.beginPath();
-      ctx.arc(f.x, f.y, f.r * 4, 0, Math.PI * 2);
+      ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2);
       ctx.fill();
     });
-    ctx.globalCompositeOperation = 'source-over';
     if (flies.length) requestAnimationFrame(tick);
     else { running = false; ctx.clearRect(0, 0, innerWidth, innerHeight); }
   }
