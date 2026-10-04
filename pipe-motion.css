@@ -1,0 +1,105 @@
+/* ============================================================
+   PIPE MOTION — AI Game & Art Pipeline 접이식 블록 안의 모션 (pipe-motion.js)
+   카드 등장 · 커서 빛 · 흐름 단계 스윕 · 루브릭 · 칩 · 미니 흐름도 그리기 · 게임 정보 전환
+   html.pm 은 pipe-motion.js 가 붙인다 — 스크립트가 없으면 원래 화면 그대로
+   ============================================================ */
+
+/* ---------- 칼럼 머리 · 카드: 아래에서 떠오르며 등장, 윗변에 선이 그어진다 ---------- */
+html.pm #art-pipeline .col-head,
+html.pm #art-pipeline .tool-card{
+  opacity:0;transform:translateY(26px);
+  transition:opacity .8s ease,transform .9s cubic-bezier(.2,.7,.2,1),border-color .35s;
+  transition-delay:var(--pd,0s);
+}
+html.pm #art-pipeline .pm-in.col-head,
+html.pm #art-pipeline .pm-in.tool-card{opacity:1;transform:none;}
+html.pm #art-pipeline .tool-card{position:relative;overflow:hidden;}
+html.pm #art-pipeline .tool-card::before{
+  content:"";position:absolute;left:0;top:0;height:1px;width:100%;
+  background:linear-gradient(90deg,var(--accent),transparent);
+  transform:scaleX(0);transform-origin:left;
+  transition:transform 1.1s cubic-bezier(.77,0,.18,1);transition-delay:calc(var(--pd,0s) + .25s);
+}
+html.pm #art-pipeline .tool-card.pm-in::before{transform:scaleX(1);}
+
+/* 커서를 따라가는 빛 — 마우스 기기에서만 (--mx, --my 는 JS) */
+html.pm #art-pipeline .tool-card::after{
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .35s;
+  background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),rgba(10,160,210,0.10),transparent 60%);
+}
+html.pm #art-pipeline .tool-col--past .tool-card::after{
+  background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,0.05),transparent 60%);
+}
+html.pm #art-pipeline .tool-card.pm-hover::after{opacity:1;}
+html.pm #art-pipeline .tool-card.pm-hover{border-color:rgba(10,160,210,0.28);}
+html.pm #art-pipeline .tool-col--past .tool-card.pm-hover{border-color:rgba(255,255,255,0.14);}
+
+/* ---------- 흐름 단계: 한 칸씩 차례로 불이 들어온다 ---------- */
+html.pm #art-pipeline .flow span{transition:background .4s,border-color .4s,color .4s,box-shadow .4s,transform .4s;}
+html.pm #art-pipeline .flow span.pm-lit{
+  background:rgba(10,160,210,0.22);border-color:var(--accent);color:#fff;
+  box-shadow:0 0 18px rgba(10,160,210,0.35);transform:translateY(-2px);
+}
+html.pm #art-pipeline .flow .arw.pm-lit{color:var(--accent);box-shadow:none;background:none;transform:translateX(3px);}
+
+/* ---------- 루브릭: 왼쪽 선이 자라고 글이 밀려 들어온다 ---------- */
+html.pm #art-pipeline .rubric li{
+  position:relative;border-left-color:transparent;
+  opacity:0;transform:translateX(-14px);
+  transition:opacity .6s ease,transform .7s cubic-bezier(.2,.7,.2,1),background .3s;
+  transition-delay:var(--pd,0s);
+}
+html.pm #art-pipeline .rubric li::before{
+  content:"";position:absolute;left:-2px;top:0;bottom:0;width:2px;background:rgba(10,160,210,0.55);
+  transform:scaleY(0);transform-origin:top;
+  transition:transform .6s cubic-bezier(.77,0,.18,1);transition-delay:var(--pd,0s);
+}
+html.pm #art-pipeline .tool-col--past .rubric li::before{background:rgba(255,255,255,0.22);}
+html.pm #art-pipeline .rubric.pm-in li{opacity:1;transform:none;}
+html.pm #art-pipeline .rubric.pm-in li::before{transform:scaleY(1);}
+html.pm #art-pipeline .rubric li:hover{background:linear-gradient(90deg,rgba(10,160,210,0.07),transparent 70%);}
+html.pm #art-pipeline .tool-col--past .rubric li:hover{background:linear-gradient(90deg,rgba(255,255,255,0.035),transparent 70%);}
+
+/* ---------- 칩: 하나씩 튀어나온다 ---------- */
+html.pm #art-pipeline .pipe-fold-body .chips span{
+  opacity:0;transform:translateY(8px) scale(.94);
+  transition:opacity .45s ease,transform .5s cubic-bezier(.34,1.56,.64,1),border-color .3s,color .3s;
+  transition-delay:var(--pd,0s);
+}
+html.pm #art-pipeline .pipe-fold-body .chips.pm-in span{opacity:1;transform:none;}
+html.pm #art-pipeline .pipe-fold-body .chips span:hover{border-color:var(--accent);color:var(--white);}
+
+/* ---------- 미니 흐름도: 위에서부터 노드가 켜지고 선이 그어진 뒤, 점이 흐른다 ---------- */
+html.pm #art-pipeline .mini .mn,
+html.pm #art-pipeline .mini .mb,
+html.pm #art-pipeline .mini .mwt{opacity:0;transition:opacity .5s ease;transition-delay:var(--pd,0s);}
+html.pm #art-pipeline .mini .mln{
+  opacity:0;stroke-dasharray:1;stroke-dashoffset:1;
+  transition:stroke-dashoffset .45s ease,opacity .2s;transition-delay:var(--pd,0s);
+}
+html.pm #art-pipeline .mini .mln.mwarn{stroke-dasharray:4 3;stroke-dashoffset:0;transition:opacity .5s;}
+html.pm #art-pipeline .mini.pm-in .mn,
+html.pm #art-pipeline .mini.pm-in .mb,
+html.pm #art-pipeline .mini.pm-in .mwt,
+html.pm #art-pipeline .mini.pm-in .mln{opacity:1;stroke-dashoffset:0;}
+html.pm #art-pipeline .mini.pm-flowing .mwarn{animation:pm-dash 1.1s linear infinite;}
+@keyframes pm-dash{to{stroke-dashoffset:-14;}}
+html.pm #art-pipeline .mini .mn rect{transition:stroke .35s,fill .35s;}
+html.pm #art-pipeline .mini .mn.pm-hit rect{stroke:rgba(255,255,255,0.75);fill:rgba(255,255,255,0.09);}
+html.pm #art-pipeline .mini .mn.pm-hit text{fill:#fff;}
+html.pm #art-pipeline .mini .mn.pm-hit-warn rect{stroke:rgba(224,169,91,0.75);}
+.mini .pm-dot{fill:#fff;stroke:rgba(255,255,255,0.35);stroke-width:4;opacity:0;pointer-events:none;transition:opacity .15s;}
+.mini .pm-dot.is-warn{fill:#e0a95b;stroke:rgba(224,169,91,0.35);}
+
+/* ---------- 게임 쇼케이스: 게임이 바뀔 때 정보가 차례로 다시 나타난다 ---------- */
+html.pm #art-pipeline .gj-info.pm-swap .gj-badge,
+html.pm #art-pipeline .gj-info.pm-swap h4,
+html.pm #art-pipeline .gj-info.pm-swap .gj-desc p,
+html.pm #art-pipeline .gj-info.pm-swap .gj-spec > div{
+  animation:pm-rise .55s cubic-bezier(.2,.7,.2,1) both;animation-delay:var(--pd,0s);
+}
+@keyframes pm-rise{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+html.pm #art-pipeline .gj-thumb{transition:transform .35s cubic-bezier(.2,.7,.2,1),opacity .3s;}
+html.pm #art-pipeline .gj-thumb:hover{transform:translateY(-3px);}
+html.pm #art-pipeline .gj-thumb.is-on img{animation:pm-thumb .6s ease;}
+@keyframes pm-thumb{from{filter:brightness(1.8);}to{filter:none;}}

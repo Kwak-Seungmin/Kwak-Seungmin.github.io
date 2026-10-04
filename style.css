@@ -1,5 +1,5 @@
 /* ============================================================
-   KWAK SEUNGMIN — Technical Artist Portfolio
+   KWAK SEUNGMIN — Technical / AI Pipeline Artist Portfolio
    ============================================================ */
 
 :root{
@@ -750,6 +750,8 @@ footer .container{display:flex;justify-content:space-between;flex-wrap:wrap;gap:
 .modal-body .m-meta{font-family:var(--head);font-size:14px;font-weight:600;color:var(--accent2);margin-bottom:20px;}
 .modal-body .m-lead{font-family:var(--kr);font-size:17px;line-height:31px;color:var(--soft);margin-bottom:20px;}
 .modal-body p{font-family:var(--kr);font-size:15px;line-height:29px;color:var(--muted);margin-bottom:16px;}
+.modal-body .m-sec{font-family:var(--head);font-size:13px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent2);margin:28px 0 12px;padding-top:22px;border-top:1px solid rgba(255,255,255,0.12);}
+.modal-body .m-sec:first-child{margin-top:4px;}
 .modal-close{
   position:absolute;top:22px;right:26px;font-family:var(--head);font-size:13px;font-weight:700;
   letter-spacing:1.5px;text-transform:uppercase;color:var(--white);

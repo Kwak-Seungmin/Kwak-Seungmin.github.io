@@ -200,10 +200,12 @@ const openProject = (key) => {
   mLead.style.display = p.lead ? '' : 'none';
 
   mText.innerHTML = '';
+  // 문자열은 문단, { head } 는 구분선이 붙은 소제목
   (p.text || []).forEach(paragraph => {
-    const el = document.createElement('p');
-    el.className = 'kr';
-    el.textContent = paragraph;
+    const isHead = typeof paragraph === 'object' && paragraph.head;
+    const el = document.createElement(isHead ? 'h4' : 'p');
+    el.className = isHead ? 'm-sec' : 'kr';
+    el.textContent = isHead ? paragraph.head : paragraph;
     mText.appendChild(el);
   });
 
