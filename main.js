@@ -1,3 +1,9 @@
+// PCG asset variations: show the 24-second capture at 2x speed.
+document.querySelectorAll('#pcg-rnd video[src*="pcg_varied_spline_"]').forEach(video => {
+  video.defaultPlaybackRate = 2;
+  video.playbackRate = 2;
+});
+
 // ---------- 헤더 스크롤 상태 + 맨 위로 버튼 ----------
 const header = document.getElementById('header');
 const backTop = document.querySelector('.back-top');
