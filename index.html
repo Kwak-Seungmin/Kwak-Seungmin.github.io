@@ -28,7 +28,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700;800;900&display=swap">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="style.css?v=119">
+<link rel="stylesheet" href="style.css?v=20261102">
 <link rel="stylesheet" href="motion.css?v=104">
 <link rel="stylesheet" href="motion-extra.css?v=106">
 <link rel="stylesheet" href="about-motion.css?v=3">
@@ -735,10 +735,13 @@ coding agent implements the GDD in a shared Phaser starter project
           </div>
           <p class="kr">월드모델에 쓸 시뮬레이션 도시 배경을 언리얼 엔진 5로 제작했습니다. 건물 외벽 셰이더를 HLSL로 포팅해 창문·실내 시차·블라인드를 재현하고, 가로수 37,390그루와 소품 58종 약 27만 개를 HISM 인스턴스로 배치했습니다.</p>
           <p class="kr">도시는 크래프톤 inZOI 에셋들로 만들었습니다.</p>
-          <div class="rnd-media">
-            <figure><video src="assets/video/pcg_city_orbit.mp4?v=123" poster="assets/video/poster_pcg_city_orbit.jpg?v=123" muted loop playsinline controls preload="none"></video><figcaption>항공 선회 — 첨탑 고층 랜드마크와 스카이라인</figcaption></figure>
-            <figure><video src="assets/video/pcg_city_peds.mp4?v=123" poster="assets/video/poster_pcg_city_peds.jpg?v=123" muted loop playsinline controls preload="none"></video><figcaption>보행자 광장 — Mass 크라우드로 서로 피해 걷는 보행자</figcaption></figure>
-            <figure><video src="assets/video/pcg_city_street.mp4?v=122" poster="assets/video/poster_pcg_city_street.jpg?v=122" muted loop playsinline controls preload="none"></video><figcaption>거리 높이 — 양방향 대로를 신호에 따라 달리는 차량</figcaption></figure>
+          <div class="rnd-media rnd-media--2 rnd-media--city">
+            <figure><video src="assets/video/sim_revision_weather_base.mp4?v=20261102" poster="assets/video/poster_sim_revision_weather_base.jpg?v=20261102" muted loop playsinline controls preload="none" aria-label="BASE — 기본 날씨"></video><figcaption>BASE — 기본 날씨</figcaption></figure>
+            <figure><video src="assets/video/sim_revision_weather_snow.mp4?v=20261102" poster="assets/video/poster_sim_revision_weather_snow.jpg?v=20261102" muted loop playsinline controls preload="none" aria-label="SNOW — 눈"></video><figcaption>SNOW — 눈</figcaption></figure>
+            <figure><video src="assets/video/sim_revision_weather_rain.mp4?v=20261102" poster="assets/video/poster_sim_revision_weather_rain.jpg?v=20261102" muted loop playsinline controls preload="none" aria-label="RAIN — 비"></video><figcaption>RAIN — 비</figcaption></figure>
+            <figure><video src="assets/video/sim_revision_road_opening.mp4?v=20261102" poster="assets/video/poster_sim_revision_road_opening.jpg?v=20261102" muted loop playsinline controls preload="none" aria-label="CITY — 도시 전경"></video><figcaption>CITY — 도시 전경</figcaption></figure>
+            <figure><video src="assets/video/sim_gallery_roads.mp4?v=20261102" poster="assets/video/poster_sim_gallery_roads.jpg?v=20261102" muted loop playsinline controls preload="none" aria-label="TRAFFIC — 도로와 차량"></video><figcaption>TRAFFIC — 도로와 차량</figcaption></figure>
+            <figure><video src="assets/video/sim_revision_sunset.mp4?v=20261102" poster="assets/video/poster_sim_revision_sunset.jpg?v=20261102" muted loop playsinline controls preload="none" aria-label="SUNSET — 일몰"></video><figcaption>SUNSET — 일몰</figcaption></figure>
           </div>
           <div class="chips"><span>World Model</span><span>HLSL 외벽 셰이더</span><span>HISM 인스턴싱</span><span>KRAFTON inZOI 에셋</span></div>
         </article>
@@ -755,6 +758,13 @@ coding agent implements the GDD in a shared Phaser starter project
             <figure><video src="assets/video/pcg_citygen_roads.mp4?v=119" poster="assets/video/poster_pcg_citygen_roads.jpg?v=119" muted loop playsinline controls preload="none"></video><figcaption>도로 스플라인 제어점을 끄는 대로 교차로 · 건물이 바로 다시 생성</figcaption></figure>
             <figure><video src="assets/video/pcg_citygen_spacing.mp4?v=119" poster="assets/video/poster_pcg_citygen_spacing.jpg?v=119" muted loop playsinline controls preload="none"></video><figcaption>ExtraSpacing(건물 간격)을 올리고 내리는 대로 건물 위치 · 개수가 바로 바뀜</figcaption></figure>
             <figure><video src="assets/video/pcg_citygen_scale.mp4?v=120" poster="assets/video/poster_pcg_citygen_scale.jpg?v=120" muted loop playsinline controls preload="none"></video><figcaption>BuildingScale(건물 크기)을 조절하는 대로 건물 크기 · 배치가 바로 바뀜</figcaption></figure>
+          </div>
+          <p class="rnd-sub">에셋 교체 · 배치 변형</p>
+          <p class="kr">도시 생성기의 배치 에셋을 도화원·골렘 사원·나무로 바꾸고, 스플라인 조절에 따라 배치가 달라지는 과정을 실험했습니다.</p>
+          <div class="rnd-media">
+            <figure><video src="assets/video/pcg_varied_spline_peach.mp4?v=20261102" poster="assets/video/poster_pcg_varied_spline_peach.jpg?v=20261102" muted loop playsinline controls preload="none" aria-label="도화원 에셋 — 스플라인 조절에 따른 배치 변화"></video><figcaption>도화원 에셋 — 스플라인 조절에 따른 배치 변화</figcaption></figure>
+            <figure><video src="assets/video/pcg_varied_spline_golem.mp4?v=20261102" poster="assets/video/poster_pcg_varied_spline_golem.jpg?v=20261102" muted loop playsinline controls preload="none" aria-label="골렘 사원 에셋 — 스플라인 조절에 따른 배치 변화"></video><figcaption>골렘 사원 에셋 — 스플라인 조절에 따른 배치 변화</figcaption></figure>
+            <figure><video src="assets/video/pcg_varied_spline_trees.mp4?v=20261102" poster="assets/video/poster_pcg_varied_spline_trees.jpg?v=20261102" muted loop playsinline controls preload="none" aria-label="나무 에셋 — 스플라인 조절에 따른 배치 변화"></video><figcaption>나무 에셋 — 스플라인 조절에 따른 배치 변화</figcaption></figure>
           </div>
           <div class="chips"><span>PCG Graph</span><span>Spline Intersection</span><span>PCGExtendedToolkit</span><span>튜토리얼 기반 학습</span></div>
         </article>
@@ -779,26 +789,44 @@ coding agent implements the GDD in a shared Phaser starter project
   </div>
 </section>
 
-<!-- ============ GAME FX STUDY ============ -->
+<!-- ============ VFX STUDY ============ -->
 <section id="fx" class="section-with-bg">
   <div class="container">
     <div class="section-header">
       <span class="section-eyebrow">Unreal Engine 5 · Niagara · 2026</span>
-      <h2>Game FX Study</h2>
-      <p class="kr">Paragon 기디언 애니메이션에 맞춰 Niagara로 스킬 이펙트를 만들고, 시퀀서로 타이밍과 카메라를 연출했습니다.</p>
+      <h2>VFX Study</h2>
+      <p class="kr">파괴·화염·연기·유체 등 다양한 시각 효과를 제작하고, 캐릭터 애니메이션에 맞춘 게임 이펙트의 타이밍과 카메라를 연출했습니다.</p>
     </div>
     <details class="pipe-fold" id="fx-study">
       <summary>
         <div class="paper-tags">
-          <span class="paper-tag">Game FX</span>
-          <span class="paper-venue">Wave Slam · Bird Projectile</span>
+          <span class="paper-tag">VFX</span>
+          <span class="paper-venue">Chaos · Fire · Smoke · FLIP · Game FX</span>
         </div>
-        <h3 class="paper-title"><b>Game FX Study</b> — 게임 이펙트 스터디</h3>
-        <p class="paper-oneline kr">게임 이펙트 관련 스터디들을 정리한 목록입니다.</p>
+        <h3 class="paper-title"><b>VFX Study</b> — 시각 효과 스터디</h3>
+        <p class="paper-oneline kr">물리 기반 파괴, 화염·연기·유체·먼지, 캐릭터 스킬 이펙트 스터디를 정리했습니다.</p>
         <div class="chips"><span>Niagara</span><span>Chaos Destruction</span><span>Camera Shake</span><span>Sequencer</span></div>
         <span class="paper-toggle"><span class="pt-open">이펙트 스터디 자세히 보기</span><span class="pt-close">접기</span></span>
       </summary>
       <div class="pipe-fold-body">
+        <article class="rnd-item">
+          <div class="rnd-head"><h4>Chaos Destruction</h4></div>
+          <div class="rnd-media rnd-media--1 fx-media">
+            <figure><video src="assets/video/vfx_chaos.mp4?v=20261102" poster="assets/video/poster_vfx_chaos.jpg?v=20261102" muted loop playsinline controls preload="none" aria-label="Chaos Destruction — inZOI 에셋을 활용한 물리 기반 파괴"></video><figcaption>Chaos Destruction — inZOI 에셋을 활용한 물리 기반 파괴</figcaption></figure>
+          </div>
+        </article>
+        <article class="rnd-item">
+          <div class="rnd-head"><h4>VFX Studies</h4></div>
+          <div class="rnd-media fx-media">
+            <figure><video src="assets/video/vfx_detail_ring.mp4?v=20261102" poster="assets/video/poster_vfx_detail_ring.jpg?v=20261102" muted loop playsinline controls preload="none" aria-label="Ring Fire — 고리 형태의 화염"></video><figcaption>Ring Fire — 고리 형태의 화염</figcaption></figure>
+            <figure><video src="assets/video/vfx_detail_vortex.mp4?v=20261102" poster="assets/video/poster_vfx_detail_vortex.jpg?v=20261102" muted loop playsinline controls preload="none" aria-label="Fire Vortex — 소용돌이 형태의 화염"></video><figcaption>Fire Vortex — 소용돌이 형태의 화염</figcaption></figure>
+            <figure><video src="assets/video/vfx_detail_smoke_full.mp4?v=20261102" poster="assets/video/poster_vfx_detail_smoke_full.jpg?v=20261102" muted loop playsinline controls preload="none" aria-label="Smoke — 연기 시뮬레이션"></video><figcaption>Smoke — 연기 시뮬레이션</figcaption></figure>
+            <figure><video src="assets/video/vfx_flip_liquid.mp4?v=20261102" poster="assets/video/poster_vfx_flip_liquid.jpg?v=20261102" muted loop playsinline controls preload="none" aria-label="FLIP Liquid — 유체 시뮬레이션"></video><figcaption>FLIP Liquid — 유체 시뮬레이션</figcaption></figure>
+            <figure><video src="assets/video/vfx_detail_dust_final.mp4?v=20261102" poster="assets/video/poster_vfx_detail_dust_final.jpg?v=20261102" muted loop playsinline controls preload="none" aria-label="Dust — 먼지 이펙트"></video><figcaption>Dust — 먼지 이펙트</figcaption></figure>
+            <figure><video src="assets/video/vfx_detail_monster.mp4?v=20261102" poster="assets/video/poster_vfx_detail_monster.jpg?v=20261102" muted loop playsinline controls preload="none" aria-label="Desert Monster — 모래 괴물 이펙트"></video><figcaption>Desert Monster — 모래 괴물 이펙트</figcaption></figure>
+          </div>
+        </article>
+        <div class="rnd-head"><h4>Game FX · Wave Slam / Bird Projectile</h4></div>
         <div class="fx-grid">
         <div class="rnd-media rnd-media--2 fx-media">
           <figure><video src="assets/video/fx_study_wave.mp4?v=103" poster="assets/video/poster_fx_study_wave.jpg?v=103" muted loop playsinline controls preload="none"></video><figcaption><b>Wave Slam</b> — 블랙홀 차지 후 내려찍기, 충격파 · 지면 균열(Chaos) · 카메라 셰이크<span class="fx-note">준비(Ready) · 웨이브 메시 · 히트 이펙트를 Niagara 시스템으로 나누고, 바닥 균열은 Chaos 캐시로 재생해 착지 타이밍에 맞췄습니다.</span></figcaption></figure>
