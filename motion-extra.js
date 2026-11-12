@@ -79,8 +79,6 @@
   wipeGroups.forEach((_, parent) => wipeIO.observe(parent));
   document.querySelectorAll('details').forEach(d => d.addEventListener('toggle', () => {
     if (d.open) d.querySelectorAll('.wipe').forEach(el => setTimeout(() => el.classList.add('is-in'), 120));
-    // 펼치면 안의 무음 영상 재생, 접으면 정지
-    d.querySelectorAll('.rnd-media video').forEach(v => { if (d.open) { if (v.muted) v.play().catch(() => {}); } else v.pause(); });
   }));
 
   /* 숫자 카운트업 — 논문 표 노트의 숫자 */
@@ -113,25 +111,6 @@
     requestAnimationFrame(tick);
   }), { threshold: 0.6 });
   counters.forEach(c => { c.el.classList.add('count'); countIO.observe(c.el); });
-
-  /* 무음 영상은 화면에 보일 때만 재생, 벗어나면 정지 */
-  const vidIO = new IntersectionObserver(entries => entries.forEach(en => {
-    const v = en.target;
-    if (en.isIntersecting) { if (v.muted) v.play().catch(() => {}); } else v.pause();
-  }), { threshold: 0.45 });
-  // 영상도 와이프로 가려질 수 있으므로 감싸는 figure/stage 를 관찰한다
-  const vidMap = new Map();
-  document.querySelectorAll('#gjVideo, .rnd-media video').forEach(v => {
-    v.preload = 'metadata';
-    const box = v.closest('.rnd-media') || v.closest('.gj-stage')?.parentElement || v.parentElement;
-    vidMap.set(box, [...(vidMap.get(box) || []), v]);
-  });
-  const vidIO2 = new IntersectionObserver(entries => entries.forEach(en => {
-    vidMap.get(en.target).forEach(v => {
-      if (en.isIntersecting) { if (v.muted) v.play().catch(() => {}); } else v.pause();
-    });
-  }), { threshold: 0.35 });
-  vidMap.forEach((_, box) => vidIO2.observe(box));
 
   /* 글자 스크램블 — 메뉴 호버, 섹션 아이브로우 등장 */
   const GLYPHS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/ _';

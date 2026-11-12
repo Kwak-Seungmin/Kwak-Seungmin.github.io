@@ -16,11 +16,11 @@ const PROJECTS = {
       '아트 바이블의 에셋 스펙을 단일 기준으로 삼는 것이 핵심입니다. 캔버스 크기와 에셋 종류, 프레임 수, fps, 팔레트, 네이밍까지 기획서에 명시된 값만 사용하고, 파일명이나 설명에서 추론하지 않습니다. 값이 비어 있으면 작업을 멈추고 기획서를 채우도록 되돌립니다. 픽셀 변환에는 생성 모델을 쓰지 않고 색과 형태를 분리해 팔레트를 밝기 순으로 직접 할당하며, 타일셋은 이어 붙였을 때 이음매가 보이지 않는지 따로 검증합니다.'
     ],
     media: [
-      { type:'video', src:'assets/video/paper_case_study.mp4?v=84', poster:'assets/video/poster_paper_case_study.jpg?v=92', cap:'A2Z GameSpec-Bench 케이스 스터디 — GDD로 생성된 게임과, 요구사항 피드백 전후의 빌드 비교 (논문)' },
+      { type:'video', src:'assets/video/web/paper_case_study.mp4?v=84', poster:'assets/video/poster_paper_case_study.jpg?v=92', cap:'A2Z GameSpec-Bench 케이스 스터디 — GDD로 생성된 게임과, 요구사항 피드백 전후의 빌드 비교 (논문)' },
       { type:'image', src:'assets/img/paper/teaser.jpg', cap:'A2Z GameSpec-Bench 평가 구조 — Dependency-Aware Contract → 소스 검사 시나리오 리플레이 적응형 플레이테스트 → 요구사항 단위 피드백 (논문)' },
-      { type:'video', src:'assets/video/game_abyssal.mp4?v=84', poster:'assets/video/poster_game_abyssal.jpg', cap:'심연의 사슬 — 체인을 이어 터뜨리는 심해 아케이드 (인게임)' },
-      { type:'video', src:'assets/video/game_starless.mp4?v=84', poster:'assets/video/poster_game_starless.jpg', cap:'별이 스러지는 밤에 — 에셋 97종으로 구성한 비주얼 노벨 (인게임)' },
-      { type:'video', src:'assets/video/game_pixelrunner.mp4?v=84', poster:'assets/video/poster_game_pixelrunner.jpg', cap:'픽셀런너 8-9 — 파이프라인 에셋으로 만든 2D 플랫포머 (인게임)' },
+      { type:'video', src:'assets/video/web/game_abyssal.mp4?v=84', poster:'assets/video/poster_game_abyssal.jpg', cap:'심연의 사슬 — 체인을 이어 터뜨리는 심해 아케이드 (인게임)' },
+      { type:'video', src:'assets/video/web/game_starless.mp4?v=84', poster:'assets/video/poster_game_starless.jpg', cap:'별이 스러지는 밤에 — 에셋 97종으로 구성한 비주얼 노벨 (인게임)' },
+      { type:'video', src:'assets/video/web/game_pixelrunner.mp4?v=84', poster:'assets/video/poster_game_pixelrunner.jpg', cap:'픽셀런너 8-9 — 파이프라인 에셋으로 만든 2D 플랫포머 (인게임)' },
       { type:'video', src:'assets/video/game_sprout.mp4?v=84', poster:'assets/video/poster_game_sprout.jpg', cap:'새싹 요새 — 타워 6종, 15웨이브 타워 디펜스 (인게임)' },
       { type:'video', src:'assets/video/game_fogfall.mp4?v=84', poster:'assets/video/poster_game_fogfall.jpg', cap:'안개 항로 — 항로를 그려 화물을 옮기는 경로 계획 퍼즐 (인게임)' },
       { type:'image', src:'assets/img/unity_boss.jpg', cap:'3D AI 아트 파이프라인으로 만든 에셋을 Unity 씬으로 구성 — 안개 낀 성채' },
@@ -111,7 +111,7 @@ const PROJECTS = {
       { type:'image', src:'assets/img/p06_spring.jpg', cap:'온천의 새벽, UE5 키비주얼' },
       { type:'image', src:'assets/img/p06_pose_sheet.jpg', cap:'응용 동작 시트 — 온천 안개 속 세 가지 포즈' },
       { type:'image', src:'assets/img/p06_turn_sheet.jpg', cap:'앞 옆 뒤 턴어라운드 — 공모전 제출 시트' },
-      { type:'video', src:'assets/video/avene-ad-topaz-4k.mp4?v=20261112', poster:'assets/video/poster_avene_ad.jpg?v=20261112', cap:'아벤느 화장품 영상 — AI 영상 제작' }
+      { type:'video', src:'assets/video/web/avene-ad-topaz-4k.mp4?v=20261112', poster:'assets/video/poster_avene_ad.jpg?v=20261112', cap:'아벤느 화장품 영상 — AI 영상 제작' }
     ]
   },
 
@@ -146,7 +146,7 @@ const PROJECTS = {
       '세계관 설정부터 캐릭터 조형, 텍스처링, 라이팅까지 진행했습니다. 반복된 시술로 변색되고 부풀어 오른 피부는 Substance Painter로 상처와 멍 텍스처를 만들어 생체 조작의 흔적을 기록했습니다.'
     ],
     media: [
-      { type:'video', src:'assets/video/bio_lab.mp4', poster:'assets/video/poster_bio_lab.jpg', cap:'Lab 시퀀스 — 수술대 위의 실험체 (15초)' },
+      { type:'video', src:'assets/video/web/bio_lab.mp4', poster:'assets/video/poster_bio_lab.jpg', cap:'Lab 시퀀스 — 수술대 위의 실험체 (15초)' },
       { type:'image', src:'assets/img/p05_torso_v2.png', cap:'누워있는 실험체' },
       { type:'image', src:'assets/img/p05_head_3view.jpg', cap:'실험체 헤드, 3방향 — 변색되고 부풀어 오른 피부' },
       { type:'image', src:'assets/img/p05_face_close.jpg', cap:'헤드 클로즈업 — 함몰된 눈두덩과 피하 출혈 디테일' },
@@ -187,9 +187,9 @@ const PROJECTS = {
       '소설 속에서 비중이 비교적 적은 나가 종족의 세계를, 전투적이고 적대적인 모습이 아니라 성인식이나 기도 같은 생활상으로 보여주고 싶었습니다. 세계관 재해석부터 캐릭터 공간 디자인, GPT Image 2 생성, Seedance2 영상화까지 진행했습니다.'
     ],
     media: [
-      { type:'video', src:'assets/video/bonfire_ep1.mp4', poster:'assets/video/poster_bonfire_ep1.jpg', cap:'Episode 1 — 횃불의 춤 (1:08)' },
-      { type:'video', src:'assets/video/bonfire_ep2.mp4', poster:'assets/video/poster_bonfire_ep2.jpg', cap:'Episode 2 — 심장탑, 여신의 의식 (0:51)' },
-      { type:'video', src:'assets/video/bonfire_ep3.mp4', poster:'assets/video/poster_bonfire_ep3.jpg', cap:'Episode 3 — 심장 적출 성인식 (0:30)' },
+      { type:'video', src:'assets/video/web/bonfire_ep1.mp4', poster:'assets/video/poster_bonfire_ep1.jpg', cap:'Episode 1 — 횃불의 춤 (1:08)' },
+      { type:'video', src:'assets/video/web/bonfire_ep2.mp4', poster:'assets/video/poster_bonfire_ep2.jpg', cap:'Episode 2 — 심장탑, 여신의 의식 (0:51)' },
+      { type:'video', src:'assets/video/web/bonfire_ep3.mp4', poster:'assets/video/poster_bonfire_ep3.jpg', cap:'Episode 3 — 심장 적출 성인식 (0:30)' },
       { type:'image', src:'assets/img/p02_hearttower.jpg', cap:'심장탑 전경 — 세대가 축적되는 신전' },
       { type:'image', src:'assets/img/p02_shaman_night.jpg', cap:'여신 앞의 기도, 춤채를 든 샤먼' }
     ]
