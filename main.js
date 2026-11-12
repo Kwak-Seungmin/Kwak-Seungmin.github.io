@@ -135,6 +135,7 @@ const showSlide = (i, autoplay = false) => {
     mYt.classList.add('show');
   } else if (s.type === 'video') {
     stopYoutube();
+    mVideo.muted = true;
     mVideo.src = s.src;
     if (s.poster) mVideo.poster = s.poster;
     mVideo.classList.add('show');
@@ -213,7 +214,7 @@ const openProject = (key) => {
   });
   mLinks.style.display = (p.links || []).length ? '' : 'none';
 
-  showSlide(0);
+  showSlide(0, true);
   modal.classList.add('open');
   modal.querySelector('.modal-box').scrollTop = 0;
   document.body.style.overflow = 'hidden';
