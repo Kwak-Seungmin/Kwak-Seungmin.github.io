@@ -1,9 +1,9 @@
 /* ============================================================
-   MOTION EXTRA — 커서 · 마그넷 · 키워드 띠 · 미디어 와이프 · 카운트업 · 모달 · 헤더 숨김 · 맨 위로 링
+   MOTION EXTRA — 커서 마그넷 키워드 띠 미디어 와이프 카운트업 모달 헤더 숨김 맨 위로 링
    모두 html.motion 일 때만 동작 (동작 줄이기 / JS 없음이면 원래 화면 그대로)
    ============================================================ */
 
-/* ---------- 미디어 와이프 (이미지·영상이 아래에서 위로 열린다) ---------- */
+/* ---------- 미디어 와이프 (이미지 영상이 아래에서 위로 열린다) ---------- */
 html.motion .wipe{clip-path:inset(100% 0 0 0);transition:clip-path 1.05s cubic-bezier(.77,0,.18,1);transition-delay:var(--wd,0s);}
 html.motion .wipe.is-in{clip-path:inset(0 0 0 0);}
 html.motion .wipe > img,html.motion .wipe > video{transform:scale(1.12);transition:transform 1.4s cubic-bezier(.2,.7,.2,1);transition-delay:var(--wd,0s);}
@@ -34,7 +34,7 @@ html.motion .portfolio-item.filter-pop{animation:filter-pop .5s cubic-bezier(.2,
 html.motion #intro h1 .ch{display:inline-block;transition:transform .35s cubic-bezier(.34,1.56,.64,1),color .25s;}
 html.motion #intro h1 .ch:hover{transform:translateY(-8px);}
 
-/* ---------- 섹션 아이브로우 · 메뉴 글자 디코드(스크램블) 중 고정폭 ---------- */
+/* ---------- 섹션 아이브로우 메뉴 글자 디코드(스크램블) 중 고정폭 ---------- */
 .scrambling{font-variant-numeric:tabular-nums;}
 
 /* ---------- 카운트업 숫자 ---------- */

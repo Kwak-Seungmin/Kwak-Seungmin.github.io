@@ -1,4 +1,4 @@
-// ---------- 모션 추가: 마그넷 · 와이프 · 카운트업 · 영상 자동재생 · 헤더 숨김 · 맨 위로 링 · 스크램블 ----------
+// ---------- 모션 추가: 마그넷 와이프 카운트업 영상 자동재생 헤더 숨김 맨 위로 링 스크램블 ----------
 (() => {
   const root = document.documentElement;
   if (!root.classList.contains('motion')) return;
@@ -83,7 +83,7 @@
     d.querySelectorAll('.rnd-media video').forEach(v => { if (d.open) { if (v.muted) v.play().catch(() => {}); } else v.pause(); });
   }));
 
-  /* 숫자 카운트업 — 논문 표·노트의 숫자 */
+  /* 숫자 카운트업 — 논문 표 노트의 숫자 */
   const counters = [];
   document.querySelectorAll('.paper-table td, .paper-block p b').forEach(el => {
     const m = el.textContent.trim().match(/^([\d,]+(?:\.\d+)?)(%?)/);
@@ -134,7 +134,7 @@
   vidMap.forEach((_, box) => vidIO2.observe(box));
 
   /* 글자 스크램블 — 메뉴 호버, 섹션 아이브로우 등장 */
-  const GLYPHS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/·_';
+  const GLYPHS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/ _';
   const scramble = el => {
     if (el.dataset.scrambling) return;
     const final = el.dataset.text || el.textContent;

@@ -1,4 +1,4 @@
-// ---------- About 모션: 순차 등장 딜레이 · 등장 후 정착 · 마우스 기울기 ----------
+// ---------- About 모션: 순차 등장 딜레이 등장 후 정착 마우스 기울기 ----------
 (() => {
   const root = document.documentElement;
   if (!root.classList.contains('motion')) return;

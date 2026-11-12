@@ -1,4 +1,4 @@
-// ---------- 모션: 스크롤 유도 아이콘 · 스크롤 리빌 ----------
+// ---------- 모션: 스크롤 유도 아이콘 스크롤 리빌 ----------
 // html.motion 은 <head> 의 인라인 스크립트가 붙인다 (동작 줄이기 설정이면 붙지 않음).
 (() => {
   const root = document.documentElement;
@@ -32,7 +32,7 @@
   const heroVideo = intro && intro.querySelector('.video');
   const timeline = document.querySelector('.tl');
   const tlItems = timeline ? [...timeline.querySelectorAll('.tl-item')] : [];
-  // 항목마다 세로 위치(0~1) — 점·날짜 색이 하늘색에서 초록으로 변한다
+  // 항목마다 세로 위치(0~1) — 점 날짜 색이 하늘색에서 초록으로 변한다
   tlItems.forEach((item, i) => item.style.setProperty('--pos', (tlItems.length > 1 ? i / (tlItems.length - 1) : 0).toFixed(3)));
   let ticking = false;
   const onScrollFrame = () => {

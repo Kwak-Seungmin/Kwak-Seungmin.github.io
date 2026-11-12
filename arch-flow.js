@@ -10,15 +10,15 @@
 
   const nodes = [...svg.querySelectorAll('.nd')];
   const edges = [...svg.querySelectorAll('path.ln')];
-  // 노드: 0 GDD · 1 art-bible · 2 Spec · 3 Concept · 4 2D · 5 Pixel · 6 런타임 에셋 · 7 엔진
-  // 선:   0·1 입력 → 2 합류 → 3 스펙→컨셉 · 4 컨셉→2D · 5 2D→픽셀 · 6 픽셀→출력 · 7 2D→출력(우회) · 8 출력→엔진 · 9 중단
+  // 노드: 0 GDD 1 art-bible 2 Spec 3 Concept 4 2D 5 Pixel 6 런타임 에셋 7 엔진
+  // 선:   0 1 입력 → 2 합류 → 3 스펙→컨셉 4 컨셉→2D 5 2D→픽셀 6 픽셀→출력 7 2D→출력(우회) 8 출력→엔진 9 중단
   const STEPS = [
-    { tab: 'Input', nodes: [0, 1], edges: [0, 1, 2], text: '게임 기획서와 아트 바이블(에셋 스펙 · 품질 기준)을 입력으로 받습니다.' },
+    { tab: 'Input', nodes: [0, 1], edges: [0, 1, 2], text: '게임 기획서와 아트 바이블(에셋 스펙 품질 기준)을 입력으로 받습니다.' },
     { tab: 'Spec Check', nodes: [2], edges: [9], text: '에셋 스펙을 확인합니다. 스펙이 비어 있으면 추론하지 않고 기획서로 되돌려 작업을 멈춥니다.' },
     { tab: 'Concept', nodes: [3], edges: [3], text: '스펙을 통과하면 컨셉 아트를 만듭니다.' },
     { tab: '2D Asset', nodes: [4], edges: [4], text: '컨셉이 확정되면 2D 에셋과 프레임을 만듭니다.' },
     { tab: 'Pixel', nodes: [5], edges: [5, 6], text: 'GDD에 픽셀 아트로 명시된 경우에만 픽셀로 변환합니다. 그 외에는 2D 에셋을 그대로 씁니다.' },
-    { tab: 'Output', nodes: [6, 7], edges: [7, 8], text: '규격을 맞춘 런타임 에셋(스프라이트 · 타일셋 · UI)이 변환 없이 그대로 엔진에 올라갑니다.' },
+    { tab: 'Output', nodes: [6, 7], edges: [7, 8], text: '규격을 맞춘 런타임 에셋(스프라이트 타일셋 UI)이 변환 없이 그대로 엔진에 올라갑니다.' },
   ];
 
   /* 단계 탭 + 설명 */

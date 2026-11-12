@@ -1,5 +1,5 @@
 // ---------- AI Game & Art Pipeline 블록 모션 ----------
-// 카드 등장 · 커서 빛 · 흐름 단계 스윕 · 루브릭 · 칩 · 미니 흐름도(그리기 + 흐르는 점) · 게임 정보 전환
+// 카드 등장 커서 빛 흐름 단계 스윕 루브릭 칩 미니 흐름도(그리기 + 흐르는 점) 게임 정보 전환
 (() => {
   const root = document.documentElement;
   const fold = document.getElementById('art-pipeline');
@@ -21,7 +21,7 @@
   const stagger = (els, step, base = 0) =>
     els.forEach((el, i) => el.style.setProperty('--pd', (base + i * step).toFixed(2) + 's'));
 
-  /* 칼럼 머리 · 카드 — 칼럼 안에서 순서대로 */
+  /* 칼럼 머리 카드 — 칼럼 안에서 순서대로 */
   fold.querySelectorAll('.tool-col').forEach(col => {
     const items = [...col.querySelectorAll('.col-head, .tool-card')];
     stagger(items, 0.12);
@@ -41,7 +41,7 @@
     });
   }
 
-  /* 루브릭 · 칩 — 목록 안에서 차례로 */
+  /* 루브릭 칩 — 목록 안에서 차례로 */
   const lists = [...fold.querySelectorAll('.rubric, .pipe-fold-body .chips')];
   lists.forEach(list => stagger([...list.children], list.matches('.rubric') ? 0.1 : 0.05));
   onceVisible(lists, el => el.classList.add('pm-in'), 0.3);
@@ -65,7 +65,7 @@
     }, { threshold: 0.5 }).observe(flow);
   });
 
-  /* 미니 흐름도 — 위에서부터 그려지고, 다 그려지면 점이 2D · 재생성 · 3D 경로를 번갈아 흐른다 */
+  /* 미니 흐름도 — 위에서부터 그려지고, 다 그려지면 점이 2D 재생성 3D 경로를 번갈아 흐른다 */
   const mini = fold.querySelector('.mini');
   const svg = mini && mini.querySelector('svg');
   if (svg) {
@@ -75,8 +75,8 @@
     const DRAW_SPAN = 1.6; // 맨 위에서 맨 아래까지 그려지는 데 걸리는 시간(초)
     lines.forEach(l => { if (!l.classList.contains('mwarn')) l.setAttribute('pathLength', '1'); });
 
-    // 선: 0 기획→LLM · 1·2 LLM→가이드/시트 · 3·4 →생성 실행 · 5 →AI 피드백 · 6 →업스케일 · 7·8 →스프라이트/3D
-    //     9·10 →애니/리토폴 · 11·12 합류 · 13 →엔진 · 14 피드백 루프(재생성)
+    // 선: 0 기획→LLM 1 2 LLM→가이드/시트 3 4 →생성 실행 5 →AI 피드백 6 →업스케일 7 8 →스프라이트/3D
+    //     9 10 →애니/리토폴 11 12 합류 13 →엔진 14 피드백 루프(재생성)
     const ROUTES = [
       [0, 1, 3, 5, 6, 7, 9, 11, 13],        // 2D
       [0, 1, 3, 5, 14, 3, 5, 6, 8, 10, 12, 13], // AI가 걸러 재생성 후 3D
@@ -168,7 +168,7 @@
     document.addEventListener('visibilitychange', () => { if (document.hidden) stop(); else start(); });
   }
 
-  /* 게임 쇼케이스 — 게임이 바뀌면 장르 · 제목 · 설명 · 스펙이 차례로 다시 나타난다 */
+  /* 게임 쇼케이스 — 게임이 바뀌면 장르 제목 설명 스펙이 차례로 다시 나타난다 */
   const info = fold.querySelector('.gj-info');
   const spec = document.getElementById('gjSpec');
   if (info && spec) {

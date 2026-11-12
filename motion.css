@@ -1,5 +1,5 @@
 /* ============================================================
-   MOTION — 진입 스플래시 · 히어로 등장 · 스크롤 리빌
+   MOTION — 진입 스플래시 히어로 등장 스크롤 리빌
    html.motion 이 붙었을 때만 동작한다 (JS 없음 / 동작 줄이기 = 원래 화면 그대로).
    ============================================================ */
 
@@ -47,7 +47,7 @@ html.motion.splash .splash-line{animation:line-draw .9s cubic-bezier(.65,0,.35,1
 html.motion.splash .splash-sub{animation:sub-in .7s ease 1.15s forwards;}
 @keyframes sub-in{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
 
-/* ---------- 헤더 · 히어로 등장 ---------- */
+/* ---------- 헤더 히어로 등장 ---------- */
 html.motion{--enter:.15s;}
 html.motion.splash{--enter:2.35s;}
 html.motion #header{animation:rise-header .8s cubic-bezier(.2,.7,.2,1) var(--enter) both;}

@@ -1,5 +1,5 @@
 /* ============================================================
-   ARCH FLOW — 아트 파이프라인 구조도 단계 탭 · 흐름 애니메이션 (arch-flow.js)
+   ARCH FLOW — 아트 파이프라인 구조도 단계 탭 흐름 애니메이션 (arch-flow.js)
    ============================================================ */
 .arch svg.af-on .nd{opacity:.38;transition:opacity .45s ease;}
 .arch svg.af-on .nd.af-active{opacity:1;}

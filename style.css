@@ -301,7 +301,7 @@ section{padding:60px 0;}
 .pipe-fold-body{padding:24px 32px 32px;border-top:1px solid rgba(255,255,255,0.08);}
 .pipe-fold-body > .arch{margin-top:0;}
 .pipe-fold-body > .gj{margin:0 0 24px;}
-/* 시뮬레이션 도시 · PCG 학습 카드 */
+/* 시뮬레이션 도시 PCG 학습 카드 */
 .rnd-item{padding:26px 0;border-bottom:1px solid rgba(255,255,255,0.08);}
 .rnd-item:first-child{padding-top:4px;}
 .rnd-item:last-child{border-bottom:0;padding-bottom:0;}
@@ -324,7 +324,7 @@ section{padding:60px 0;}
 .rnd-media figcaption{font-family:var(--kr);font-size:12.5px;color:var(--muted);margin-top:6px;}
 .rnd-media--city video{aspect-ratio:1600/507;object-fit:contain;}
 @media (max-width:880px){.rnd-media,.rnd-media--2{grid-template-columns:1fr;}}
-/* 섹션 제목 위 회사 · 기간 */
+/* 섹션 제목 위 회사 기간 */
 .section-eyebrow{
   display:inline-block;margin-bottom:10px;
   font-family:var(--head);font-size:13px;font-weight:700;letter-spacing:3px;color:var(--accent);
@@ -627,10 +627,10 @@ section{padding:60px 0;}
   counter-increment:cv;transition:border-color .3s ease;
 }
 .cv-card:hover{border-color:rgba(10,160,210,0.45);}
-/* 대외활동 · 학력 — 전체 폭 카드, 항목을 3열로 나란히 (빈칸 없이) */
+/* 대외활동 학력 — 전체 폭 카드, 항목을 3열로 나란히 (빈칸 없이) */
 .cv-card--wide{grid-column:1 / -1;display:grid;grid-template-columns:repeat(3,1fr);column-gap:22px;align-items:start;}
 .cv-card--wide > h6{grid-column:1 / -1;}
-/* 모든 이력 카드: 로고를 글씨 위에 같은 규격 칸(높이 34px, 왼쪽·세로 가운데)으로 — 로고별 높이는 index.html 에서 면적 보정 */
+/* 모든 이력 카드: 로고를 글씨 위에 같은 규격 칸(높이 34px, 왼쪽 세로 가운데)으로 — 로고별 높이는 index.html 에서 면적 보정 */
 .cv-card .cv-row{flex-direction:column;gap:12px;}
 .cv-card .cv-logo{width:auto;height:34px;justify-content:flex-start;align-items:center;margin-top:0;}
 .cv-card .cv-logo img{max-width:150px;max-height:none;width:auto;}
@@ -641,7 +641,7 @@ section{padding:60px 0;}
 .cv-card--wide .cv-row + .cv-row{border-top:0;}
 .cv-card--wide .cv-row:hover{background:none;}
 .cv-card--wide .cv-logo{width:auto;height:30px;justify-content:flex-start;}
-/* 대외활동 · 학력 — 세 칸의 링크 줄(끝선)을 맞춘다 */
+/* 대외활동 학력 — 세 칸의 링크 줄(끝선)을 맞춘다 */
 .cv-card--wide{align-items:stretch;}
 .cv-card--wide .cv-row{display:flex;}
 .cv-card--wide .cv-body{flex:1;display:flex;flex-direction:column;}
@@ -664,7 +664,7 @@ section{padding:60px 0;}
 .cv-date{font-family:var(--head);font-size:12px;font-weight:600;letter-spacing:1px;color:var(--accent);margin-bottom:5px;}
 .cv-body h4{font-family:var(--head);font-size:16px;font-weight:700;color:var(--white);margin:0 0 6px;}
 .cv-body h4 a:hover{color:var(--accent);}
-/* 학교·회사·프로젝트 이름 링크 — 밑줄이 그려지는 링크 */
+/* 학교 회사 프로젝트 이름 링크 — 밑줄이 그려지는 링크 */
 .cv-body h4 a{background:linear-gradient(var(--accent),var(--accent)) left bottom/0 1px no-repeat;transition:background-size .35s ease,color .2s;padding-bottom:1px;}
 .cv-body h4 a:hover{background-size:100% 1px;}
 .cv-body h4 a::after{content:' ↗';font-size:.75em;color:var(--muted);}
@@ -861,4 +861,4 @@ footer .container{display:flex;justify-content:space-between;flex-wrap:wrap;gap:
 .rnd-media--presentation video{aspect-ratio:auto;height:auto;object-fit:contain;}
 
 /* Align city video frames while retaining full source framing. */
-.rnd-media--city-uniform video{width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;background:#000;}
+.rnd-media--city-uniform video{width:100%;height:auto;aspect-ratio:1920/608;object-fit:contain;background:#000;}
