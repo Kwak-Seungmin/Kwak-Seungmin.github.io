@@ -859,3 +859,6 @@ footer .container{display:flex;justify-content:space-between;flex-wrap:wrap;gap:
 
 /* Presentation media retain their original framing. */
 .rnd-media--presentation video{aspect-ratio:auto;height:auto;object-fit:contain;}
+
+/* Align city video frames while retaining full source framing. */
+.rnd-media--city-uniform video{width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;background:#000;}
