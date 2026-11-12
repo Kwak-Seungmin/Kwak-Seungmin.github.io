@@ -856,3 +856,6 @@ footer .container{display:flex;justify-content:space-between;flex-wrap:wrap;gap:
 /* FX — 영상마다 바로 밑에 제작 설명 */
 .fx-media figcaption b{color:var(--white);font-weight:700;}
 .fx-media .fx-note{display:block;margin-top:8px;padding-left:12px;border-left:2px solid rgba(10,160,210,0.45);color:var(--soft);font-size:13.5px;line-height:1.75;}
+
+/* Presentation media retain their original framing. */
+.rnd-media--presentation video{aspect-ratio:auto;height:auto;object-fit:contain;}

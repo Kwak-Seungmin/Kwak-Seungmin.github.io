@@ -62,6 +62,7 @@ const PROJECTS = {
       { type:'image', src:'assets/img/p07_kocca_booth_side.jpg', cap:'MNM 부스 측면 — 헤드폰으로 숏폼을 감상하는 관람객 (사진: 에듀코카 성과아카이브)' }
     ],
     links: [
+      { label:'나이비스 프로젝트 포트폴리오 · PDF (12p)', href:'assets/docs/naevis-project-portfolio.pdf' },
       { label:'KOCCA 성과아카이브', href:'https://edu.kocca.kr/edu/archiveUser/contentsDeptList.do?menuNo=500266&taskSeq=338' },
       { label:'프로젝트 영상 · YouTube', href:'https://www.youtube.com/watch?v=1xPpFn-jTrU' }
     ]
@@ -103,6 +104,7 @@ const PROJECTS = {
       '아벤느의 상징인 온천수를 몸 곳곳의 물방울로, 메인 키컬러인 라이브 코랄을 몸 색상으로 표현했습니다. 캐릭터 설계부터 모델링, 리깅을 고려한 라운드 토폴로지, Unreal Engine 키비주얼까지 전부 직접 만들어 제출했습니다. 브랜드의 색과 제품 특성을 캐릭터에 얼마나 직접적으로 드러낼지의 균형이 가장 큰 고민이었습니다.'
     ],
     media: [
+      { type:'video', src:'assets/video/avene-ad-topaz-4k.mp4?v=20261112', poster:'assets/video/poster_avene_ad.jpg?v=20261112', cap:'아벤느 화장품 영상 — AI 영상 제작' },
       { type:'image', src:'assets/img/p06_meditation.jpg', cap:'온천 속 명상, 몽숭이' },
       { type:'image', src:'assets/img/p06_3view.jpg', cap:'정면·측면·후면 — 온천수 물방울과 라이브 코랄 컬러' },
       { type:'image', src:'assets/img/p06_wire.jpg', cap:'와이어프레임 — 리깅을 고려한 라운드 토폴로지' },
